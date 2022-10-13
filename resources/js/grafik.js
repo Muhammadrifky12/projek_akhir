@@ -1,0 +1,1 @@
+document.querySelector("#content > div > div:nth-child(3) > div.col-xl-8.col-lg-7 > div > div.card-body > div > div")
