@@ -39,7 +39,7 @@ Route::resource('viewsiswa12',Siswa12Controller::class);
 // Route::post('register',RegisterController::class, 'store');
 //View Kelas
 Route::resource('Kelas',KelasController::class);
-Route::get('/Kelas/search',[KelasController::class,'search']);
+// Route::get('/Kelas/search',[KelasController::class,'search']);
 Route::get('/admin', function () {
     return view('layout.admin');    
 });
@@ -48,6 +48,9 @@ Route::get('/Siswa', function () {
 });
 Route::get('/p', function () {
     return view('popup');    
+});
+Route::get('/coba', function () {
+    return view('coba');    
 });
 // Route::get('/kelas', function () {
 //     return view('Kelas');    

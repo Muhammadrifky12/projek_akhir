@@ -2,10 +2,13 @@
 @section('title' , 'Siswa')
 @section('content')
 <style>
-    #p {
-        background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%)
-    }
-    </style>
+  #p {
+      background: linear-gradient(to left, #33ccff 0%, #33ccff 100%)
+  }
+  #k{
+      background: linear-gradient(to bottom, #ff6600 0%, #ffcc00 100%)
+  }
+  </style>
 <div class="row ">
     <div class=" col-lg-12">
             <div class="card-body p-0">
@@ -43,15 +46,33 @@
                     <div class="card shadow mb-4"> 
                         <div class="card-header" id="p">
                             <div class="row">
-                              <div class="col-lg-1">
-                                <a href="/viewsiswa" data-="tab" class="text-white">Kelas10</a>
-                              </div> 
-                              <div class="col-lg-1">     
-                                  <a href="/viewsiswa11" data-="tab" class="text-white">Kelas11</a>
-                              </div>
-                              <div class="col-lg-8">    
-                                  <a href="/viewsiswa12" data-="tab" class="text-white">Kelas12</a>
-                              </div>
+                              <div class="col-lg-2">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="k" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Kelas 10 RPL
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="/viewsiswa">10 RPL 1</a>
+                                    <a class="dropdown-item" href="#">10 RPL 2</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-2">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="k" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Kelas 11 RPL
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="/viewsiswa11">11 RPL 1</a>
+                                    <a class="dropdown-item" href="#">11 RPL 2</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="k" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Kelas 12 RPL
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <a class="dropdown-item" href="/viewsiswa12">12 RPL 1</a>
+                                    <a class="dropdown-item" href="#">12 RPL 2</a>
+                                </div>
+                            </div>
                               <div class="col-lg-2">
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tambah">
                                   Tambah Siswa

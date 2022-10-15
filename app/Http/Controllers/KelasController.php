@@ -37,12 +37,6 @@ class KelasController extends Controller
     
     public function search(Request $request,$id){
         
-        if($request->has('search')) {
-            $kelas = Kelas::where('kelas','LIKE','%'.$request->search.'%')->get($id);
-        }else
-        {
-            $kelas = Kelas::all();
-        }
-        return view('Kelas',['kelas' => $kelas]);
+        
     }
 }

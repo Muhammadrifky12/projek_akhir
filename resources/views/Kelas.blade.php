@@ -7,13 +7,13 @@
     }
     </style>
 <div class="row">
-    <div class="col-lg-6">
+    <div class="col-lg-4">
         <div class="card shadow mb-4"> 
             <div class="card-header" id="p">
-                <form action="/Kelas/search" method="GET" class="form-inline">
+                <form action="" method="GET" class="form-inline">
                   <input type="search" name="search" class="form-control float-right" placeholder="Cari">
                     <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
+                      <button type="submit" class="btn btn-default bg-primary">
                         <i class="fas fa-search"></i>
                       </button>
                     </div>
