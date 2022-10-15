@@ -1,5 +1,5 @@
 @extends('layout.admin')
-@section('title' , 'Siswa')
+@section('title' , 'Kelas-11 RPL 1')
 @section('content')
 <style>
   #p {
@@ -51,27 +51,27 @@
                                     Kelas 10 RPL
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="/viewsiswa">10 RPL 1</a>
-                                    <a class="dropdown-item" href="#">10 RPL 2</a>
+                                  <a class="dropdown-item" href="/viewsiswa">10 RPL 1</a>
+                                  <a class="dropdown-item" href="/viewsiswa10rpl2">10 RPL 2</a>
                                 </div>
-                            </div>
-                            <div class="col-lg-2">
-                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="k" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Kelas 11 RPL
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="/viewsiswa11">11 RPL 1</a>
-                                    <a class="dropdown-item" href="#">11 RPL 2</a>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="k" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Kelas 12 RPL
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <a class="dropdown-item" href="/viewsiswa12">12 RPL 1</a>
-                                    <a class="dropdown-item" href="#">12 RPL 2</a>
-                                </div>
+                              </div>
+                              <div class="col-lg-2">
+                                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="k" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Kelas 11 RPL
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                      <a class="dropdown-item" href="/viewsiswa11">11 RPL 1</a>
+                                      <a class="dropdown-item" href="/viewsiswa11rpl2">11 RPL 2</a>
+                                  </div>
+                              </div>
+                              <div class="col-lg-6">
+                                  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="k" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      Kelas 12 RPL
+                                  </a>
+                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                      <a class="dropdown-item" href="/viewsiswa12">12 RPL 1</a>
+                                      <a class="dropdown-item" href="/viewsiswa12rpl2">12 RPL 2</a>
+                                  </div>
                             </div>
                               <div class="col-lg-2">
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tambah">
@@ -90,7 +90,6 @@
                                             <th scope="col">No</th>
                                             <th scope="col">Nisn</th>
                                             <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Kelas</th>
                                             <th scope="col">Action</th>
                                           </tr>
                                         </thead>

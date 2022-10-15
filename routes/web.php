@@ -13,6 +13,9 @@ use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\Siswa11Controller;
 use App\Http\Controllers\Siswa12Controller;
+use App\Http\Controllers\Siswa10rpl2Controller;
+use App\Http\Controllers\Siswa11rpl2Controller;
+use App\Http\Controllers\Siswa12rpl2Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,8 +39,12 @@ Route::resource('Quiz',QuizController::class);
 Route::resource('viewsiswa',SiswaController::class);
 Route::resource('viewsiswa11',Siswa11Controller::class);
 Route::resource('viewsiswa12',Siswa12Controller::class);
+Route::resource('viewsiswa10rpl2',Siswa10rpl2Controller::class);
+Route::resource('viewsiswa11rpl2',Siswa11rpl2Controller::class);
+Route::resource('viewsiswa12rpl2',Siswa12rpl2Controller::class);
 // Route::post('register',RegisterController::class, 'store');
-//View Kelas
+
+//Route  Kelas
 Route::resource('Kelas',KelasController::class);
 // Route::get('/Kelas/search',[KelasController::class,'search']);
 Route::get('/admin', function () {
@@ -45,16 +52,4 @@ Route::get('/admin', function () {
 });
 Route::get('/Siswa', function () {
     return view('Siswa');    
-});
-Route::get('/p', function () {
-    return view('popup');    
-});
-Route::get('/coba', function () {
-    return view('coba');    
-});
-// Route::get('/kelas', function () {
-//     return view('Kelas');    
-// });
-// Route::get('/Pelanggaran', function () {
-//     return view('Pelanggaran');    
-// });
+});    

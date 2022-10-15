@@ -1,5 +1,5 @@
 @extends('layout.admin')
-@section('title' , 'Siswa')
+@section('title' , 'Kelas-12 RPL 1')
 @section('content')
 <style>
   #p {
@@ -53,7 +53,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="/viewsiswa">10 RPL 1</a>
-                                    <a class="dropdown-item" href="#">10 RPL 2</a>
+                                    <a class="dropdown-item" href="/viewsiswa10rpl2">10 RPL 2</a>
                                 </div>
                             </div>
                             <div class="col-lg-2">
@@ -62,7 +62,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="/viewsiswa11">11 RPL 1</a>
-                                    <a class="dropdown-item" href="#">11 RPL 2</a>
+                                    <a class="dropdown-item" href="/viewsiswa11rpl2">11 RPL 2</a>
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -71,7 +71,7 @@
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                     <a class="dropdown-item" href="/viewsiswa12">12 RPL 1</a>
-                                    <a class="dropdown-item" href="#">12 RPL 2</a>
+                                    <a class="dropdown-item" href="/viewsiswa12rpl2">12 RPL 2</a>
                                 </div>
                             </div>
                               <div class="col-lg-2">
