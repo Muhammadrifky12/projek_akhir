@@ -50,12 +50,14 @@ class Siswa12Controller extends Controller
             'nisn'=>'required|numeric',
             'nama'=>'required|min:7|max:50',
             'kelas'=>'required',
+            'JK'=>'requied',
         ]);
         //insert data
         $siswa12 = new Siswa12;
         $siswa12->nisn = $request->input('nisn'); 
         $siswa12->nama = $request->input('nama'); 
         $siswa12->kelas = $request->input('kelas'); 
+        $siswa12->JK = $request->input('JK');
 
         $siswa12->save();
         // Session::flash('success','Data Berhasil Diinput');

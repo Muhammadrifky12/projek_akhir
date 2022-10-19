@@ -92,6 +92,7 @@
                                             <th scope="col">Nisn</th>
                                             <th scope="col">Nama Siswa</th>
                                             <th scope="col">Kelas</th>
+                                            <th scope="col">Jenis Kelamin</th>
                                             <th scope="col">Action</th>
                                           </tr>
                                         </thead>
@@ -103,6 +104,7 @@
                                               <td>{{$items -> nisn }}</td>
                                               <td>{{$items -> nama }}</td>
                                               <td>{{$items -> kelas }}</td>
+                                              <td>{{$items -> JK    }}</td>
                                               <td><a href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                                                 <a href="" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
@@ -149,9 +151,16 @@
               <label for="alamat">Kelas</label>
               <input type="text" class="form-control" id="kelas" name='kelas'>
           </div>
+          <div class="form-group">
+            <label for="JK">Jenis Kelamin</label>
+            <select class="form-select form-control" id="JK" name='JK'value="Pilih Jenis Kelamin">
+            <option value="laki-laki">Laki-Laki</option>
+            <option value="perempuan">Perempuan</option>
+            </select>
+        </div>
       </div>
       <div class="modal-footer">
-        <input type="submit"  class="btn-success">
+        <input type="submit"  class="btn btn-success" value="OK">
         <a href="{{route('viewsiswa12.index')}}" class="btn btn-danger">Batal</a>
       </div>
     </form>

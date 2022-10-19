@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PelanggaranController;
@@ -27,29 +26,35 @@ use App\Http\Controllers\Siswa12rpl2Controller;
 |
 */
 
-Route::resource('dashboard',DashboardController::class);
-Route::resource('login',LoginController::class);
-Route::resource('register',RegisterController::class);
-Route::resource('Pelanggaran_kerajinan',KerajinanController::class);
-// Route::resource('Pelanggaran_sikap_prilaku',PelanggaranController::class);
-Route::resource('Pelanggaran',PelanggaranController::class);
-Route::resource('Pelanggaran_kerapian',KerapianController::class);
-Route::resource('Quiz',QuizController::class);
-//View Siswa
-Route::resource('viewsiswa',SiswaController::class);
-Route::resource('viewsiswa11',Siswa11Controller::class);
-Route::resource('viewsiswa12',Siswa12Controller::class);
-Route::resource('viewsiswa10rpl2',Siswa10rpl2Controller::class);
-Route::resource('viewsiswa11rpl2',Siswa11rpl2Controller::class);
-Route::resource('viewsiswa12rpl2',Siswa12rpl2Controller::class);
-// Route::post('register',RegisterController::class, 'store');
+
 
 //Route  Kelas
 Route::resource('Kelas',KelasController::class);
 // Route::get('/Kelas/search',[KelasController::class,'search']);
-Route::get('/admin', function () {
-    return view('layout.admin');    
+   
+
+Route::middleware('guest')->group(function(){
+    Route::get('/admin', function () {
+        return view('layout.admin');    
+    }); 
+    Route::get('login', [LoginController::class,"index"])->name('login');
+    Route::post('login', [LoginController::class,"authenticate"]);
 });
-Route::get('/Siswa', function () {
-    return view('Siswa');    
-});    
+
+Route::middleware('auth')->group(function(){
+    Route::resource('viewsiswa',SiswaController::class);
+    Route::resource('viewsiswa11',Siswa11Controller::class);
+    Route::resource('viewsiswa12',Siswa12Controller::class);
+    Route::resource('viewsiswa10rpl2',Siswa10rpl2Controller::class);
+    Route::resource('viewsiswa11rpl2',Siswa11rpl2Controller::class);
+    Route::resource('viewsiswa12rpl2',Siswa12rpl2Controller::class);
+    Route::resource('dashboard',DashboardController::class);
+    Route::post('logout', [LoginController::class,"logout"]);
+    Route::resource('Pelanggaran_kerajinan',KerajinanController::class);
+    Route::resource('Pelanggaran',PelanggaranController::class);
+    Route::resource('Pelanggaran_kerapian',KerapianController::class);
+    Route::resource('Quiz',QuizController::class);
+    Route::get('/Siswa', function () {
+        return view('Siswa');    
+    });
+});

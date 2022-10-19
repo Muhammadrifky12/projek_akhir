@@ -12,6 +12,7 @@ class Siswa12rpl2 extends Model
         'nisn',
         'nama',
         'kelas',
+        'JK',
     ];
     protected $table = 'siswa12rpl2';
 }

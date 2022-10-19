@@ -92,17 +92,19 @@
                                             <th scope="col">Nisn</th>
                                             <th scope="col">Nama Siswa</th>
                                             <th scope="col">Kelas</th>
+                                            <th scope="col">Jenis Kelamin</th>
                                             <th scope="col">Action</th>
                                           </tr>
                                         </thead>
                                         <tbody>
                                             {{-- perulangan --}}
-                                            @foreach ($rpl2 as $b => $items)
+                                            @foreach ($data6 as $b => $items)
                                             <tr>
                                               <th scope="row">{{++$b}}</th>
                                               <td>{{$items -> nisn }}</td>
                                               <td>{{$items -> nama }}</td>
                                               <td>{{$items -> kelas }}</td>
+                                              <td>{{$items -> JK    }}</td>
                                               <td><a href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                                                 <a href="" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
@@ -111,7 +113,7 @@
                                         </tbody>
                                     </table>
                                      <div class="card-footer d-flex justify-content-end">
-                                        {{ $rpl22->links() }}
+                                        {{ $dataa->links() }}
                                      </div>
                                 </div>
                             </div>
@@ -133,7 +135,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form method="post" action="{{ route('viewsiswa.store') }}">
+          <form method="post" action="{{ route('viewsiswa11rpl2.store') }}">
             @csrf
             <div class="form-group">
               <div class="form-group">
@@ -148,10 +150,17 @@
                 <label for="alamat">Kelas</label>
                 <input type="text" class="form-control" id="kelas" name='kelas'>
             </div>
+            <div class="form-group">
+                <label for="JK">Jenis Kelamin</label>
+                <select class="form-select form-control" id="JK" name='JK'value="Pilih Jenis Kelamin">
+                <option value="laki-laki">Laki-Laki</option>
+                <option value="perempuan">Perempuan</option>
+                </select>
+            </div>
         </div>
         <div class="modal-footer">
-          <input type="submit"  class="btn-success">
-          <a href="{{route('viewsiswa.index')}}" class="btn btn-danger">Batal</a>
+          <input type="submit"  class="btn-success" value="OK">
+          <a href="{{route('viewsiswa11rpl2.index')}}" class="btn btn-danger">Batal</a>
         </div>
       </form>
       </div>

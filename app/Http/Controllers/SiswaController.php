@@ -15,8 +15,8 @@ class SiswaController extends Controller
     public function index()
     {
         $dataa=Siswa::paginate(10);
-        $data4 = Siswa::all();
-        return view('viewsiswa',compact('data4','dataa'));
+        $data6 = Siswa::all();
+        return view('viewsiswa',compact('data6','dataa'));
     }
 
     /**
@@ -37,7 +37,30 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         // $massage=[
+        //     'required' => ':attribute harus diisi Slurr ',
+        //     'numeric' =>':attribute kudu diisi angka Slur!!!',
+        //     'min' => ':attribute minimal :min karakter ya Slurr',
+        //     'mimes' =>':attribute harus bertipe jpg,jpeg,png',
+        //     'max' => ':attribute maksimal :max Karakter Slurrr'
+        // ];
+        // validasi form
+        $this->validate($request,[
+            'nisn'=>'required|numeric',
+            'nama'=>'required|min:7|max:50',
+            'kelas'=>'required',
+            'JK'=>'required',
+        ]);
+        //insert data
+        $siswa12 = new Siswa;
+        $siswa12->nisn = $request->input('nisn'); 
+        $siswa12->nama = $request->input('nama'); 
+        $siswa12->kelas = $request->input('kelas'); 
+        $siswa12->JK = $request->input('JK');
+
+        $siswa12->save();
+        // Session::flash('success','Data Berhasil Diinput');
+        return redirect('/viewsiswa')->with('succes','Data Saved');
     }
 
     /**

@@ -12,6 +12,7 @@ class Siswa extends Model
         'nisn',
         'nama',
         'kelas',
+        'JK',
     ];
     protected $table = 'siswa';
     

@@ -15,8 +15,8 @@ class Siswa11Controller extends Controller
     public function index()
     {
         $dataa = Siswa11::paginate(10);
-        $data5 = Siswa11::all();
-        return view('viewsiswa11',compact('data5','dataa'));
+        $data6 = Siswa11::all();
+        return view('viewsiswa11',compact('data6','dataa'));
     }
 
     /**
@@ -26,7 +26,7 @@ class Siswa11Controller extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -37,7 +37,30 @@ class Siswa11Controller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // $massage=[
+        //     'required' => ':attribute harus diisi Slurr ',
+        //     'numeric' =>':attribute kudu diisi angka Slur!!!',
+        //     'min' => ':attribute minimal :min karakter ya Slurr',
+        //     'mimes' =>':attribute harus bertipe jpg,jpeg,png',
+        //     'max' => ':attribute maksimal :max Karakter Slurrr'
+        // ];
+        // validasi form
+        $this->validate($request,[
+            'nisn'=>'required|numeric',
+            'nama'=>'required|min:7|max:50',
+            'kelas'=>'required',
+            'JK'=>'required',
+        ]);
+        //insert data
+        $siswa12 = new Siswa11;
+        $siswa12->nisn = $request->input('nisn'); 
+        $siswa12->nama = $request->input('nama'); 
+        $siswa12->kelas = $request->input('kelas'); 
+        $siswa12->JK = $request->input('JK');
+
+        $siswa12->save();
+        // Session::flash('success','Data Berhasil Diinput');
+        return redirect('/viewsiswa11')->with('succes','Data Saved');
     }
 
     /**
