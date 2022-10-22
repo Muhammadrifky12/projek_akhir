@@ -160,7 +160,7 @@
         </div>
         <div class="modal-footer">
           <input type="submit"  class="btn-success" value="OK">
-          <a href="{{route('viewsiswa10rpl2.index')}}" class="btn btn-danger">Batal</a>
+          <a href="{{route('viewsiswa10rpl2.index')}}" type="button" class="btn btn-danger">Batal</a>
         </div>
       </form>
       </div>
