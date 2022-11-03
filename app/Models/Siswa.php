@@ -11,9 +11,11 @@ class Siswa extends Model
     protected $fillable = [
         'nisn',
         'nama',
-        'kelas',
+        'id_kelas',
         'JK',
     ];
     protected $table = 'siswa';
-    
+    public function kelas1(){
+        return $this->belongsTo('App\Models\Kelas','id');
+    }
 }

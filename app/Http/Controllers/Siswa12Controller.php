@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Kelas;
 use App\Models\Pelanggaran;
 use App\Models\Siswa12;
 use Illuminate\Support\Facades\Session;
@@ -17,7 +19,8 @@ class Siswa12Controller extends Controller
     {
         $dataa= Siswa12::paginate(10);
         $data6 = Siswa12::all();
-        return view('viewsiswa12',compact('data6','dataa'));
+        $kelas = Kelas::all();
+        return view('viewsiswa12',compact('data6','dataa','kelas'));
     }
 
     /**
@@ -49,14 +52,16 @@ class Siswa12Controller extends Controller
         $this->validate($request,[
             'nisn'=>'required|numeric',
             'nama'=>'required|min:7|max:50',
-            'kelas'=>'required',
-            'JK'=>'requied',
+            'id_kelas'=>'required',
+            'alamat'=>'required',
+            'JK'=>'required',
         ]);
         //insert data
         $siswa12 = new Siswa12;
         $siswa12->nisn = $request->input('nisn'); 
         $siswa12->nama = $request->input('nama'); 
-        $siswa12->kelas = $request->input('kelas'); 
+        $siswa12->id_kelas = $request->input('id_kelas'); 
+        $siswa12->alamat = $request->input('alamat');
         $siswa12->JK = $request->input('JK');
 
         $siswa12->save();

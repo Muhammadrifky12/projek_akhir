@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>SB Admin 2 - @yield('title')</title>
+    <title>Projek Akhir - @yield('title')</title>
     @include('layout.head')
 </head>
 <body id="page-top" >

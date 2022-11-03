@@ -57,4 +57,7 @@ Route::middleware('auth')->group(function(){
     Route::get('/Siswa', function () {
         return view('Siswa');    
     });
+    Route::get('/Input', function () {
+        return view('InputPelanggaran');    
+    });
 });

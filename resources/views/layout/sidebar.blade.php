@@ -44,7 +44,7 @@
             <span>Kelas</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/">
+        <a class="nav-link" href="/Input">
             <i class="fas fa-fw  fa-align-left"></i>
             <span>Input Point</span></a>
     </li>

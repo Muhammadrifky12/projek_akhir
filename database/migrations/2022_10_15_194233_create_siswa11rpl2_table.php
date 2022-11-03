@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('siswa11rpl2', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('id_kelas')->unsigned();
+            $table->foreign('id_kelas')->references('id')->on('kelas');
             $table->char('nisn');
             $table->string('nama');
-            $table->string('kelas');
             $table->char('JK');
             $table->timestamps();
         });
