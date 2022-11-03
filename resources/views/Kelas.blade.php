@@ -33,7 +33,7 @@
                     <div class="card shadow mb-4"> 
                         <div class="card-header" id="p">
                             <div class="row">
-                                <div class="col-lg-8"></div>
+                                <div class="col-lg-10"></div>
                               <div class="col-lg-2">
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tambah">
                                   Tambah Siswa

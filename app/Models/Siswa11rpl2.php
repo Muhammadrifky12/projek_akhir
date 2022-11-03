@@ -15,4 +15,7 @@ class Siswa11rpl2 extends Model
         'JK',
     ];
     protected $table = 'siswa11rpl2';
+    public function kelas4(){
+        return $this->belongsTo('App\Models\Kelas','id');
+    }
 }

@@ -15,5 +15,7 @@ class Siswa11 extends Model
         'JK',
     ];
     protected $table = 'siswa11';
-    
+    public function kelas3(){
+        return $this->belongsTo('App\Models\Kelas','id');
+    }
 }
