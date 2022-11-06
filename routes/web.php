@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HistorypelanggaranController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\KerapianController;
@@ -54,10 +55,8 @@ Route::middleware('auth')->group(function(){
     Route::resource('Pelanggaran',PelanggaranController::class);
     Route::resource('Pelanggaran_kerapian',KerapianController::class);
     Route::resource('Quiz',QuizController::class);
+    Route::resource('History',HistorypelanggaranController::class);
     Route::get('/Siswa', function () {
         return view('Siswa');    
-    });
-    Route::get('/Input', function () {
-        return view('InputPelanggaran');    
     });
 });

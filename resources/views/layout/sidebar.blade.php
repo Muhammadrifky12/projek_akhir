@@ -44,9 +44,9 @@
             <span>Kelas</span></a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="/Input">
+        <a class="nav-link" href="/History">
             <i class="fas fa-fw  fa-align-left"></i>
-            <span>Input Point</span></a>
+            <span>History Pelanggaran</span></a>
     </li>
 
     {{-- <!-- Heading -->

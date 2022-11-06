@@ -59,7 +59,7 @@
                                             @foreach ($kelas as $b => $items)
                                             <tr>
                                               <th scope="row">{{++$b}}</th>
-                                              <td>{{$items -> kelas }}</td>
+                                              <td>{{$items -> kelas_id }}</td>
                                               <td>{{$items -> walas }}</td>
                                               <td><a href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                                                 <a href="" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
@@ -106,8 +106,8 @@
             @csrf
             <div class="form-group">
               <div class="form-group">
-                <label for="kleas">Kelas</label>
-                <input type="text" class="form-control" id="kelas" name='kelas' >
+                <label for="kelas_id">Kelas</label>
+                <input type="text" class="form-control" id="kelas_id" name='kelas_id' >
             </div>
             <div class="form-group">
                 <label for="walas">Nama Guru</label>

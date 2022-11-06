@@ -22,12 +22,12 @@ class KelasController extends Controller
             'max' => ':attribute maksimal :max Karakter Slurrr'
         ];
         $this->validate($request,[
-            'kelas'=>'required|',
+            'kelas_id'=>'required|',
             'walas'=>'required|min:7|max:50',
         ], $massage);
         //insert data
         $kelass = new kelas;
-        $kelass->kelas = $request->input('kelas'); 
+        $kelass->kelas_id = $request->input('kelas_id'); 
         $kelass->walas = $request->input('walas'); 
 
         $kelass->save();
