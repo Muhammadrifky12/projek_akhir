@@ -15,7 +15,8 @@ class HistorypelanggaranController extends Controller
     public function index()
     {
         $history = Siswa12::all();
-        return view('History' ,compact('history'));
+        $data = Siswa12::paginate(7);
+        return view('History' ,compact('history','data'));
     }
 
     /**
@@ -47,7 +48,8 @@ class HistorypelanggaranController extends Controller
      */
     public function show($id)
     {
-        //
+        $History = Siswa12::find($id)->history()->get();
+        return view('Historyshow', compact('History'));
     }
 
     /**

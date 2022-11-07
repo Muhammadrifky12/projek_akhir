@@ -61,8 +61,8 @@
                                               <th scope="row">{{++$b}}</th>
                                               <td>{{$items -> kelas_id }}</td>
                                               <td>{{$items -> walas }}</td>
-                                              <td><a href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                                <a href="" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+                                              <td><a href="" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                                <a href="" class="btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
                                             </tr>
                                             @endforeach

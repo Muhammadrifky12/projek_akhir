@@ -1,8 +1,10 @@
 <style>
     #gradient {
-        background: linear-gradient(to bottom,#00ccff 0%, #0000ff 100%);
+        background: linear-gradient(to top,#0000ff 0%, #0099ff 100%);
     }
     </style>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="gradient">   
     
     <!-- Sidebar - Brand -->
@@ -15,38 +17,43 @@
     <li class="nav-item">
         <a class="nav-link" href="/dashboard">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span class="text-white" >Dashboard</span></a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider">
 
     <li class="nav-item">
-        <a class="nav-link" href="/Pelanggaran">
-            <i class="fas fa-fw fa-user"></i>
-            <span>Pelanggaran</span></a>
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities">
+            <span>Data Master</span>
+        </a>
+        <div id="collapseUtilities" class="collapse">
+            <div class="nav-link py-2 collapse-inner rounded">
+                <a class="collapse-item text-white" href="/Siswa">
+                    <i class="fas fa-fw fa-user" ></i>Siswa</a>
+                <a class="collapse-item text-white" href="/Kelas">
+                    <i class="fas fa-school"></i>Kelas</a>
+                <a class="collapse-item text-white" href="/Guru">Guru</a>
+            </div>
+        </div> 
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="/Siswa">
-            <i class="fas fa-fw  fa-align-left"></i>
-            <span>Siswa</span></a>
+        <a class="nav-link" href="/Pelanggaran">
+            <i class="fas fa-fw fa-user" ></i>
+            <span class="text-white" >Pelanggaran</span></a>
     </li>
 
     <li class="nav-item">
         <a class="nav-link" href="/Quiz">
             <i class="fas fa-fw fa-tty"></i>
-            <span>QUIZ</span></a>
+            <span class="text-white">QUIZ</span></a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="/Kelas">
-            <i class="fas fa-fw  fa-align-left"></i>
-            <span>Kelas</span></a>
-    </li>
+    
     <li class="nav-item">
         <a class="nav-link" href="/History">
             <i class="fas fa-fw  fa-align-left"></i>
-            <span>History Pelanggaran</span></a>
+            <span class="text-white">History Pelanggaran</span></a>
     </li>
 
     {{-- <!-- Heading -->

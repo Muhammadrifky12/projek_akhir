@@ -1,6 +1,13 @@
 <style>
     #gradient1 {
-        background: linear-gradient(to right,#00ccff 0%, #0000ff 100%);
+        background: linear-gradient(to left,#0000ff 0%,#0099ff 100%);
+    }
+    #z{
+        color: #fff;
+        text-shadow: 0 0 5px #fff,
+        0 0 10px #fff, 0 0 15px #66ff33,
+        0 0 20px #66ff33, 0 0 25px #66ff33,
+        0 0 30px #66ff33, 0 0 35px #66ff33;
     }
     </style>
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="gradient1">
@@ -165,7 +172,7 @@
         <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-white-600 small">{{auth()->user()->name}}</span>
+                <span class="mr-2 d-none d-lg-inline text-white-600 small" id="z">{{auth()->user()->name}}</span>
                 <img class="img-profile rounded-circle"
                     src="{{ asset ('template/img/undraw_profile.svg') }}">
             </a>
