@@ -72,8 +72,8 @@
                       <thead>
                         <tr>
                           <th scope="col">no</th>
-                          <th scope="col">Nisn</th>
-                          <th scope="col">Nama</th>
+                          <th scope="col">Bentuk pelanggaran</th>
+                          <th scope="col">Skor Sanksi</th>
                           <th scope="col"></th>
                         </tr>
                       </thead>
