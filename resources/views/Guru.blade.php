@@ -1,5 +1,5 @@
 @extends('layout.admin')
-@section('title' , 'Kelas')
+@section('title' , 'Guru')
 @section('content')
 <style>
     #p {
@@ -35,8 +35,8 @@
                             <div class="row">
                                 <div class="col-lg-10"></div>
                               <div class="col-lg-2">
-                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tambah">
-                                  Tambah Siswa
+                                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Guru">
+                                  Tambah Guru
                                 </button>  
                               </div> 
                             </div>
@@ -49,27 +49,29 @@
                                         <thead>
                                           <tr>
                                             <th scope="col">No</th>
-                                            <th scope="col">Kelas</th>
-                                            <th scope="col">Walas</th>
+                                            <th scope="col">nip</th>
+                                            <th scope="col">Nama Guru</th>
+                                            <th scope="col">Bidang</th>
+                                            <th scope="col">Jenis Kelamin</th>
                                             <th scope="col">Action</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- perulangan --}}
-                                            @foreach ($kelas as $b => $items)
+                                            @foreach ($guru as $b => $items)
                                             <tr>
                                               <th scope="row">{{++$b}}</th>
-                                              <td>{{$items -> kelas_id }}</td>
-                                              <td>{{$items -> walas }}</td>
+                                              <td>{{$items -> nip }}</td>
+                                              <td>{{$items -> nama }}</td>
+                                              <td>{{$items -> bidang }}</td>
+                                              <td>{{$items -> JK }}</td>
                                               <td><a href="" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
                                                 <a href="" class="btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
                                             </tr>
                                             @endforeach
-                                          </tbody>
                                     </table>
                                     <div class="card-footer d-flex justify-content-end">
-                                      {{ $kelas->links() }}
+                                      {{ $guru->links() }}
                                     </div>
                                 </div>
                             </div>
@@ -83,7 +85,7 @@
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="tambah" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="Guru" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -102,26 +104,32 @@
                     </ul>
                 </div>
                 @endif
-          <form method="post" action="{{ route('Kelas.store') }}">
+          <form method="post" action="{{ route('Guru.store') }}">
             @csrf
             <div class="form-group">
               <div class="form-group">
-                <label for="kelas_id">Kelas</label>
-                <input type="text" class="form-control" id="kelas_id" name='kelas_id' >
+                <label for="nip">nip</label>
+                <input type="text" class="form-control" id="nip" name='nip'>
             </div>
             <div class="form-group">
-                <label for="walas">Nama Guru</label>
-                <select name="walas" id="walas" class="form-control">
-                  <option value="">--PILIH--</option>
-                      @foreach ($walas as $item)
-                      <option value="{{$item->nama}}">{{$item->nama}}</option>
-                      @endforeach
-                 </select>
+                <label for="nama">Nama Guru</label>
+                <input type="text" class="form-control" id="nama" name="nama">
+            </div>
+            <div class="form-group">
+                <label for="bidang">Bidang Guru</label>
+                <input type="text" class="form-control" id="bidang" name="bidang">
+            </div>
+            <div class="form-group">
+                <label for="JK">Jenis Kelamin</label>
+                <select class="form-select form-control" id="JK" name='JK'value="{{ old('JK') }}">
+                <option value="laki-laki">Laki-Laki</option>
+                <option value="perempuan">Perempuan</option>
+                </select>
             </div>
         </div>
         <div class="modal-footer">
           <input type="submit"  class="btn-success">
-          <a href="{{route('Kelas.index')}}" class="btn btn-danger">Batal</a>
+          <a href="{{route('Guru.index')}}" class="btn btn-danger">Batal</a>
         </div>
       </form>
       </div>

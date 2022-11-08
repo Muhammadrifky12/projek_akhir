@@ -16,6 +16,6 @@ class Siswa extends Model
     ];
     protected $table = 'siswa';
     public function kelas1(){
-        return $this->belongsTo('App\Models\Kelas','id');
+        return $this->belongsTo('App\Models\Kelas','kelas_id');
     }
 }

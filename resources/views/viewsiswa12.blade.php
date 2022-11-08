@@ -106,8 +106,8 @@
                                               <td>{{$items -> nisn }}</td>
                                               <td>{{$items -> nama }}</td>
                                               <td>{{$items-> JK}}</td>
-                                              <td><a href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                                <a href="" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+                                              <td><a href="" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
+                                                <a href="" class="btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
                                             </tr>
                                             @endforeach

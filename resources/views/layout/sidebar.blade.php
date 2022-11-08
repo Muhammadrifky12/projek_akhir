@@ -25,7 +25,7 @@
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities">
-            <span>Data Master</span>
+            <span><i class="far fa-folder"></i>Data Master</span>
         </a>
         <div id="collapseUtilities" class="collapse">
             <div class="nav-link py-2 collapse-inner rounded">
@@ -33,7 +33,7 @@
                     <i class="fas fa-fw fa-user" ></i>Siswa</a>
                 <a class="collapse-item text-white" href="/Kelas">
                     <i class="fas fa-school"></i>Kelas</a>
-                <a class="collapse-item text-white" href="/Guru">Guru</a>
+                <a class="collapse-item text-white" href="/Guru"><i class="fas fa-user-graduate"></i>Guru</a>
             </div>
         </div> 
     </li>

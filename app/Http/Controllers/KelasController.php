@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\guru;
 use App\Models\Kelas;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -11,7 +13,8 @@ class KelasController extends Controller
     {
         $kelas = Kelas::all();
         $kelas = Kelas::paginate(10);
-        return view('Kelas',compact('kelas'));
+        $walas = guru::all();
+        return view('Kelas',compact('kelas','walas'));
     }
 
     public function store(Request $request)

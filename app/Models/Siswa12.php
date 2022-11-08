@@ -17,6 +17,6 @@ class Siswa12 extends Model
     ];
     protected $table = 'siswa12';
     public function kelas(){
-        return $this->belongsTo('App\Models\Kelas')->withPivot('id','kelas');
+        return $this->belongsTo('App\Models\Kelas')->withPivot('kelas_id');
     }
 }

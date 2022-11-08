@@ -19,7 +19,6 @@ return new class extends Migration
             $table->foreign('id_kelas')->references('kelas_id')->on('kelas');
             $table->char('nisn');
             $table->string('nama');
-            $table->string('kelas');
             $table->char('JK');
             $table->timestamps();
         });

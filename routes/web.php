@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GuruController;
 use App\Http\Controllers\HistorypelanggaranController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PelanggaranController;
@@ -49,6 +50,7 @@ Route::middleware('auth')->group(function(){
     Route::resource('viewsiswa10rpl2',Siswa10rpl2Controller::class);
     Route::resource('viewsiswa11rpl2',Siswa11rpl2Controller::class);
     Route::resource('viewsiswa12rpl2',Siswa12rpl2Controller::class);
+    Route::resource('Guru',GuruController::class);
     Route::resource('dashboard',DashboardController::class);
     Route::post('logout', [LoginController::class,"logout"]);
     Route::resource('Pelanggaran_kerajinan',KerajinanController::class);

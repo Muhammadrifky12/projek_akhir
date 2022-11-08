@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('kelas', function (Blueprint $table) {
-            $table->string('kelas_id');
-            $table->primary('kelas_id');
-            $table->string('walas');
-            $table->foreign('walas')->references('nama')->on('guru');
+        Schema::create('bidang_guru', function (Blueprint $table) {
+            $table->string('id_bidang');
+            $table->primary('id_bidang');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kelas');
+        Schema::dropIfExists('bidang_guru');
     }
 };
