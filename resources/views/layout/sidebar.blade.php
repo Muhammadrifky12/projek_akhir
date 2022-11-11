@@ -24,6 +24,12 @@
     <hr class="sidebar-divider">
 
     <li class="nav-item">
+        <a class="nav-link" href="/Pelanggaran">
+            <i class="fas fa-fw fa-user" ></i>
+            <span class="text-white" >Pelanggaran</span></a>
+    </li>
+
+    <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities">
             <span><i class="far fa-folder"></i>Data Master</span>
         </a>
@@ -36,12 +42,6 @@
                 <a class="collapse-item text-white" href="/Guru"><i class="fas fa-user-graduate"></i>Guru</a>
             </div>
         </div> 
-    </li>
-
-    <li class="nav-item">
-        <a class="nav-link" href="/Pelanggaran">
-            <i class="fas fa-fw fa-user" ></i>
-            <span class="text-white" >Pelanggaran</span></a>
     </li>
 
     <li class="nav-item">

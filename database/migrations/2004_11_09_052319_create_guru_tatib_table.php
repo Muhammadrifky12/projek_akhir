@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('guru', function (Blueprint $table) {
-            $table->string('nama');
-            $table->primary('nama');
-            $table->integer('nip');
-            $table->char('JK');
+        Schema::create('guru_tatib', function (Blueprint $table) {
+            $table->string('id_nama');
+            $table->foreign('id_nama')->references('nama')->on('guru');
+            $table->primary('id_nama');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guru');
+        Schema::dropIfExists('guru_tatib');
     }
 };

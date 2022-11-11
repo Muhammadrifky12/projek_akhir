@@ -11,12 +11,17 @@ class guru extends Model
     protected $fillable = [
         'nama',
         'nip',
-        'bidang',
         'JK',
         
     ];
     protected $table = 'guru';
     public function kelasss(){
         return $this->hasMany('App\Models\kelas','walas');
+    }
+    public function gurubk(){
+        return $this->hasMany('App\Models\gurubk','nama');
+    }
+    public function gurutatib(){
+        return $this->hasMany('App\Models\gurutatib','id_nama');
     }
 }

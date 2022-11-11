@@ -118,6 +118,16 @@
                       @endforeach
                  </select>
             </div>
+            <div class="form-group">
+              <label for="BK">Guru BK</label>
+              <select name="walas" id="BK" class="bk">
+                <option value="">--PILIH--</option>
+                    @foreach ($bk as $item)
+                    <option value="{{$item->nama}}">{{$item->nama}}</option>
+                    @endforeach
+               </select>
+          </div>
+
         </div>
         <div class="modal-footer">
           <input type="submit"  class="btn-success">

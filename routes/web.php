@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GurubkController;
 use App\Http\Controllers\GuruController;
+use App\Http\Controllers\GurutatibController;
 use App\Http\Controllers\HistorypelanggaranController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PelanggaranController;
@@ -58,6 +60,8 @@ Route::middleware('auth')->group(function(){
     Route::resource('Pelanggaran_kerapian',KerapianController::class);
     Route::resource('Quiz',QuizController::class);
     Route::resource('History',HistorypelanggaranController::class);
+    Route::resource('Gurubk',GurubkController::class);
+    Route::resource('Gurutatib',GurutatibController::class);
     Route::get('/Siswa', function () {
         return view('Siswa');    
     });

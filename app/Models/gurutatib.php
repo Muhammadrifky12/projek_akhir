@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class bidang_guru extends Model
+class gurutatib extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'id_bidang',
+        'id_nama',
         
     ];
-    protected $table = 'bidang_guru';
-    public function guru(){
-        return $this->hasMany('App\Models\guru','bidang');
+    protected $table = 'guru_tatib';
+    public function gurutatib(){
+        return $this->belongsTo('App\Models\guru','nama');
     }
 }

@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Session;
-use App\Models\guru;
-use App\Models\gurubk;
 use App\Models\gurutatib;
 use Illuminate\Http\Request;
-
-class GuruController extends Controller
+class GurutatibController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +13,7 @@ class GuruController extends Controller
      */
     public function index()
     {
-        $guru = guru::all();
-        $guru = guru::paginate(10);
-        $gurubk = gurubk::all();
-        $gurubkk = gurubk::paginate(5);
-        $tatib = gurutatib::all();
-        $tatibb = gurutatib::paginate(5);
-        $bk = guru::all();
-        return view('Guru', compact('guru', 'gurubk', 'bk', 'gurubkk', 'tatib', 'tatibb'));
+        //
     }
 
     /**
@@ -45,25 +34,18 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
-        $massage = [
+        $massage=[
             'required' => ':attribute harus diisi Slurr ',
-            'min' => ':attribute minimal :min karakter ya Slurr',
-            'max' => ':attribute maksimal :max Karakter Slurrr'
         ];
-        $this->validate($request, [
-            'nip' => 'required|numeric',
-            'nama' => 'required|min:7|max:50',
-            'JK' => 'required',
+        $this->validate($request,[
+            'id_nama'=>'required',
         ], $massage);
         //insert data
-        $Guru = new guru;
-        $Guru->nip = $request->input('nip');
-        $Guru->nama = $request->input('nama');
-        $Guru->JK = $request->input('JK');
+        $tatip = new gurutatib;
+        $tatip->id_nama = $request->input('id_nama');
 
-        $Guru->save();
-        Session::flash('success', 'Data Berhasil Diinput');
-        return redirect('/Guru')->with('succes', 'Data Saved');
+        $tatip->save();
+        return redirect('/Guru');
     }
 
     /**
