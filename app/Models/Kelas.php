@@ -9,8 +9,9 @@ class Kelas extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'kelas_id',
+        'kelass',
         'walas',
+        'gurubk',
     ];
     protected $table = 'kelas';
     public function kelas1(){
@@ -33,5 +34,8 @@ class Kelas extends Model
     }
     public function kelasss(){
         return $this->hasMany('App\Models\guru','nama');
+    }
+    public function kel(){
+        return $this->belongsTo('App\Models\kelas','nama');
     }
 }

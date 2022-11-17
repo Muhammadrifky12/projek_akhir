@@ -51,6 +51,7 @@
                                             <th scope="col">No</th>
                                             <th scope="col">Kelas</th>
                                             <th scope="col">Walas</th>
+                                            <th scope="col">Guru BK</th>
                                             <th scope="col">Action</th>
                                           </tr>
                                         </thead>
@@ -61,8 +62,9 @@
                                               <th scope="row">{{++$b}}</th>
                                               <td>{{$items -> kelas_id }}</td>
                                               <td>{{$items -> walas }}</td>
-                                              <td><a href="" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                                <a href="" class="btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+                                              <td>{{$items -> gurubk}}</td>
+                                              <td><a href="{{ route('Kelas.hapus', $items ->nama) }}" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                                <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
                                             </tr>
                                             @endforeach
@@ -120,7 +122,7 @@
             </div>
             <div class="form-group">
               <label for="BK">Guru BK</label>
-              <select name="walas" id="BK" class="bk">
+              <select name="gurubk" id="gurubk" class="form-control form-control-sm">
                 <option value="">--PILIH--</option>
                     @foreach ($bk as $item)
                     <option value="{{$item->nama}}">{{$item->nama}}</option>

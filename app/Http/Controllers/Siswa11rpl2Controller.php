@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Kelas;
 use App\Models\Siswa11rpl2;
 use Illuminate\Http\Request;
 
@@ -15,7 +17,8 @@ class Siswa11rpl2Controller extends Controller
     {
         $dataa = Siswa11rpl2::paginate(10);
         $data6 = Siswa11rpl2::all();
-        return view('viewsiswa11rpl2',compact('data6','dataa'));
+        $kelas = Kelas::all();
+        return view('viewsiswa11rpl2',compact('data6','dataa','kelas'));
     }
 
     /**
@@ -47,14 +50,15 @@ class Siswa11rpl2Controller extends Controller
         $this->validate($request,[
             'nisn'=>'required|numeric',
             'nama'=>'required|min:7|max:50',
-            'kelas'=>'required',
+            'id_kelas'=>'required',
+            'JK'=>'required',
         ]);
         //insert data
         $siswa12 = new Siswa11rpl2;
         $siswa12->nisn = $request->input('nisn'); 
         $siswa12->nama = $request->input('nama'); 
-        $siswa12->kelas = $request->input('kelas');
-
+        $siswa12->id_kelas = $request->input('id_kelas'); 
+        $siswa12->JK = $request->input('JK');
         $siswa12->save();
         // Session::flash('success','Data Berhasil Diinput');
         return redirect('/viewsiswa11rpl2')->with('succes','Data Saved');
@@ -103,5 +107,10 @@ class Siswa11rpl2Controller extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function hapus($nama)
+    {
+        Siswa11rpl2::where('nama',$nama)->delete();
+        return redirect('/viewsiswa11rpl2');
     }
 }

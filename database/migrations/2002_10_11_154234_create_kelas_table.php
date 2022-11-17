@@ -14,10 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('kelas', function (Blueprint $table) {
-            $table->string('kelas_id');
-            $table->primary('kelas_id');
+            $table->string('kelass');
+            $table->primary('kelass');
             $table->string('walas');
             $table->foreign('walas')->references('nama')->on('guru');
+            $table->string('gurubk');
+            $table->foreign('gurubk')->references('nama')->on('guru_bk');
             $table->timestamps();
         });
     }

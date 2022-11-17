@@ -1,67 +1,68 @@
-<style>
-    #gradient {
-        background: linear-gradient(to top,#0000ff 0%, #0099ff 100%);
-    }
-    </style>
-    <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-<ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="gradient">   
-    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="gradient">
+
     <!-- Sidebar - Brand -->
     <a class="justify-content-start">
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline ">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
-        <a class="nav-link" href="/dashboard">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span class="text-white" >Dashboard</span></a>
-    </li>
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item">
+            <a class="nav-link" href="/dashboard">
+                <i class="fas fa-fw fa-tachometer-alt"></i>
+                <span class="text-white">Dashboard</span></a>
+        </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+        <!-- Divider -->
+        <hr class="sidebar-divider">
 
-    <li class="nav-item">
-        <a class="nav-link" href="/Pelanggaran">
-            <i class="fas fa-fw fa-user" ></i>
-            <span class="text-white" >Pelanggaran</span></a>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Pelanggaran">
+                <i class="fas fa-fw fa-user"></i>
+                <span class="text-white">Pelanggaran</span></a>
+        </li>
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities">
-            <span><i class="far fa-folder"></i>Data Master</span>
-        </a>
-        <div id="collapseUtilities" class="collapse">
-            <div class="nav-link py-2 collapse-inner rounded">
-                <a class="collapse-item text-white" href="/Siswa">
-                    <i class="fas fa-fw fa-user" ></i>Siswa</a>
-                <a class="collapse-item text-white" href="/Kelas">
-                    <i class="fas fa-school"></i>Kelas</a>
-                <a class="collapse-item text-white" href="/Guru"><i class="fas fa-user-graduate"></i>Guru</a>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities">
+                <span><i class="far fa-folder"></i>Data Master</span>
+            </a>
+            <div id="collapseUtilities" class="collapse">
+                <div class="nav-link py-2 collapse-inner rounded">
+                    <a class="collapse-item text-white" href="/Siswa">
+                        <i class="fas fa-fw fa-user"></i>Siswa</a>
+                    <a class="collapse-item text-white" href="/Kelas">
+                        <i class="fas fa-school"></i>Kelas</a>
+                    <a class="collapse-item text-white" href="/Guru"><i class="fas fa-user-graduate"></i>Guru</a>
+                </div>
             </div>
-        </div> 
-    </li>
+        </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="/Quiz">
-            <i class="fas fa-fw fa-tty"></i>
-            <span class="text-white">QUIZ</span></a>
-    </li>
-    
-    <li class="nav-item">
-        <a class="nav-link" href="/History">
-            <i class="fas fa-fw  fa-align-left"></i>
-            <span class="text-white">History Pelanggaran</span></a>
-    </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/Quiz">
+                <i class="fas fa-fw fa-tty"></i>
+                <span class="text-white">QUIZ</span></a>
+        </li>
 
-    {{-- <!-- Heading -->
+        <li class="nav-item">
+            <a class="nav-link" href="/History">
+                <i class="fas fa-fw  fa-align-left"></i>
+                <span class="text-white">History Pelanggaran</span></a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/Input">
+                <i class="far fa-sun"></i>
+                <span class="text-white">Input Pelanggaran</span></a>
+        </li>
+
+        {{-- <!-- Heading -->
     <div class="sidebar-heading">
         Interface
     </div> --}}
 
-    {{-- <!-- Nav Item - Pages Collapse Menu -->
+        {{-- <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
             aria-expanded="true" aria-controls="collapseTwo">
@@ -77,7 +78,7 @@
         </div>
     </li> --}}
 
-    {{-- <!-- Nav Item - Utilities Collapse Menu -->
+        {{-- <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
             aria-expanded="true" aria-controls="collapseUtilities">
@@ -96,7 +97,7 @@
         </div>
     </li> --}}
 
-    {{-- <!-- Divider -->
+        {{-- <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
@@ -124,23 +125,109 @@
                 <a class="collapse-item active" href="blank.html">Blank Page</a>
             </div>
         </div>
-    </li>--}}
+    </li> --}}
 
-    <!-- Nav Item - Charts -->
-    {{-- <li class="nav-item">
+        <!-- Nav Item - Charts -->
+        {{-- <li class="nav-item">
         <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
     </li> --}}
 
-    {{-- <!-- Nav Item - Tables -->
+        {{-- <!-- Nav Item - Tables -->
     <li class="nav-item">
         <a class="nav-link" href="tables.html">
             <i class="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
     </li> --}}
 
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+        <div class="loading">
+            <span>Hallo</span>
+        </div>
+
 </ul>
 <!-- End of Sidebar -->
+<style>
+    #gradient {
+        background: linear-gradient(to top, #0000ff 0%, #0099ff 100%);
+    }
+
+    .loading {
+        text-transform: uppercase;
+        width: 150px;
+        text-align: center;
+        line-height: 50px;
+        left: 0;
+        right: 0;
+        top: 50%;
+        margin: auto;
+        transform: translateY(-50%);
+    }
+
+    .loading span {
+        position: relative;
+        z-index: 999;
+        color: #fff;
+    }
+
+    .loading::before {
+        content: '';
+        background: #61bdb6;
+        width: 128px;
+        height: 36px;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        animation: 2s loadingBefore infinite ease-in-out;
+    }
+
+    @keyframes loadingBefore {
+        0% {
+            transform: translateX(-14px);
+        }
+
+        50% {
+            transform: translateX(14px);
+        }
+
+        100% {
+            transform: translateX(-14px);
+        }
+    }
+
+    .loading::after {
+        content: '';
+        background: #ff3600;
+        width: 14px;
+        height: 60px;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: .5;
+        animation: 2s loadingAfter infinite ease-in-out;
+    }
+
+    @keyframes loadingAfter {
+        0% {
+            transform: translateX(-50px);
+        }
+
+        50% {
+            transform: translateX(50px);
+        }
+
+        100% {
+            transform: translateX(-50px);
+        }
+    }
+</style>

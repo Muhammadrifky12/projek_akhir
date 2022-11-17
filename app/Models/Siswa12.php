@@ -12,11 +12,10 @@ class Siswa12 extends Model
         'id_kelas',
         'nisn',
         'nama',
-        'alamat',
         'JK',
     ];
     protected $table = 'siswa12';
     public function kelas(){
-        return $this->belongsTo('App\Models\Kelas')->withPivot('kelas_id');
+        return $this->belongsTo('App\Models\Kelas')->withPivot('kelass');
     }
 }

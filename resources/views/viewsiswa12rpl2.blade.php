@@ -42,6 +42,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card shadow mb-4"> 
@@ -105,8 +106,8 @@
                                               <td>{{$items -> nisn }}</td>
                                               <td>{{$items -> nama }}</td>
                                               <td>{{$items -> JK    }}</td>
-                                              <td><a href="" class="btn-sm btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                                <a href="" class="btn-sm btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+                                              <td><a href="{{ route('viewsiswa12rpl2.hapus', $items ->nama) }}" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                                <a href="" class="btn-sm  btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
                                             </tr>
                                             @endforeach

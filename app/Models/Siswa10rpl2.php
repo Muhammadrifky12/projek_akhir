@@ -16,6 +16,6 @@ class Siswa10rpl2 extends Model
     ];
     protected $table = 'siswa10rpl2';
     public function kelas2(){
-        return $this->belongsTo('App\Models\Kelas','kelas_id');
+        return $this->belongsTo('App\Models\Kelas','kelass');
     }
 }

@@ -109,4 +109,9 @@ class Siswa12rpl2Controller extends Controller
     {
         //
     }
+    public function hapus($nama)
+    {
+        Siswa12rpl2::where('nama',$nama)->delete();
+        return redirect('/viewsiswa12rpl2');
+    }
 }

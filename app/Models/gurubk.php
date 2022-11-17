@@ -17,4 +17,7 @@ class gurubk extends Model
     public function gurubk(){
         return $this->belongsTo('App\Models\guru','nama');
     }
+    public function kel(){
+        return $this->hasMany('App\Models\kelas','gurubk');
+    }
 }

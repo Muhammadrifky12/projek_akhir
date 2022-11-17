@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Kelas;
 use App\Models\Siswa;
+use Illuminate\Support\Facades\Session;
 use App\Models\Pelanggaran;
 use Illuminate\Http\Request;
 
@@ -16,7 +19,8 @@ class SiswaController extends Controller
     {
         $dataa=Siswa::paginate(10);
         $data6 = Siswa::all();
-        return view('viewsiswa',compact('data6','dataa'));
+        $kelas = Kelas::all();
+        return view('viewsiswa',compact('data6','dataa','kelas'));
     }
 
     /**
@@ -48,13 +52,15 @@ class SiswaController extends Controller
         $this->validate($request,[
             'nisn'=>'required|numeric',
             'nama'=>'required|min:7|max:50',
-            'kelas'=>'required',
+            'id_kelas'=>'required',
+            'JK'=>'required',
         ]);
         //insert data
         $siswa12 = new Siswa;
         $siswa12->nisn = $request->input('nisn'); 
         $siswa12->nama = $request->input('nama'); 
-        $siswa12->kelas = $request->input('kelas'); 
+        $siswa12->id_kelas = $request->input('id_kelas'); 
+        $siswa12->JK = $request->input('JK');
 
         $siswa12->save();
         // Session::flash('success','Data Berhasil Diinput');
@@ -106,5 +112,9 @@ class SiswaController extends Controller
         //
     }
 
-
+    public function hapus($nama)
+    {
+        Siswa::where('nama',$nama)->delete();
+        return redirect('/viewsiswa');
+    }
 }

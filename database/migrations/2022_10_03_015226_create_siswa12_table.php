@@ -14,12 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('siswa12', function (Blueprint $table) {
-            $table->id();
-            $table->string('id_kelas');
-            $table->foreign('id_kelas')->references('kelas_id')->on('kelas');
-            $table->char('nisn');
             $table->string('nama');
-            $table->string('alamat');
+            $table->primary('nama');
+            $table->string('id_kelas');
+            $table->foreign('id_kelas')->references('kelass')->on('kelas');
+            $table->char('nisn');
             $table->char('JK');
             $table->timestamps();
         });

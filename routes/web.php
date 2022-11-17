@@ -8,6 +8,7 @@ use App\Http\Controllers\GurubkController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\GurutatibController;
 use App\Http\Controllers\HistorypelanggaranController;
+use App\Http\Controllers\InputpelanggaranController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\KerapianController;
@@ -33,7 +34,7 @@ use App\Http\Controllers\Siswa12rpl2Controller;
 
 
 //Route  Kelas
-Route::resource('Kelas',KelasController::class);
+
 // Route::get('/Kelas/search',[KelasController::class,'search']);
    
 
@@ -46,6 +47,7 @@ Route::middleware('guest')->group(function(){
 });
 
 Route::middleware('auth')->group(function(){
+    // Route view
     Route::resource('viewsiswa',SiswaController::class);
     Route::resource('viewsiswa11',Siswa11Controller::class);
     Route::resource('viewsiswa12',Siswa12Controller::class);
@@ -54,7 +56,6 @@ Route::middleware('auth')->group(function(){
     Route::resource('viewsiswa12rpl2',Siswa12rpl2Controller::class);
     Route::resource('Guru',GuruController::class);
     Route::resource('dashboard',DashboardController::class);
-    Route::post('logout', [LoginController::class,"logout"]);
     Route::resource('Pelanggaran_kerajinan',KerajinanController::class);
     Route::resource('Pelanggaran',PelanggaranController::class);
     Route::resource('Pelanggaran_kerapian',KerapianController::class);
@@ -62,6 +63,19 @@ Route::middleware('auth')->group(function(){
     Route::resource('History',HistorypelanggaranController::class);
     Route::resource('Gurubk',GurubkController::class);
     Route::resource('Gurutatib',GurutatibController::class);
+    Route::resource('Input',InputpelanggaranController::class);
+    Route::resource('Kelas',KelasController::class);
+    //route login
+    Route::post('logout', [LoginController::class,"logout"]);
+    //route hapus
+    Route::get('viewsiswa/{nama_siswa}/hapus',[SiswaController::class,'hapus'])->name('viewsiswa.hapus');
+    Route::get('viewsiswa10rpl2/{nama_siswa}/hapus',[Siswa10rpl2Controller::class,'hapus'])->name('viewsiswa10rpl2.hapus');
+    Route::get('viewsiswa11rpl1/{nama_siswa}/hapus',[Siswa11Controller::class,'hapus'])->name('viewsiswa11.hapus');
+    Route::get('viewsiswa11rpl2/{nama_siswa}/hapus',[Siswa11rpl2Controller::class,'hapus'])->name('viewsiswa11rpl2.hapus');
+    Route::get('viewsiswa12rpl1/{nama_siswa}/hapus',[Siswa12Controller::class,'hapus'])->name('viewsiswa12.hapus');
+    Route::get('viewsiswa12rpl2/{nama_siswa}/hapus',[Siswa12rpl2Controller::class,'hapus'])->name('viewsiswa12rpl2.hapus');
+    Route::get('Kelas/{kelass_kelas}/hapus',[KelasController::class,'hapus'])->name('Kelas.hapus');
+    //Route get
     Route::get('/Siswa', function () {
         return view('Siswa');    
     });
