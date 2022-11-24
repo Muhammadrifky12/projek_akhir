@@ -60,10 +60,10 @@
                                             @foreach ($kelas as $b => $items)
                                             <tr>
                                               <th scope="row">{{++$b}}</th>
-                                              <td>{{$items -> kelas_id }}</td>
+                                              <td>{{$items -> kelass }}</td>
                                               <td>{{$items -> walas }}</td>
                                               <td>{{$items -> gurubk}}</td>
-                                              <td><a href="{{ route('Kelas.hapus', $items ->nama) }}" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                              <td><a href="{{ route('Kelas.hapus', $items ->kelass) }}" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
                                                 <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
                                             </tr>
@@ -108,8 +108,8 @@
             @csrf
             <div class="form-group">
               <div class="form-group">
-                <label for="kelas_id">Kelas</label>
-                <input type="text" class="form-control" id="kelas_id" name='kelas_id' >
+                <label for="kelass">Kelas</label>
+                <input type="text" class="form-control" id="kelass" name='kelass' >
             </div>
             <div class="form-group">
                 <label for="walas">Nama Guru</label>

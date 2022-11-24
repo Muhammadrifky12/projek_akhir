@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Pelanggaran_kerajinan;
+
+use App\Models\jenispelanggaran;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
-class KerajinanController extends Controller
+class JenispelanggaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +15,7 @@ class KerajinanController extends Controller
      */
     public function index()
     {
-        $dataa = Pelanggaran_kerajinan::paginate(10);
-        $data2 = Pelanggaran_kerajinan::all();
-        return view('Pelanggaran_kerajinan',compact('data2','dataa'));
+    
     }
 
     /**
@@ -36,7 +36,19 @@ class KerajinanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $massage = [
+            'required' => ':attribute harus diisi Slurr ',
+        ];
+        $this->validate($request, [
+            'jenisku' => 'required|',
+        ], $massage);
+        //insert data
+        $y = new jenispelanggaran();
+        $y->jenisku = $request->input('jenisku');
+
+        $y->save();
+        Session::flash('success', 'Data Berhasil Diinput');
+        return redirect('/Pelanggaran')->with('succes', 'Data Saved');
     }
 
     /**
@@ -82,5 +94,9 @@ class KerajinanController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function hapus($jenisku){
+        jenispelanggaran::where('jenisku',$jenisku)->delete();
+        return redirect('/Pelanggaran');
     }
 }

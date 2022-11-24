@@ -1,18 +1,6 @@
 @extends('login.login')
 @section('title' , 'Login')
 @section('content')
-<style>
-    #k{
-        color: #fff;
-        text-shadow: 0 0 5px #fff,
-        0 0 10px #fff, 0 0 15px #0073e6,
-        0 0 20px #0073e6, 0 0 25px #0073e6,
-        0 0 30px #0073e6, 0 0 35px #0073e6;
-    }
-    #ppppp {
-    background: linear-gradient(to bottom, #000066 0%, #000066 100%);
-    }
-</style>
 <div class="container">
     @if ($message = Session::get('success'))
     <div class="alert alert-success alert-block">
@@ -25,11 +13,11 @@
 
         <div class="col-xl-10 col-lg-12 col-md-9">
 
-            <div class="card o-hidden border-0 shadow-lg my-5">
-                <div class="card-body p-0" id="ppppp">
+            <div class="card border-0 shadow-lg my-5">
+                <div class="card-body p-0"  id="ppppp">
                     <!-- Nested Row within Card Body -->
                     <div class="row">
-                        <div class="">
+                        <div class="col-lg-6">
                             <img src="{{asset ('./template/img/logo1.jpg')}}" width="455" height="575" alt=""></div>
                         <div class="col-lg-6">
                             <div class="p-5">
@@ -124,4 +112,31 @@
       </div>
     </div>
   </div> --}}
+  <style>
+    #k{
+        color: #fff;
+        text-shadow: 0 0 5px #fff,
+        0 0 10px #fff, 0 0 15px #0073e6,
+        0 0 20px #0073e6, 0 0 25px #0073e6,
+        0 0 30px #0073e6, 0 0 35px #0073e6;
+    }
+    #ppppp {
+    background: linear-gradient(to bottom, #000066 0%, #000066 100%);
+    --angle: 0deg;
+    border: 1rem solid;
+    border-image: linear-gradient(var(--angle), #12c2e9, #c471ed, #f64f59) 1;
+    animation: 5s rotate linear
+    infinite;
+    }
+    @keyframes rotate {
+    to {
+        --angle: 360deg;
+        }
+    }
+    @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+    }
+</style>
 @endsection 

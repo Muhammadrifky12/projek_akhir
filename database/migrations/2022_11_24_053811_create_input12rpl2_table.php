@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pelanggaran_sikap_prilaku', function (Blueprint $table) {
+        Schema::create('input12rpl2', function (Blueprint $table) {
             $table->id();
-            $table->string('Bentuk_pelanggaran');
-            $table->char('Skor_sanksi');
+            $table->string('nama');
+            $table->string('skor');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelanggaran_sikap_prilaku');
+        Schema::dropIfExists('input12rpl2');
     }
 };

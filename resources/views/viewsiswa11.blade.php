@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Kelas-11 RPL 1')
+@section('content-title', 'Kelas 11 RPL 1')
 @section('content')
     <style>
         #p {

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\input12rpl2;
+use App\Models\Pelanggaran;
+use App\Models\Siswa12rpl2;
 use Illuminate\Support\Facades\Session;
-use App\Models\guru;
-use App\Models\gurubk;
-use App\Models\gurutatib;
 use Illuminate\Http\Request;
 
-class GuruController extends Controller
+class Input12rpl2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,14 +17,10 @@ class GuruController extends Controller
      */
     public function index()
     {
-        $guru = guru::all();
-        $guru = guru::paginate(5);
-        $gurubk = gurubk::all();
-        $gurubkk = gurubk::paginate(5);
-        $tatib = gurutatib::all();
-        $tatibb = gurutatib::paginate(5);
-        $bk = guru::all();
-        return view('Guru', compact('guru', 'gurubk', 'bk', 'gurubkk', 'tatib', 'tatibb'));
+        $skor = input12rpl2::all();
+        $pela = Pelanggaran::all();
+        $siswa = Siswa12rpl2::all();
+        return view('Input.Input12rpl2' ,compact('skor','pela','siswa'));
     }
 
     /**
@@ -45,25 +41,20 @@ class GuruController extends Controller
      */
     public function store(Request $request)
     {
-        $massage = [
+        $massage=[
             'required' => ':attribute harus diisi Slurr ',
-            'min' => ':attribute minimal :min karakter ya Slurr',
-            'max' => ':attribute maksimal :max Karakter Slurrr'
         ];
-        $this->validate($request, [
-            'nip' => 'required|numeric',
-            'nama' => 'required|min:7|max:50',
-            'JK' => 'required',
+        $this->validate($request,[
+            'nama'=>'required',
+            'skor'=>'required',
         ], $massage);
         //insert data
-        $Guru = new guru;
-        $Guru->nip = $request->input('nip');
-        $Guru->nama = $request->input('nama');
-        $Guru->JK = $request->input('JK');
+        $input = new input12rpl2();
+        $input->nama = $request->input('nama');
+        $input->skor = $request->input('skor');
 
-        $Guru->save();
-        Session::flash('success', 'Data Berhasil Diinput');
-        return redirect('/Guru')->with('succes', 'Data Saved');
+        $input->save();
+        return redirect('/Input12rpl2');
     }
 
     /**
@@ -85,7 +76,9 @@ class GuruController extends Controller
      */
     public function edit($id)
     {
-        //
+        $siswaku = input12rpl2::find($id);
+        $pela = Pelanggaran::all();
+        return view('edit.Einput12rpl2' ,compact('siswaku','pela'));
     }
 
     /**
@@ -97,8 +90,26 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-    }
+        $massage=[
+            'required' => ':attribute harus diisi Slurr ',
+           'numeric' =>':attribute kudu diisi angka Slur!!!',
+           'min' => ':attribute minimal :min karakter ya Slurr',
+           'mimes' =>':attribute harus bertipe jpg,jpeg,png',
+           'max' => ':attribute maksimal :max Karakter Slurrr'
+           ];
+           // validasi form
+           $this->validate($request,[
+           'nama'=>'required',
+           'skor'=>'required'
+           ], $massage);
+         
+           $siswa=input12rpl2::find($id);
+           $siswa->skor = $siswa->skor + $request->skor;
+           $siswa ->save();
+           Session::flash('success','Data Berhasil Diinput');
+           return redirect('/Input12rpl2');
+     }
+    
 
     /**
      * Remove the specified resource from storage.
@@ -109,10 +120,5 @@ class GuruController extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function hapus($nama)
-    {
-        guru::where('nama', $nama)->delete();
-        return redirect('/Guru');
     }
 }

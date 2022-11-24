@@ -28,13 +28,13 @@ class KelasController extends Controller
             'max' => ':attribute maksimal :max Karakter Slurrr'
         ];
         $this->validate($request, [
-            'kelas_id' => 'required|',
+            'kelass' => 'required|',
             'walas' => 'required|min:7|max:50',
             'gurubk' => 'required',
         ], $massage);
         //insert data
         $kelass = new kelas;
-        $kelass->kelas_id = $request->input('kelas_id');
+        $kelass->kelass = $request->input('kelass');
         $kelass->walas = $request->input('walas');
         $kelass->gurubk = $request->input('gurubk');
 
@@ -47,9 +47,9 @@ class KelasController extends Controller
     {
     }
 
-    public function hapus($kelas_id)
+    public function hapus($kelass)
     {
-        Kelas::where('kelas_id', $kelas_id)->delete();
+        Kelas::where('kelass', $kelass)->delete();
         return redirect('/Kelas');
     }
 }

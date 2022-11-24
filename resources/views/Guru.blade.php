@@ -64,7 +64,7 @@
                                                 <td>{{ $items-> nip }}</td>
                                                 <td>{{ $items-> nama }}</td>
                                                 <td>{{ $items-> JK }}</td>
-                                                <td><a href="" class="btn-sm btn-circle"><i
+                                                <td><a href="{{ route('Guru.hapus', $items ->nama) }}" class="btn-sm btn-circle"><i
                                                             class="fas fa-trash"></i></a>
                                                     <a href="" class="btn-sm btn-circle"><i
                                                             class="fas fa-edit"></i></a>
@@ -104,7 +104,7 @@
                                 <th scope="row">{{ ++$i1 }}</th>
                                 <td>{{ $item2-> nama }}</td>
                                 <td>{{ $item2-> deskripsi }}</td>
-                                <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                <td><a href="{{ route('Gurubk.hapus', $item2 ->nama) }}" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
                                     <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
                                 </td>
                             </tr>
@@ -137,7 +137,7 @@
                             <tr>
                                 <th scope="row">{{ ++$g }}</th>
                                 <td>{{ $hallo-> id_nama }}</td>
-                                <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                <td><a href="{{ route('Gurutatib.hapus', $hallo ->id_nama) }}" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
                                     <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
                                 </td>
                             </tr>

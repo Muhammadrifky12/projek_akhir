@@ -13,7 +13,7 @@ class InputpelanggaranController extends Controller
      */
     public function index()
     {
-        return view('Inputpelanggaran');
+        return view('Input.Inputpelanggaran');
     }
 
     /**

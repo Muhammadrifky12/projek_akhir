@@ -92,4 +92,9 @@ class GurutatibController extends Controller
     {
         //
     }
+    public function hapus($id_nama)
+    {
+        gurutatib::where('id_nama', $id_nama)->delete();
+        return redirect('/Guru');
+    }
 }

@@ -1,7 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\pelanggaran_sikap_prilaku;
+
+use App\Models\jenispelanggaran;
+use App\Models\Pelanggaran;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class PelanggaranController extends Controller
@@ -13,9 +16,11 @@ class PelanggaranController extends Controller
      */
     public function index()
     {
-        $dataa = pelanggaran_sikap_prilaku::paginate(10);
-        $data1= Pelanggaran_sikap_prilaku::all();
-        return view('Pelanggaran',compact('data1','dataa'));
+        $pelanggar = Pelanggaran::all();
+        $pela = Pelanggaran::paginate(5);
+        $jenis = jenispelanggaran::all();
+        $jenis = jenispelanggaran::paginate(3);
+        return view('Pelanggaran',compact('pelanggar','pela','jenis'));
     }
 
     /**
@@ -36,7 +41,25 @@ class PelanggaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $massage = [
+            'required' => ':attribute harus diisi Slurr ',
+            'min' => ':attribute minimal :min karakter ya Slurr',
+            'max' => ':attribute maksimal :max Karakter Slurrr'
+        ];
+        $this->validate($request, [
+            'id_jenis' => 'required',
+            'Bentukpelanggaran' => 'required|min:7|max:50',
+            'skor' => 'required',
+        ], $massage);
+        //insert data
+        $pelangg = new Pelanggaran();
+        $pelangg->id_jenis = $request->input('id_jenis');
+        $pelangg->Bentukpelanggaran = $request->input('Bentukpelanggaran');
+        $pelangg->skor = $request->input('skor');
+
+        $pelangg->save();
+        Session::flash('success', 'Data Berhasil Diinput');
+        return redirect('/Pelanggaran')->with('succes', 'Data Saved');
     }
 
     /**

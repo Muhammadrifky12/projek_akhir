@@ -52,7 +52,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="/Input">
+            <a class="nav-link" href="/Input12rpl2">
                 <i class="far fa-sun"></i>
                 <span class="text-white">Input Pelanggaran</span></a>
         </li>

@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('title' , 'Kelas-12 RPL 2')
+@section('content-title','Kelas 12 RPL 2')
 @section('content')
 <style>
   #p {
@@ -143,7 +144,7 @@
                 <select name="id_kelas" id="id_kelas" class="form-control">
                   <option value="">--PILIH--</option>
                       @foreach ($kelas as $item)
-                      <option value="{{$item->kelas_id}}">{{$item->kelas_id}}</option>
+                      <option value="{{$item->kelass}}">{{$item->kelass}}</option>
                       @endforeach
                  </select>
             </div>
