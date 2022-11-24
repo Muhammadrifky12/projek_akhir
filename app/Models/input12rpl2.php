@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class pelanggaran_sikap_prilaku extends Model
+class input12rpl2 extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'Bentuk_pelanggaran',
-        'Skor_sanksi',
+        'nama',
+        'skor',
     ];
-    protected $table = 'pelanggaran_sikap_prilaku';
+    protected $table = 'input12rpl2';
 }

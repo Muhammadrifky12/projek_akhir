@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('siswa10rpl2', function (Blueprint $table) {
-            $table->id();
-            $table->bigInteger('id_kelas')->unsigned();
-            $table->foreign('id_kelas')->references('id')->on('kelas');
-            $table->char('nisn');
             $table->string('nama');
+            $table->primary('nama');
+            $table->string('id_kelas');
+            $table->foreign('id_kelas')->references('kelass')->on('kelas');
+            $table->char('nisn');
             $table->char('JK');
             $table->timestamps();
         });

@@ -51,6 +51,7 @@
                                             <th scope="col">No</th>
                                             <th scope="col">Kelas</th>
                                             <th scope="col">Walas</th>
+                                            <th scope="col">Guru BK</th>
                                             <th scope="col">Action</th>
                                           </tr>
                                         </thead>
@@ -59,10 +60,11 @@
                                             @foreach ($kelas as $b => $items)
                                             <tr>
                                               <th scope="row">{{++$b}}</th>
-                                              <td>{{$items -> kelas }}</td>
+                                              <td>{{$items -> kelass }}</td>
                                               <td>{{$items -> walas }}</td>
-                                              <td><a href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                                <a href="" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+                                              <td>{{$items -> gurubk}}</td>
+                                              <td><a href="{{ route('Kelas.hapus', $items ->kelass) }}" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                                <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
                                             </tr>
                                             @endforeach
@@ -106,13 +108,28 @@
             @csrf
             <div class="form-group">
               <div class="form-group">
-                <label for="kleas">Kelas</label>
-                <input type="text" class="form-control" id="kelas" name='kelas' >
+                <label for="kelass">Kelas</label>
+                <input type="text" class="form-control" id="kelass" name='kelass' >
             </div>
             <div class="form-group">
                 <label for="walas">Nama Guru</label>
-                <input type="text" class="form-control" id="walas" name='walas'>
+                <select name="walas" id="walas" class="form-control">
+                  <option value="">--PILIH--</option>
+                      @foreach ($walas as $item)
+                      <option value="{{$item->nama}}">{{$item->nama}}</option>
+                      @endforeach
+                 </select>
             </div>
+            <div class="form-group">
+              <label for="BK">Guru BK</label>
+              <select name="gurubk" id="gurubk" class="form-control form-control-sm">
+                <option value="">--PILIH--</option>
+                    @foreach ($bk as $item)
+                    <option value="{{$item->nama}}">{{$item->nama}}</option>
+                    @endforeach
+               </select>
+          </div>
+
         </div>
         <div class="modal-footer">
           <input type="submit"  class="btn-success">

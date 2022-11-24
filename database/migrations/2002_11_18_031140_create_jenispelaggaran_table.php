@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pelanggaran_kerajinan', function (Blueprint $table) {
-            $table->id();
-            $table->string('Bentuk_pelanggaran');
-            $table->char('Skor_sanksi');
+        Schema::create('jenispelaggaran', function (Blueprint $table) {
+            $table->String('jenisku');
+            $table->primary('jenisku');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelanggaran_kerajinan');
+        Schema::dropIfExists('jenispelaggaran');
     }
 };

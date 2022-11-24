@@ -5,11 +5,12 @@
     @include('login.head')
 </head>
 <style>
-    #gradient3 {
-        background: linear-gradient(to bottom left,#00ccff 0%, #0000ff 100%);
+    body{
+        background-image: url('https://wallpaperaccess.com/full/558715.jpg');
+        background-attachment: fixed;
     }
     </style>
-<body id="gradient3">
+<body>
     <div id="content">
         <!-- Begin Page Content -->
         <div class="container-fluid">

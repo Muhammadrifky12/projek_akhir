@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('title' , 'Kelas-10 RPL 2')
+@section('content-title', 'Kelas 10 RPL 2')
 @section('content')
 <style>
   #p {
@@ -42,6 +43,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card shadow mb-4"> 
@@ -103,10 +105,10 @@
                                               <th scope="row">{{++$b}}</th>
                                               <td>{{$items -> nisn }}</td>
                                               <td>{{$items -> nama }}</td>
-                                              <td>{{$items -> kelas }}</td>
+                                              <td>{{$items -> id_kelas }}</td>
                                               <td>{{$items -> JK    }}</td>
-                                              <td><a href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                                <a href="" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+                                              <td><a href="{{ route('viewsiswa10rpl2.hapus', $items ->nama) }}" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                                <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
                                             </tr>
                                             @endforeach
@@ -147,8 +149,13 @@
                 <input type="text" class="form-control" id="nama" name='nama'>
             </div>
             <div class="form-group">
-                <label for="alamat">Kelas</label>
-                <input type="text" class="form-control" id="kelas" name='kelas'>
+                <label for="kelas">Kelas</label>
+                <select name="id_kelas" id="id_kelas" class="form-control">
+                  <option value="">--PILIH--</option>
+                      @foreach ($kelas as $item)
+                      <option value="{{$item->kelas_id}}">{{$item->kelas_id}}</option>
+                      @endforeach
+                 </select>
             </div>
             <div class="form-group">
                 <label for="JK">Jenis Kelamin</label>

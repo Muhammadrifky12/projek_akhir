@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Pelanggaran_kerapian;
+
 use Illuminate\Http\Request;
 
-class KerapianController extends Controller
+class InputpelanggaranController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,7 @@ class KerapianController extends Controller
      */
     public function index()
     {
-        $dataa = Pelanggaran_kerapian::paginate(10);
-        $data3 = Pelanggaran_kerapian::all();
-        return view('Pelanggaran_kerapian',compact('data3','dataa'));
+        return view('Input.Inputpelanggaran');
     }
 
     /**

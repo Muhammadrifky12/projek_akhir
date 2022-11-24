@@ -11,11 +11,11 @@ class Siswa10rpl2 extends Model
     protected $fillable = [
         'nisn',
         'nama',
-        'kelas',
+        'id_kelas',
         'JK',
     ];
     protected $table = 'siswa10rpl2';
     public function kelas2(){
-        return $this->belongsTo('App\Models\Kelas','id');
+        return $this->belongsTo('App\Models\Kelas','kelass');
     }
 }

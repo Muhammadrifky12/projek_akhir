@@ -12,9 +12,6 @@
     #sl {
         background: linear-gradient(to left, #ff9933 0%, #ff6600 100%);
     }
-    #ss {
-        background: linear-gradient(to left, #ff3300 0%, #ff3300 100%);
-    }
     </style>
 <div class="row">
     <div class="col-lg-12">
@@ -52,7 +49,7 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="card shadow mb-4"> 
-            <div class="card-header" id="ss">
+            <div class="card-header bg-black">
                 <div class="row">
                     <h6 class="m-0 font-weight-bold text-primary">Pelanggaran Berat : Dikembalikan Ke Orang Tua/Di Keluarkan Dari Sekolah</h6>
                 </div>

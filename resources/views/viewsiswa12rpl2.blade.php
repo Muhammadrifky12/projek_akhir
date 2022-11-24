@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('title' , 'Kelas-12 RPL 2')
+@section('content-title','Kelas 12 RPL 2')
 @section('content')
 <style>
   #p {
@@ -42,6 +43,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card shadow mb-4"> 
@@ -89,9 +91,9 @@
                                         <thead>
                                           <tr>
                                             <th scope="col">No</th>
+                                            <th scope="col">Kelas</th>
                                             <th scope="col">Nisn</th>
                                             <th scope="col">Nama Siswa</th>
-                                            <th scope="col">Kelas</th>
                                             <th scope="col">Jenis Kelamin</th>
                                             <th scope="col">Action</th>
                                           </tr>
@@ -101,12 +103,12 @@
                                             @foreach ($data6 as $b => $items)
                                             <tr>
                                               <th scope="row">{{++$b}}</th>
+                                              <td>{{$items -> id_kelas }}</td>
                                               <td>{{$items -> nisn }}</td>
                                               <td>{{$items -> nama }}</td>
-                                              <td>{{$items -> kelas }}</td>
                                               <td>{{$items -> JK    }}</td>
-                                              <td><a href="" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a>
-                                                <a href="" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+                                              <td><a href="{{ route('viewsiswa12rpl2.hapus', $items ->nama) }}" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                                <a href="" class="btn-sm  btn-circle"><i class="fas fa-edit"></i></a>
                                               </a></td>
                                             </tr>
                                             @endforeach
@@ -138,6 +140,15 @@
           <form method="post" action="{{ route('viewsiswa12rpl2.store') }}">
             @csrf
             <div class="form-group">
+                <label for="kelas">Kelas</label>
+                <select name="id_kelas" id="id_kelas" class="form-control">
+                  <option value="">--PILIH--</option>
+                      @foreach ($kelas as $item)
+                      <option value="{{$item->kelass}}">{{$item->kelass}}</option>
+                      @endforeach
+                 </select>
+            </div>
+            <div class="form-group">
               <div class="form-group">
                 <label for="Nisn">Nisn</label>
                 <input type="text" class="form-control" id="nisn" name='nisn' >
@@ -145,10 +156,6 @@
             <div class="form-group">
                 <label for="nama">Nama</label>
                 <input type="text" class="form-control" id="nama" name='nama'>
-            </div>
-            <div class="form-group">
-                <label for="alamat">Kelas</label>
-                <input type="text" class="form-control" id="kelas" name='kelas'>
             </div>
             <div class="form-group">
                 <label for="JK">Jenis Kelamin</label>

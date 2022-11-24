@@ -9,13 +9,13 @@ class Siswa11rpl2 extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'id_kelas',
         'nisn',
         'nama',
-        'kelas',
         'JK',
     ];
     protected $table = 'siswa11rpl2';
     public function kelas4(){
-        return $this->belongsTo('App\Models\Kelas','id');
+        return $this->belongsTo('App\Models\Kelas','kelass');
     }
 }

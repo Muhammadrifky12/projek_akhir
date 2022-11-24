@@ -53,7 +53,6 @@ class Siswa12Controller extends Controller
             'nisn'=>'required|numeric',
             'nama'=>'required|min:7|max:50',
             'id_kelas'=>'required',
-            'alamat'=>'required',
             'JK'=>'required',
         ]);
         //insert data
@@ -61,7 +60,6 @@ class Siswa12Controller extends Controller
         $siswa12->nisn = $request->input('nisn'); 
         $siswa12->nama = $request->input('nama'); 
         $siswa12->id_kelas = $request->input('id_kelas'); 
-        $siswa12->alamat = $request->input('alamat');
         $siswa12->JK = $request->input('JK');
 
         $siswa12->save();
@@ -112,5 +110,10 @@ class Siswa12Controller extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function hapus($nama)
+    {
+        Siswa12::where('nama',$nama)->delete();
+        return redirect('/viewsiswa12');
     }
 }
