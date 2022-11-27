@@ -9,52 +9,60 @@
             <button class="rounded-circle border-0" id="sidebarToggle"></button>
         </div>
         <!-- Nav Item - Dashboard -->
-        <li class="nav-item">
-            <a class="nav-link" href="/dashboard">
-                <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span class="text-white">Dashboard</span></a>
+        <li class="nav-item" style="--clr: #00ffff;">
+            <a class="nav-link" data-text="&nbsp;Dashboard" href="/dashboard">
+                &nbsp;Dashboard&nbsp; <i class="fas fa-tachometer-alt"></i></a>
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
 
-        <li class="nav-item">
-            <a class="nav-link" href="/Pelanggaran">
-                <i class="fas fa-fw fa-user"></i>
-                <span class="text-white">Pelanggaran</span></a>
+        <li class="nav-item" style="--clr: #00ffff;">
+            <a class="nav-link" href="/Pelanggaran" data-text="&nbsp;Pelanggaran">
+                &nbsp;Pelanggaran&nbsp; <i class="fas fa-fw fa-user"></i></a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities">
-                <span><i class="far fa-folder"></i>Data Master</span>
+        <hr class="sidebar-divider">
+
+        <li class="nav-item" style="--clr: #00ffff;">
+            <a class="nav-link collapsed" data-text="&nbsp;DataMaster" href="#" data-toggle="collapse" data-target="#collapseUtilities">
+                &nbsp;DataMaster&nbsp; <i class="fas fa-wrench"></i>
             </a>
             <div id="collapseUtilities" class="collapse">
-                <div class="nav-link py-2 collapse-inner rounded">
-                    <a class="collapse-item text-white" href="/Siswa">
-                        <i class="fas fa-fw fa-user"></i>Siswa</a>
-                    <a class="collapse-item text-white" href="/Kelas">
-                        <i class="fas fa-school"></i>Kelas</a>
-                    <a class="collapse-item text-white" href="/Guru"><i class="fas fa-user-graduate"></i>Guru</a>
+                <div class="nav-linkav py-2 collapse-inner rounded">
+                    <a class="collapse-item text-white" data-text="&nbsp;Siswa" href="/Siswa">
+                        &nbsp;Siswa&nbsp;</a>
+                    <a class="collapse-item text-white" data-text="&nbsp;Kelas" href="/Kelas">
+                        &nbsp;Kelas&nbsp;</a>
+                    <a class="collapse-item text-white" data-text="&nbsp;Guru" href="/Guru">&nbsp;Guru&nbsp;</a>
                 </div>
             </div>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="/Quiz">
+        <hr class="sidebar-divider">
+
+        <li class="nav-item" style="--clr: #00ffff;">
+            <a class="nav-link" href="/Quiz" data-text="&nbsp;QUIZ">
+                &nbsp;QUIZ&nbsp;
                 <i class="fas fa-fw fa-tty"></i>
-                <span class="text-white">QUIZ</span></a>
+            </a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="/History">
-                <i class="fas fa-fw  fa-align-left"></i>
-                <span class="text-white">History Pelanggaran</span></a>
+        <hr class="sidebar-divider">
+
+        <li class="nav-item" style="--clr: #00ffff;">
+            <a class="nav-link" href="/History" data-text="&nbsp;History">
+                &nbsp;History&nbsp; <i class="fas fa-fw  fa-align-left"></i>
+            </a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="/Input12rpl2">
+        <hr class="sidebar-divider">
+        
+        <li class="nav-item" style="--clr: #00ffff;">
+            <a class="nav-link" href="/Input12rpl2" data-text="&nbsp;InputPoint">
+                &nbsp;InputPoint&nbsp;
                 <i class="far fa-sun"></i>
-                <span class="text-white">Input Pelanggaran</span></a>
+            </a>
         </li>
 
         {{-- <!-- Heading -->
@@ -151,7 +159,7 @@
 <!-- End of Sidebar -->
 <style>
     #gradient {
-        background: linear-gradient(to top, #0000ff 0%, #0099ff 100%);
+        background: linear-gradient(to bottom, #000066 0%, #00ccff 100%);
     }
 
     .loading {
