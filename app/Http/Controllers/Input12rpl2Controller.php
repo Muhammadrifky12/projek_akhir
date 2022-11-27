@@ -7,6 +7,7 @@ use App\Models\Pelanggaran;
 use App\Models\Siswa12rpl2;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
+use PDF;
 
 class Input12rpl2Controller extends Controller
 {
@@ -120,5 +121,12 @@ class Input12rpl2Controller extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function cetakpdf(){
+        $data = input12rpl2::all();
+        view()->share('data', $data);
+        $pdf = 'PDF'::loadview('pdf.Input12rpl2-pdf');
+        return $pdf->stream('Pelanggaran 12 RPL 2.pdf');
+        // return 'berhasil';
     }
 }

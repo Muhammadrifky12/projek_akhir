@@ -1,9 +1,14 @@
 @extends('layout.admin')
 @section('title', 'Input')
-@section('content-title', 'Input Pelanggaran')
 @section('content')
     <div class="row">
         <div class="col-lg-12">
+            <div class="row">
+                <div class="col-lg-1">
+                    <a href="/cetakpdf" class="btn-lg btn-circle btn-danger" data-toggle="tooltip" data-placement="top" title="Download pdf"><i class="fas fa-file-pdf"></i></a>
+                </div>
+            </div>
+            <hr>
             <div class="card shadow">
                 <div class="card-header" id="p">
                     <div class="row">
@@ -62,7 +67,8 @@
                                     <td>{{ $items->nama }}</td>
                                     <td>{{ $items->skor }}</td>
                                     <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
-                                        <a href="{{ route('Input12rpl2.edit', $items-> id) }}" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                        <a href="{{ route('Input12rpl2.edit', $items->id) }}" class="btn-sm btn-circle"><i
+                                                class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -77,13 +83,11 @@
     </div>
     <div class="modal fade" id="tamm" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalLabel"aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Tambah Guru BK</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Masukkan Data</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form method="post" action="{{ route('Input12rpl2.store') }}">
