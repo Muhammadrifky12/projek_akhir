@@ -18,4 +18,7 @@ class Siswa extends Model
     public function kelas1(){
         return $this->belongsTo('App\Models\Kelas','kelass');
     }
+    public function Input10rpl1(){
+        return $this->hasMany('App\Models\input10rpl1','nama');
+    }
 }

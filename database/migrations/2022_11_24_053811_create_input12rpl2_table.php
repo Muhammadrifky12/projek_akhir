@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('input12rpl2', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->foreign('nama')->references('nama')->on('siswa12rpl2');
             $table->string('skor');
             $table->timestamps();
         });

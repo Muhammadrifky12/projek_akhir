@@ -17,9 +17,13 @@ return new class extends Migration
             $table->string('kelass');
             $table->primary('kelass');
             $table->string('walas');
-            $table->foreign('walas')->references('nama')->on('guru');
+            $table->foreign('walas')->references('nama')->on('guru')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             $table->string('gurubk');
-            $table->foreign('gurubk')->references('nama')->on('guru_bk');
+            $table->foreign('gurubk')->references('nama')->on('guru_bk')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             $table->timestamps();
         });
     }

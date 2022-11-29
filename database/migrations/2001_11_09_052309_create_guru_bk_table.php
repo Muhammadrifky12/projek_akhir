@@ -15,7 +15,9 @@ return new class extends Migration
     {
         Schema::create('guru_bk', function (Blueprint $table) {
             $table->string('nama');
-            $table->foreign('nama')->references('nama')->on('guru');
+            $table->foreign('nama')->references('nama')->on('guru')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
             $table->primary('nama');
             $table->string('deskripsi');
             $table->timestamps();

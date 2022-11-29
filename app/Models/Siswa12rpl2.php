@@ -18,4 +18,7 @@ class Siswa12rpl2 extends Model
     public function kelas6(){
         return $this->belongsTo('App\Models\Kelas','kelass');
     }
+    public function Input12rpl2(){
+        return $this->hasMany('App\Models\input12rpl2','nama');
+    }
 }
