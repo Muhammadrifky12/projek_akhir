@@ -25,7 +25,8 @@
         <hr class="sidebar-divider">
 
         <li class="nav-item" style="--clr: #00ffff;">
-            <a class="nav-link collapsed" data-text="&nbsp;DataMaster" href="#" data-toggle="collapse" data-target="#collapseUtilities">
+            <a class="nav-link collapsed" data-text="&nbsp;DataMaster" href="#" data-toggle="collapse"
+                data-target="#collapseUtilities">
                 &nbsp;DataMaster&nbsp; <i class="fas fa-wrench"></i>
             </a>
             <div id="collapseUtilities" class="collapse">
@@ -57,7 +58,7 @@
         </li>
 
         <hr class="sidebar-divider">
-        
+
         <li class="nav-item" style="--clr: #00ffff;">
             <a class="nav-link" href="/Input12rpl2" data-text="&nbsp;InputPoint">
                 &nbsp;InputPoint&nbsp;
@@ -238,4 +239,5 @@
             transform: translateX(-50px);
         }
     }
+
 </style>
