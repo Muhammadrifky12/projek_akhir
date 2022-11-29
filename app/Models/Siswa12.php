@@ -18,4 +18,7 @@ class Siswa12 extends Model
     public function kelas(){
         return $this->belongsTo('App\Models\Kelas')->withPivot('kelass');
     }
+    public function Input12rpl1(){
+        return $this->hasMany('App\Models\input12rpl1','nama');
+    }
 }

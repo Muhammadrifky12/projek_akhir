@@ -7,9 +7,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GurubkController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\GurutatibController;
-use App\Http\Controllers\History12rpl2Controller;
-use App\Http\Controllers\Input12rpl2Controller;
-use App\Http\Controllers\InputpelanggaranController;
+
+use App\Http\Controllers\Input11rpl1Controller;
+use App\Http\Controllers\Input11rpl2Controller;
 use App\Http\Controllers\JenispelanggaranController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PelanggaranController;
@@ -19,6 +19,10 @@ use App\Http\Controllers\Siswa11Controller;
 use App\Http\Controllers\Siswa12Controller;
 use App\Http\Controllers\Siswa10rpl2Controller;
 use App\Http\Controllers\Siswa11rpl2Controller;
+use App\Http\Controllers\Input12rpl2Controller;
+use App\Http\Controllers\Input12rpl1Controller;
+use App\Http\Controllers\Input10rpl1Controller;
+use App\Http\Controllers\Input10rpl2Controller;
 use App\Http\Controllers\Siswa12rpl2Controller;
 /*
 |--------------------------------------------------------------------------
@@ -60,10 +64,14 @@ Route::middleware('auth')->group(function(){
     Route::resource('Pelanggaran',PelanggaranController::class);
     Route::resource('Gurubk',GurubkController::class);
     Route::resource('Gurutatib',GurutatibController::class);
-    Route::resource('Input',InputpelanggaranController::class);
     Route::resource('Kelas',KelasController::class);
     Route::resource('Jenis',JenispelanggaranController::class);
     Route::resource('Input12rpl2',Input12rpl2Controller::class);
+    Route::resource('Input12rpl1',Input12rpl1Controller::class);
+    Route::resource('Input11rpl2',Input11rpl2Controller::class);
+    Route::resource('Input11rpl1',Input11rpl1Controller::class);
+    Route::resource('Input10rpl2',Input10rpl2Controller::class);
+    Route::resource('Input10rpl1',Input10rpl1Controller::class);
     //route login
     Route::post('logout', [LoginController::class,"logout"]);
     //route hapus

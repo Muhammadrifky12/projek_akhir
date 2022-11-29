@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\input12rpl2;
+use App\Models\input10rpl2;
 use App\Models\Pelanggaran;
-use App\Models\Siswa12rpl2;
+use App\Models\Siswa10rpl2;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
-use PDF;
 
-class Input12rpl2Controller extends Controller
+class Input10rpl2Controller extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +17,11 @@ class Input12rpl2Controller extends Controller
      */
     public function index()
     {
-        $skor = input12rpl2::all();
+        $skor = input10rpl2::all();
         $pela = Pelanggaran::all();
-        $siswa = Siswa12rpl2::all();
-        $dataa = input12rpl2::paginate(15);
-        return view('Input.Input12rpl2' ,compact('skor','pela','siswa','dataa'));
+        $siswa = Siswa10rpl2::all();
+        $dataa = input10rpl2::paginate(15);
+        return view('Input.Input10rpl2' ,compact('skor','pela','siswa','dataa'));
     }
 
     /**
@@ -51,12 +50,12 @@ class Input12rpl2Controller extends Controller
             'skor'=>'required',
         ], $massage);
         //insert data
-        $input = new input12rpl2();
+        $input = new input10rpl2();
         $input->nama = $request->input('nama');
         $input->skor = $request->input('skor');
 
         $input->save();
-        return redirect('/Input12rpl2');
+        return redirect('/Input10rpl2');
     }
 
     /**
@@ -78,9 +77,9 @@ class Input12rpl2Controller extends Controller
      */
     public function edit($id)
     {
-        $siswaku = input12rpl2::find($id);
+        $siswaku = input10rpl2::find($id);
         $pela = Pelanggaran::all();
-        return view('edit.Einput12rpl2' ,compact('siswaku','pela'));
+        return view('edit.Einput10rpl2' ,compact('siswaku','pela'));
     }
 
     /**
@@ -105,13 +104,12 @@ class Input12rpl2Controller extends Controller
            'skor'=>'required'
            ], $massage);
          
-           $siswa=input12rpl2::find($id);
+           $siswa=input10rpl2::find($id);
            $siswa->skor = $siswa->skor + $request->skor;
            $siswa ->save();
            Session::flash('success','Data Berhasil Diinput');
-           return redirect('/Input12rpl2');
-     }
-    
+           return redirect('/Input10rpl2');
+    }
 
     /**
      * Remove the specified resource from storage.
@@ -122,12 +120,5 @@ class Input12rpl2Controller extends Controller
     public function destroy($id)
     {
         //
-    }
-    public function cetakpdf(){
-        $data = input12rpl2::all();
-        view()->share('data', $data);
-        $pdf = 'PDF'::loadview('pdf.Input12rpl2-pdf');
-        return $pdf->stream('Pelanggaran 12 RPL 2.pdf');
-        // return 'berhasil';
     }
 }

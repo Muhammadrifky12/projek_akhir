@@ -6,7 +6,7 @@
     <div class="col-lg-12">
         <div class="card shadow mb-4">
             <div class="card-body">
-                <form method="post" action="{{ route('Input12rpl2.update',$siswaku->id) }}">
+                <form method="post" action="{{ route('Input11rpl2.update',$siswaku->id) }}">
                     @csrf
                     @method('put')
                     <div class="form-group">
@@ -22,7 +22,7 @@
                     <br>
                     <div class="form-group">
                         <input type="submit" class="btn btn-success" value="OKE">
-                        <a href="{{route('Input12rpl2.index')}}" class="btn btn-danger">Batal</a>
+                        <a href="{{route('Input11rpl2.index')}}" class="btn btn-danger">Batal</a>
                     </div>
                 </form>
             </div>
