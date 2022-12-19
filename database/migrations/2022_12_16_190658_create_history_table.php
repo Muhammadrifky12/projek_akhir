@@ -15,12 +15,9 @@ return new class extends Migration
     {
         Schema::create('history', function (Blueprint $table) {
             $table->id();
-            // $table->bigInteger('id_siswa');
-            // $table->foreign('id_siswa')->referenses('id')->on('siswa12');
-            // $table->bigInteger('id_pelanggaran');
-            // $table->foreign('id_pelanggaran')->referenses('id')->on('pelanggaran');
-            // $table->string('id_guru');
-            // $table->foreign('id_guru')->referenses('nama')->on('guru');
+            $table->string('bentuk_pelanggaran');
+            $table->string('tanggal');
+            $table->string('Pelapor');
             $table->timestamps();
         });
     }
