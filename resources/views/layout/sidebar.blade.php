@@ -10,32 +10,32 @@
         </div>
         <!-- Nav Item - Dashboard -->
         <li class="nav-item" style="--clr: #00ffff;">
-            <a class="nav-link" data-text="&nbsp;Dashboard" href="/dashboard">
-                &nbsp;Dashboard&nbsp; <i class="fas fa-tachometer-alt"></i></a>
+            <a class="nav-link" data-text="Dashboard" href="/dashboard">
+               Dashboard <i class="fas fa-tachometer-alt"></i></a>
         </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
 
         <li class="nav-item" style="--clr: #00ffff;">
-            <a class="nav-link" href="/Pelanggaran" data-text="&nbsp;Pelanggaran">
-                &nbsp;Pelanggaran&nbsp; <i class="fas fa-fw fa-user"></i></a>
+            <a class="nav-link" href="/Pelanggaran" data-text="Pelanggaran">
+                Pelanggaran <i class="fas fa-fw fa-user"></i></a>
         </li>
 
         <hr class="sidebar-divider">
 
         <li class="nav-item" style="--clr: #00ffff;">
-            <a class="nav-link collapsed" data-text="&nbsp;DataMaster" href="#" data-toggle="collapse"
+            <a class="nav-link collapsed" data-text="DataMaster" href="#" data-toggle="collapse"
                 data-target="#collapseUtilities">
-                &nbsp;DataMaster&nbsp; <i class="fas fa-wrench"></i>
+                DataMaster <i class="fas fa-wrench"></i>
             </a>
             <div id="collapseUtilities" class="collapse">
                 <div class="nav-linkav py-2 collapse-inner rounded">
-                    <a class="collapse-item text-white" data-text="&nbsp;Siswa" href="/Siswa">
-                        &nbsp;Siswa&nbsp;</a>
-                    <a class="collapse-item text-white" data-text="&nbsp;Kelas" href="/Kelas">
-                        &nbsp;Kelas&nbsp;</a>
-                    <a class="collapse-item text-white" data-text="&nbsp;Guru" href="/Guru">&nbsp;Guru&nbsp;</a>
+                    <a class="collapse-item text-white" data-text="Siswa" href="/Siswa">
+                        Siswa</a>
+                    <a class="collapse-item text-white" data-text="Kelas" href="/Kelas">
+                        Kelas</a>
+                    <a class="collapse-item text-white" data-text="Guru" href="/Guru">Guru</a>
                 </div>
             </div>
         </li>
@@ -43,8 +43,8 @@
         <hr class="sidebar-divider">
 
         <li class="nav-item" style="--clr: #00ffff;">
-            <a class="nav-link" href="/Quiz" data-text="&nbsp;QUIZ">
-                &nbsp;QUIZ&nbsp;
+            <a class="nav-link" href="/Quiz" data-text="QUIZ">
+                QUIZ
                 <i class="fas fa-fw fa-tty"></i>
             </a>
         </li>
@@ -52,16 +52,16 @@
         <hr class="sidebar-divider">
 
         <li class="nav-item" style="--clr: #00ffff;">
-            <a class="nav-link" href="/History" data-text="&nbsp;History">
-                &nbsp;History&nbsp; <i class="fas fa-fw  fa-align-left"></i>
+            <a class="nav-link" href="/History" data-text="History">
+                History<i class="fas fa-fw  fa-align-left"></i>
             </a>
         </li>
 
         <hr class="sidebar-divider">
 
         <li class="nav-item" style="--clr: #00ffff;">
-            <a class="nav-link" href="/Input12rpl2" data-text="&nbsp;InputPoint">
-                &nbsp;InputPoint&nbsp;
+            <a class="nav-link" href="/Input12rpl2" data-text="InputPoint">
+                InputPoint
                 <i class="far fa-sun"></i>
             </a>
         </li>
@@ -160,7 +160,7 @@
 <!-- End of Sidebar -->
 <style>
     #gradient {
-        background: linear-gradient(to bottom, #000066 0%, #00ccff 100%);
+        background: linear-gradient(to bottom, #0066ff 0%, #33ccff 100%);
     }
 
     .loading {
