@@ -1,6 +1,6 @@
 <style>
     #gradient1 {
-        background: linear-gradient(to left, #000066 0%, #00ccff 100%);
+        background: linear-gradient(to right, #0066ff 0%, #33ccff 100%);
     }
 
     #z {

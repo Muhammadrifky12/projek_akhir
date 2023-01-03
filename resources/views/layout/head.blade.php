@@ -13,4 +13,3 @@
         <!-- Custom fonts for this template-->
     <!-- Custom styles for this template-->
     <link href="{{ asset ('template/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <link href="{{ asset ('template/css/listyle.css') }}" rel="stylesheet">
