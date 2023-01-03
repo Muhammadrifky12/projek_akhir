@@ -31,7 +31,7 @@
             </a>
             <div id="collapseUtilities" class="collapse">
                 <div class="nav-linkav py-2 collapse-inner rounded">
-                    <a class="collapse-item text-white" data-text="Siswa" href="/Siswa">
+                    <a class="collapse-item text-white" data-text="Siswa" href="/viewsiswa">
                         Siswa</a>
                     <a class="collapse-item text-white" data-text="Kelas" href="/Kelas">
                         Kelas</a>
