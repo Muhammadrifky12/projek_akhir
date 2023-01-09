@@ -13,7 +13,6 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\QuizController;
-use App\Http\Controllers\Input12rpl2Controller;
 use App\Http\Controllers\Input10rpl1Controller;
 /*
 |--------------------------------------------------------------------------
@@ -69,5 +68,4 @@ Route::middleware('auth')->group(function(){
     Route::get('/History', function () {
         return view('history.History');    
     });
-    Route::get('/cetakpdf',[Input12rpl2Controller::class,'cetakpdf'])->name('cetakpdf');
 });
