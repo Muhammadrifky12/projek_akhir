@@ -46,12 +46,12 @@ class Input10rpl1Controller extends Controller
             'required' => ':attribute harus diisi Slurr ',
         ];
         $this->validate($request,[
-            'nama'=>'required',
+            'Nama'=>'required',
             'skor'=>'required',
         ], $massage);
         //insert data
         $input = new input10rpl1();
-        $input->nama = $request->input('nama');
+        $input->Nama = $request->input('Nama');
         $input->skor = $request->input('skor');
 
         $input->save();
@@ -79,7 +79,7 @@ class Input10rpl1Controller extends Controller
     {
         $siswaku = input10rpl1::find($id);
         $pela = Pelanggaran::all();
-        return view('edit.Einput10rpl1' ,compact('siswaku','pela'));
+        return view('Input.Edit10rpl1' ,compact('siswaku','pela'));
     }
 
     /**
@@ -100,12 +100,13 @@ class Input10rpl1Controller extends Controller
            ];
            // validasi form
            $this->validate($request,[
-           'nama'=>'required',
-           'skor'=>'required'
+           'Nama'=>'required',
+           'Skor'=>'required'
            ], $massage);
          
            $siswa=input10rpl1::find($id);
-           $siswa->skor = $siswa->skor + $request->skor;
+           $siswa->Nama=$siswa->Nama;
+           $siswa->Skor = $siswa->Skor + $request->Skor;
            $siswa ->save();
            Session::flash('success','Data Berhasil Diinput');
            return redirect('/Input10rpl1');

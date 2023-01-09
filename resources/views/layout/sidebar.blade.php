@@ -43,15 +43,6 @@
         <hr class="sidebar-divider">
 
         <li class="nav-item" style="--clr: #00ffff;">
-            <a class="nav-link" href="/Quiz" data-text="QUIZ">
-                QUIZ
-                <i class="fas fa-fw fa-tty"></i>
-            </a>
-        </li>
-
-        <hr class="sidebar-divider">
-
-        <li class="nav-item" style="--clr: #00ffff;">
             <a class="nav-link" href="/History" data-text="History">
                 History<i class="fas fa-fw  fa-align-left"></i>
             </a>
@@ -60,7 +51,7 @@
         <hr class="sidebar-divider">
 
         <li class="nav-item" style="--clr: #00ffff;">
-            <a class="nav-link" href="/Input12rpl2" data-text="InputPoint">
+            <a class="nav-link" href="/Input10rpl1" data-text="InputPoint">
                 InputPoint
                 <i class="far fa-sun"></i>
             </a>

@@ -9,8 +9,8 @@ class input10rpl1 extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'nama',
-        'skor',
+        'Nama',
+        'Skor',
     ];
     protected $table = 'input10rpl1';
     public function Input10rpl1(){
