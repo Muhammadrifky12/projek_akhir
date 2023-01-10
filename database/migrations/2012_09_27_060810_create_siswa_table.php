@@ -14,14 +14,15 @@ return new class extends Migration
     public function up()
     {
         Schema::create('siswa', function (Blueprint $table) {
+            $table->id();
             $table->string('nama');
-            $table->primary('nama');
             $table->string('id_kelas');
             $table->foreign('id_kelas')->references('kelass')->on('kelas')
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->char('nisn');
             $table->char('JK');
+            $table->char('skor');
             $table->timestamps();
         });
     }

@@ -24,8 +24,9 @@
                 <div class="card-header" id="p">
                     <div class="row">
                         <div class="col-lg-2">
-                            <a href="" class="btn-lg btn-circle btn-danger" data-toggle="tooltip"
-                                data-placement="top" title="Download pdf"><i class="fas fa-file-pdf"></i></a>
+                            <a href="{{ URL::to('/employee/pdf') }}" class="btn-lg btn-circle btn-danger"
+                                data-toggle="tooltip" data-placement="top" title="Download pdf"><i
+                                    class="fas fa-file-pdf"></i></a>
                         </div>
                         <div class="col-lg-2">
                         </div>
@@ -43,21 +44,28 @@
                         <thead>
                             <tr>
                                 <th scope="col">No</th>
+                                <th scope="col">Nisn</th>
                                 <th scope="col">Nama Siswa</th>
+                                <th scope="col">Kelas</th>
+                                <th scope="col">Jenis Kelamin</th>
                                 <th scope="col">Skor</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {{-- perulangan --}}
-                            @foreach ($skor as $b => $items)
+                            @foreach ($siswa as $b => $items)
                                 <tr>
                                     <th scope="row">{{ ++$b }}</th>
-                                    <td>{{ $items->Nama }}</td>
-                                    <td>{{ $items->Skor }}</td>
-                                    <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
-                                        <a href="{{ route('Input10rpl1.edit', $items->id) }}" class="btn-sm btn-circle"><i
-                                                class="fas fa-edit"></i></a>
+                                    <td>{{ $items->nisn }}</td>
+                                    <td>{{ $items->nama }}</td>
+                                    <td>{{ $items->id_kelas }}</td>
+                                    <td>{{ $items->JK }}</td>
+                                    <td>{{ $items->skor }}</td>
+                                    <td><a href="" class="btn-sm btn-circle"><i
+                                                class="fas fa-trash"></i></a>
+                                        <a href="{{ route('Input10rpl1.edit', $items-> id) }}" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

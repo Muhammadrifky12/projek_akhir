@@ -136,6 +136,9 @@
                                     <option value="perempuan">Perempuan</option>
                                 </select>
                             </div>
+                            <div class="form-group">
+                                <input type="hidden" class="form-control" id="skor" name='skor' value="0">
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <input type="submit" class="btn-success" value="OK">

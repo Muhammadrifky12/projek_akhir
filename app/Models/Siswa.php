@@ -13,6 +13,7 @@ class Siswa extends Model
         'nama',
         'id_kelas',
         'JK',
+        'skor',
     ];
     protected $table = 'siswa';
     public function kelas1(){

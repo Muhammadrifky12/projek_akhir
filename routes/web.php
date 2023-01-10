@@ -61,6 +61,8 @@ Route::middleware('auth')->group(function(){
     Route::get('jenispelaggaran/{jenisku_jenispelaggaran}/hapus',[JenispelanggaranController::class,'hapus'])->name('Jenis.hapus');
     Route::get('Gurubk/{nama_guru}/hapus',[GurubkController::class,'hapus'])->name('Gurubk.hapus');
     Route::get('Gurutatib/{id_nama_guru}/hapus',[GurutatibController::class,'hapus'])->name('Gurutatib.hapus');
+    Route::get('/employee/pdf', [Input10rpl1Controller::class, 'createPDF']);
+    Route::get('/', [Input10rpl1Controller::class, 'showEmployees']);
     //Route get
     Route::get('/Siswa', function () {
         return view('Siswa');    
