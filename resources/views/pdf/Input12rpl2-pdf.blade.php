@@ -35,7 +35,7 @@ tr:nth-child(even) {
     </thead>
     <tbody>
         {{-- perulangan --}}
-        @foreach ($data as $b => $items)
+        @foreach ($dataa as $b => $items)
             <tr>
                 <th scope="row">{{ ++$b }}</th>
                 <td>12 RPL 2</td>

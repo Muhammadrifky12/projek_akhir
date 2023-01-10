@@ -61,6 +61,7 @@ class SiswaController extends Controller
         $siswa12->nama = $request->input('nama'); 
         $siswa12->id_kelas = $request->input('id_kelas'); 
         $siswa12->JK = $request->input('JK');
+        $siswa12->skor = $request->input('skor');
 
         $siswa12->save();
         // Session::flash('success','Data Berhasil Diinput');
