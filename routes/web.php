@@ -7,7 +7,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\GurubkController;
 use App\Http\Controllers\GuruController;
 use App\Http\Controllers\GurutatibController;
-
+use App\Http\Controllers\HistoryController;
 use App\Http\Controllers\JenispelanggaranController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PelanggaranController;
@@ -52,6 +52,7 @@ Route::middleware('auth')->group(function(){
     Route::resource('Kelas',KelasController::class);
     Route::resource('Jenis',JenispelanggaranController::class);
     Route::resource('Input10rpl1',Input10rpl1Controller::class);
+    Route::resource('History',HistoryController::class);
     //route login
     Route::post('logout', [LoginController::class,"logout"]);
     //route hapus
@@ -66,8 +67,5 @@ Route::middleware('auth')->group(function(){
     //Route get
     Route::get('/Siswa', function () {
         return view('Siswa');    
-    });
-    Route::get('/History', function () {
-        return view('history.History');    
     });
 });

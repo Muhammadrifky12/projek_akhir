@@ -20,19 +20,8 @@
             <div class="card shadow mb-4">
                 <div class="card-header" id="pp">
                     <div class="row">
-                        <div class="col-lg-3">
-                            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="k"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Silahkan Pilih Kelas
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                <a class="dropdown-item" href="/viewsiswa">10 RPL 1</a>
-                                <a class="dropdown-item" href="/viewsiswa10rpl2">10 RPL 2</a>
-                                <a class="dropdown-item" href="/viewsiswa10rpl2">11 RPL 1</a>
-                                <a class="dropdown-item" href="/viewsiswa10rpl2">11 RPL 2</a>
-                                <a class="dropdown-item" href="/viewsiswa10rpl2">12 RPL 1</a>
-                                <a class="dropdown-item" href="/History12rpl2">12 RPL 2</a>
-                            </div>
+                        <div class="col-lg-10 text-white">
+                            <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-yin-yang"></i>Data Siswa</h6>
                         </div>
                     </div>
                 </div>
@@ -41,25 +30,43 @@
                         <thead>
                             <tr>
                                 <th scope="col">no</th>
-                                <th scope="col">Kelas</th>
                                 <th scope="col">Nisn</th>
                                 <th scope="col">Nama</th>
+                                <th scope="col">Kelas</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            {{-- perulangan --}}
+                            @foreach ($histor as $b => $items)
+                                <tr>
+                                    <th scope="row">{{ ++$b }}</th>
+                                    <td>{{ $items->nisn }}</td>
+                                    <td>{{ $items->nama }}</td>
+                                    <td>{{ $items->id_kelas }}</td>
+                                    <td><a onclick="show({{ $items->id }})" class="btn-sm btn-info"><i
+                                                class="fas fa-folder-open"></i></a>
+                                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                            data-bs-target="#historku"><i class="fas fa-edit"></i></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
         <div class="col-lg-12">
-            <div class="card shadow mb-4">
-                <div class="card-header">
-                    <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-yin-yang"></i>Project siswa</h6>
+            <div class="card shadow mb-4"> 
+                <div class="card-header" id="pp">
+                    <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-yin-yang"></i>History Pelanggaran</h6>
                 </div>
-                <div id="history" class="card-body">
-                    <h6 class="text-center">Pilih Siswa terlebih dahulu</h6>
+                <div id="history" class="card-body"> 
+                  <h6 class="text-center">Pilih Siswa terlebih dahulu</h6>
                 </div>
-            </div>
+                 </div>
+               </div>
         </div>
     </div>
     <script>
@@ -69,4 +76,69 @@
             })
         }
     </script>
+    <div class="modal fade" id="historku" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Masukkan Data</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="{{ route('History.store') }}">
+                        @csrf
+                        <div class="form-group">
+                            <div class="form-group">
+                                <label for="id_siswa">Siswa</label>
+                                <select name="id_siswa" id="id_siswa" class="form-control">
+                                    <option value="">--Pilih--</option>
+                                    @foreach ($histor as $item)
+                                        <option value="{{ $item->id }}">{{ $item->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="tanggal">Tanggal</label>
+                                <input type="date" class="form-control" id="tanggal" name='tanggal'>
+                            </div>
+                            <div class="form-group">
+                                <label for="bentukpelanggaran">Bentuk Pelanggaran</label>
+                                <select name="bentukpelanggaran" id="bentukpelanggaran" class="form-control">
+                                    <option value="">--Pilih--</option>
+                                    @foreach ($pelala as $item)
+                                        <option value="{{ $item->Bentukpelanggaran }}">{{ $item->Bentukpelanggaran }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="skor">Skor</label>
+                                <select name="skor" id="skor" class="form-control">
+                                    <option value="">--Pilih--</option>
+                                    @foreach ($pelala as $item)
+                                        <option value="{{ $item->skor }}">{{ $item->Bentukpelanggaran }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="penanganan">Penanganan</label>
+                                <select name="penanganan" id="penanganan" class="form-control">
+                                    <option value="">--Pilih--</option>
+                                    @foreach ($bk as $items)
+                                        <option value="{{ $items->nama }}">{{ $items->nama }}</option>
+                                    @endforeach
+                                    @foreach ($tatib as $item)
+                                        <option value="{{ $item->nama }}">{{ $item->nama }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" class="btn-success" value="OK">
+                            <a href="{{ route('History.index') }}" class="btn btn-danger">Batal</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
