@@ -15,9 +15,14 @@ return new class extends Migration
     {
         Schema::create('history', function (Blueprint $table) {
             $table->id();
-            $table->string('bentuk_pelanggaran');
-            $table->string('tanggal');
-            $table->string('Pelapor');
+            $table->unsignedBigInteger('id_siswa');
+            $table->foreign('id_siswa')->references('id')->on('siswa')
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
+            $table->date('tanggal');
+            $table->string('bentukpelanggaran');
+            $table->string('skor');
+            $table->string('penanganan');
             $table->timestamps();
         });
     }

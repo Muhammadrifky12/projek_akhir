@@ -9,11 +9,15 @@ class history extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'Bentuk_pelanggaran',
-        'skor_sanksi',
+        'id_siswa',
         'tanggal',
-        'guru',
+        'Bentuk_pelanggaran',
+        'skor',
+        'penanganan',
         
     ];
-    protected $table = 'kelas';
+    protected $table = 'history';
+    public function history(){
+        return $this->hasMany('App\Models\Siswa','id');
+    }
 }
