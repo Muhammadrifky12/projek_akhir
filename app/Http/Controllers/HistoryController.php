@@ -50,6 +50,7 @@ class HistoryController extends Controller
          $history = new history;
          $history->id_siswa = $request->input('id_siswa'); 
          $history->tanggal = $request->input('tanggal'); 
+         $history->pelanggar= $request->input('pelanggar');
          $history->bentukpelanggaran = $request->input('bentukpelanggaran'); 
          $history->skor = $request->input('skor');
          $history->penanganan = $request->input('penanganan');
@@ -67,7 +68,7 @@ class HistoryController extends Controller
      */
     public function show($id)
     {
-        $historyyku = history::all();
+        $historyyku = Siswa::find($id)->history()->get();
         return view('history.Isihistory',compact('historyyku'));
     }
 

@@ -24,9 +24,9 @@
                 <div class="card-header" id="p">
                     <div class="row">
                         <div class="col-lg-2">
-                            <a href="{{ URL::to('/employee/pdf') }}" class="btn-lg btn-circle btn-danger"
+                            {{-- <a href="{{ URL::to('/employee/pdf') }}" class="btn-lg btn-circle btn-danger"
                                 data-toggle="tooltip" data-placement="top" title="Download pdf"><i
-                                    class="fas fa-file-pdf"></i></a>
+                                    class="fas fa-file-pdf"></i></a> --}}
                         </div>
                         <div class="col-lg-2">
                         </div>
