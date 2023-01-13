@@ -99,6 +99,7 @@
                             <div class="form-group">
                                 <label for="tanggal">Tanggal</label>
                                 <input type="date" class="form-control" id="tanggal" name='tanggal'>
+                                <input type="hidden" class="form-control" id="pelanggar" name='pelanggar' value="1">
                             </div>
                             <div class="form-group">
                                 <label for="bentukpelanggaran">Bentuk Pelanggaran</label>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('id_siswa')->references('id')->on('siswa')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+            $table->string('pelanggar');
             $table->date('tanggal');
             $table->string('bentukpelanggaran');
             $table->string('skor');

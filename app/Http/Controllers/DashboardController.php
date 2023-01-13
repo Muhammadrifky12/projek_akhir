@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\history;
+use App\Models\Siswa;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -12,7 +15,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $siswa = Siswa::all();
+        $histor = history::all();
+        $history = [];
+        foreach ($histor as $a) {
+            $history[] = $a->pelanggar;
+        }
+        // dd($history);
+        return view('dashboard',compact('histor','history','siswa'));
     }
 
     /**
