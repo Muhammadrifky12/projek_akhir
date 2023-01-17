@@ -1,6 +1,6 @@
-{{-- @if ($historyyku->isEmpty())
+@if ($historyyku->isEmpty())
     <h6 class="text-center">Siswa Belum Melakukan Pelanggaran sama sekali</h6>  
-@else --}}
+@else
     <div class="row">
         <div class="col-lg-12">
             <div class="card shadow mb-4">
@@ -42,4 +42,4 @@
             </div>
         </div>
     </div>
-{{-- @endif --}}
+@endif
