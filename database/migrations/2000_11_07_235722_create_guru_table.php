@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('guru', function (Blueprint $table) {
             $table->string('nama');
             $table->primary('nama');
-            $table->integer('nip');
+            $table->unsignedBigInteger('nip');
             $table->char('JK');
             $table->timestamps();
         });

@@ -18,6 +18,6 @@ class history extends Model
     ];
     protected $table = 'history';
     public function history(){
-        return $this->hasMany('App\Models\Siswa','id');
+        return $this->belongsTo('App\Models\Siswa','id');
     }
 }

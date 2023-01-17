@@ -1,5 +1,5 @@
 @if ($historyyku->isEmpty())
-    <h6 class="text-center">Siswa Belum Melakukan Pelanggaran sama sekali</h6>  
+    <h6 class="text-center">Siswa Belum Melakukan Pelanggaran sama sekali</h6>
 @else
     <div class="row">
         <div class="col-lg-12">
@@ -24,18 +24,17 @@
                         </thead>
                         <tbody>
                             {{-- perulangan --}}
-                            @foreach ($historyyku as $b => $items)
-                            <tr>
-                                <th scope="row">{{ ++$b }}</th>
-                                <td>{{ $items->tanggal }}</td>
-                                <td>{{ $items->bentukpelanggaran }}</td>
-                                <td>{{ $items->skor }}</td>
-                                <td>{{ $items->penanganan}}</td>
-                                <td><a href=""
-                                        class="btn btn-circle"><i class="fas fa-trash-circle"></i></a>
-                                </td>
-                            </tr>
-                        @endforeach
+                            @foreach ($historyyku as $b => $itemw)
+                                <tr>
+                                    <th scope="row">{{ ++$b }}</th>
+                                    <td>{{ $itemw->tanggal }}</td>
+                                    <td>{{ $itemw->bentukpelanggaran }}</td>
+                                    <td>{{ $itemw->skor }}</td>
+                                    <td>{{ $itemw->penanganan }}</td>
+                                    <td><a href="" class="btn btn-circle"><i class="fas fa-trash-circle"></i></a>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
