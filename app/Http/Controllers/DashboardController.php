@@ -15,14 +15,10 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $siswa = Siswa::all();
-        $histor = history::all();
-        $history = [];
-        foreach ($histor as $a) {
-            $history[] = $a->pelanggar;
-        }
+        $siswa = Siswa::all()->count();
+        $histor = history::all()->count();
         // dd($history);
-        return view('dashboard',compact('histor','history','siswa'));
+        return view('dashboard',compact('histor','siswa'));
     }
 
     /**

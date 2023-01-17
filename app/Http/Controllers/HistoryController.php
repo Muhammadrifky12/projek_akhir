@@ -68,7 +68,7 @@ class HistoryController extends Controller
      */
     public function show($id)
     {
-        $historyyku = Siswa::find($id)->history()->get();
+        $historyyku = history::all();
         return view('history.Isihistory',compact('historyyku'));
     }
 
