@@ -20,6 +20,6 @@ class Siswa extends Model
         return $this->belongsTo('App\Models\Kelas','kelass');
     }
     public function history(){
-        return $this->belongsTo('App\Models\history','id_siswa');
+        return $this->hasMany('App\Models\history','id_siswa');
     }
 }

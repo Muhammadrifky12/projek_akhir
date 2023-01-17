@@ -14,6 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('history', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('id_siswa');
             $table->foreign('id_siswa')->references('id')->on('siswa')
             ->onDelete('cascade')

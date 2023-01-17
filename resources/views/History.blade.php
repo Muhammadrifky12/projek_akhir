@@ -58,24 +58,17 @@
             </div>
         </div>
         <div class="col-lg-12">
-            <div class="card shadow mb-4"> 
+            <div class="card shadow mb-4">
                 <div class="card-header" id="pp">
                     <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-yin-yang"></i>History Pelanggaran</h6>
                 </div>
-                <div id="history" class="card-body"> 
-                  <h6 class="text-center">Pilih Siswa terlebih dahulu</h6>
+                <div id="histor" class="card-body">
+                    <h6 class="text-center">Pilih Siswa terlebih dahulu</h6>
                 </div>
-                 </div>
-               </div>
+            </div>
         </div>
     </div>
-    <script>
-        function show(id) {
-            $.get('History/' + id, function(data) {
-                $('#history').html(data);
-            })
-        }
-    </script>
+    </div>
     <div class="modal fade" id="historku" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -142,4 +135,11 @@
             </div>
         </div>
     </div>
+    <script>
+        function show(id){
+          $.get('History/'+id,function(data){
+            $('#histor').html(data);
+          })
+        }
+      </script>
 @endsection
