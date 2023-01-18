@@ -18,9 +18,12 @@ class DashboardController extends Controller
         $siswa = Siswa::all()->count();
         $histor = history::all()->count();
         $siswaku = Siswa::doesnthave('history')->count();
-        $ortu = Siswa::where('skor','>',55,'<',149)->get();
+        $ortu = Siswa::where('skor','>',55)->where('skor','<',149)->get();
+        $paginate = Siswa::paginate(5);
+        $skorsing = Siswa::where('skor','>',150)->where('skor','<',249)->get();
+        $out = Siswa::where('skor','>',249)->get();
         // dd($history);
-        return view('dashboard',compact('histor','siswa','siswaku'));
+        return view('dashboard',compact('histor','siswa','siswaku','ortu','skorsing','out','paginate'));
     }
 
     /**

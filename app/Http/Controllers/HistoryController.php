@@ -23,9 +23,8 @@ class HistoryController extends Controller
         $histor = Siswa::all();
         $history = history::all();
         $pelala = Pelanggaran::all();
-        $bk = gurubk::all();
-        $tatib = gurutatib::all();
-        return view('History',compact('history','histor','pelala','bk','tatib'));
+        $data = Siswa::paginate(10);
+        return view('History',compact('history','histor','pelala','data'));
     }
 
     /**
@@ -35,7 +34,14 @@ class HistoryController extends Controller
      */
     public function create()
     {
-        //
+        
+    }
+
+    public function tambah($id){
+        $siswa=Siswa::find($id);
+        $bk = gurubk::all();
+        $bk = gurutatib::all();
+        return view('historytambah',compact('siswa','bk'));
     }
 
     /**
@@ -51,7 +57,6 @@ class HistoryController extends Controller
          $history->id_siswa = $request->input('id_siswa'); 
          $history->tanggal = $request->input('tanggal'); 
          $history->bentukpelanggaran = $request->input('bentukpelanggaran'); 
-         $history->skor = $request->input('skor');
          $history->penanganan = $request->input('penanganan');
  
          $history->save();
@@ -68,7 +73,8 @@ class HistoryController extends Controller
     public function show($id)
     {
         $historyyku = Siswa::find($id)->history()->get();
-        return view('Isihistory',compact('historyyku'));
+        $dataku = history::paginate(5);
+        return view('Isihistory',compact('historyyku','dataku'));
     }
 
     /**

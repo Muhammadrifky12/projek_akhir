@@ -137,6 +137,9 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <input type="hidden" class="form-control" id="status" name='status' value="Belum Dilakukan Pemanggilan">
+                            </div>
+                            <div class="form-group">
                                 <input type="hidden" class="form-control" id="skor" name='skor' value="0">
                             </div>
                         </div>

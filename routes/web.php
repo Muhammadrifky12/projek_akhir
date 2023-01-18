@@ -64,6 +64,7 @@ Route::middleware('auth')->group(function(){
     Route::get('Gurutatib/{id_nama_guru}/hapus',[GurutatibController::class,'hapus'])->name('Gurutatib.hapus');
     Route::get('/employee/pdf', [Input10rpl1Controller::class, 'createPDF']);
     Route::get('/', [Input10rpl1Controller::class, 'showEmployees']);
+    Route::get('History/create/{id_siswa}',[HistoryController::class,'tambah'])->name('History.tambah');
     //Route get
     Route::get('/Siswa', function () {
         return view('Siswa');    

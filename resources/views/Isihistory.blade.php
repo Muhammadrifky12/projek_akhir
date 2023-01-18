@@ -29,7 +29,6 @@
                                     <th scope="row">{{ ++$b }}</th>
                                     <td>{{ $itemw->tanggal }}</td>
                                     <td>{{ $itemw->bentukpelanggaran }}</td>
-                                    <td>{{ $itemw->skor }}</td>
                                     <td>{{ $itemw->penanganan }}</td>
                                     <td><a href="" class="btn btn-circle"><i class="fas fa-trash-circle"></i></a>
                                     </td>
@@ -37,6 +36,9 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <div class=" d-flex justify-content-end">
+                        {{ $dataku->links() }}
+                      </div>
                 </div>
             </div>
         </div>

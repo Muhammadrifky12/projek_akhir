@@ -62,9 +62,8 @@
                                     <td>{{ $items->id_kelas }}</td>
                                     <td>{{ $items->JK }}</td>
                                     <td>{{ $items->skor }}</td>
-                                    <td><a href="" class="btn-sm btn-circle"><i
-                                                class="fas fa-trash"></i></a>
-                                        <a href="{{ route('Input10rpl1.edit', $items-> id) }}" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                    <td><a href="{{ route('Input10rpl1.edit', $items->id) }}" class="btn-sm btn-circle"><i
+                                                class="fas fa-edit"></i></a>
                                         </a>
                                     </td>
                                 </tr>
