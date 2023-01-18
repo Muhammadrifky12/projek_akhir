@@ -23,6 +23,7 @@ return new class extends Migration
             $table->char('nisn');
             $table->char('JK');
             $table->char('skor');
+            $table->string('status');
             $table->timestamps();
         });
     }

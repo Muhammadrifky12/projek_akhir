@@ -258,8 +258,8 @@
                 <form method="post" action="{{ route('Gurutatib.store') }}">
                     @csrf
                     <div class="form-group">
-                        <label for="id_nama">Nama Guru</label>
-                        <select name="id_nama" id="id_nama" class="form-control">
+                        <label for="nama">Nama Guru</label>
+                        <select name="nama" id="nama" class="form-control">
                             <option value="">--PILIH--</option>
                             @foreach ($bk as $item)
                             <option value="{{ $item->nama }}">{{ $item->nama }}</option>

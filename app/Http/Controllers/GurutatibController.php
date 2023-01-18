@@ -42,7 +42,7 @@ class GurutatibController extends Controller
         ], $massage);
         //insert data
         $tatip = new gurutatib;
-        $tatip->id_nama = $request->input('id_nama');
+        $tatip->nama = $request->input('id_nama');
 
         $tatip->save();
         return redirect('/Guru');

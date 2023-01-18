@@ -30,7 +30,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
-                                Jumlah Pelanggaran</div>
+                                Jumlah Pelanggaran <br> yang terjadi</div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $histor }} Pelanggaran</div>
                         </div>
                         <div class="col-auto">
@@ -61,72 +61,118 @@
         <div class="col-lg-6">
             <div class="card shadow mb-4">
                 <div id="pp" class="card-header">
-                    <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Ringan : Panggilan Orang Tua
+                    <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Sedang : Panggilan Orang Tua
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">no</th>
+                                <th scope="col">No</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Kelas</th>
                                 <th scope="col">Point</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {{-- perulangan --}}
-                            {{-- @foreach ($histor as $b => $items)
+                            @foreach ($ortu as $b => $ortuu)
                                 <tr>
                                     <th scope="row">{{ ++$b }}</th>
-                                    <td>{{ $items->nama }}</td>
-                                    <td>{{ $items->id_kelas }}</td>
-                                    <td><a onclick="show({{ $items->id }})" class="btn-sm btn-info"><i
-                                                class="fas fa-folder-open"></i></a>
-                                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                            data-bs-target="#historku"><i class="fas fa-edit"></i></i>
-                                        </button>
+                                    <td>{{ $ortuu->nama }}</td>
+                                    <td>{{ $ortuu->id_kelas }}</td>
+                                    <td>{{ $ortuu->skor }}</td>
+                                    <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                        <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                        </a>
                                     </td>
                                 </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
+                    <div class=" d-flex justify-content-end">
+                        {{ $paginate->links() }}
+                      </div>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
             <div class="card shadow mb-4">
                 <div id="pp" class="card-header">
-                    <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Ringan : Panggilan Orang Tua
+                    <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Berat : Skorsing dan Paggilan Orang Tua
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th scope="col">no</th>
+                                <th scope="col">No</th>
                                 <th scope="col">Nama</th>
                                 <th scope="col">Kelas</th>
                                 <th scope="col">Point</th>
+                                <th scope="col">Status</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
                         <tbody>
                             {{-- perulangan --}}
-                            {{-- @foreach ($histor as $b => $items)
+                            @foreach ($skorsing as $b => $skor)
                                 <tr>
                                     <th scope="row">{{ ++$b }}</th>
-                                    <td>{{ $items->nama }}</td>
-                                    <td>{{ $items->id_kelas }}</td>
-                                    <td><a onclick="show({{ $items->id }})" class="btn-sm btn-info"><i
-                                                class="fas fa-folder-open"></i></a>
-                                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                            data-bs-target="#historku"><i class="fas fa-edit"></i></i>
-                                        </button>
+                                    <td>{{ $skor->nama }}</td>
+                                    <td>{{ $skor->id_kelas }}</td>
+                                    <td>{{ $skor->skor }}</td>
+                                    <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                        <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                        </a>
                                     </td>
                                 </tr>
-                            @endforeach --}}
+                            @endforeach
                         </tbody>
                     </table>
+                    <div class=" d-flex justify-content-end">
+                        {{ $paginate->links() }}
+                      </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card shadow mb-4">
+                <div id="pp" class="card-header">
+                    <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Berat : Paggilan Orang Tua dan Siswa Dikembalikan
+                        Kepada Orang Tua
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Kelas</th>
+                                <th scope="col">Point</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{-- perulangan --}}
+                            @foreach ($out as $b => $outt)
+                                <tr>
+                                    <th scope="row">{{ ++$b }}</th>
+                                    <td>{{ $outt->nama }}</td>
+                                    <td>{{ $outt->id_kelas }}</td>
+                                    <td>{{ $outt->skor }}</td>
+                                    <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                        <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                        </a>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <div class=" d-flex justify-content-end">
+                        {{ $paginate->links() }}
+                      </div>
                 </div>
             </div>
         </div>
