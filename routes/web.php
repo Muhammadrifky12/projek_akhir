@@ -12,7 +12,6 @@ use App\Http\Controllers\JenispelanggaranController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\SiswaController;
-use App\Http\Controllers\QuizController;
 use App\Http\Controllers\Input10rpl1Controller;
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +44,6 @@ Route::middleware('auth')->group(function(){
     Route::resource('viewsiswa',SiswaController::class);
     Route::resource('Guru',GuruController::class);
     Route::resource('dashboard',DashboardController::class);
-    Route::resource('Quiz',QuizController::class);
     Route::resource('Pelanggaran',PelanggaranController::class);
     Route::resource('Gurubk',GurubkController::class);
     Route::resource('Gurutatib',GurutatibController::class);
@@ -61,7 +59,7 @@ Route::middleware('auth')->group(function(){
     Route::get('Guru/{nama_guru}/hapus',[GuruController::class,'hapus'])->name('Guru.hapus');
     Route::get('jenispelaggaran/{jenisku_jenispelaggaran}/hapus',[JenispelanggaranController::class,'hapus'])->name('Jenis.hapus');
     Route::get('Gurubk/{nama_guru}/hapus',[GurubkController::class,'hapus'])->name('Gurubk.hapus');
-    Route::get('Gurutatib/{id_nama_guru}/hapus',[GurutatibController::class,'hapus'])->name('Gurutatib.hapus');
+    Route::get('Gurutatib/{nama_guru}/hapus',[GurutatibController::class,'hapus'])->name('Gurutatib.hapus');
     Route::get('/employee/pdf', [Input10rpl1Controller::class, 'createPDF']);
     Route::get('/', [Input10rpl1Controller::class, 'showEmployees']);
     Route::get('History/create/{id_siswa}',[HistoryController::class,'tambah'])->name('History.tambah');

@@ -40,8 +40,9 @@ class HistoryController extends Controller
     public function tambah($id){
         $siswa=Siswa::find($id);
         $bk = gurubk::all();
-        $bk = gurutatib::all();
-        return view('historytambah',compact('siswa','bk'));
+        $tatib = gurutatib::all();
+        
+        return view('historytambah',compact('siswa','bk','tatib'));
     }
 
     /**
@@ -85,7 +86,11 @@ class HistoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $historykuh=history::find($id);
+        $siswaa=Siswa::find($id);
+        $bkk = gurubk::all();
+        $tatibb = gurutatib::all();
+        return view('Edit.Edithistory',compact('siswaa','historykuh','bkk','tatibb'));
     }
 
     /**
@@ -97,7 +102,13 @@ class HistoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $edit = history::find($id);
+        $edit->id_siswa = $request->id_siswa;
+        $edit->tanggal = $request->tanggal;
+        $edit->bentukpelanggaran = $request->bentukpelanggaran;
+        $edit->penanganan = $request->penanganan;
+        $edit->save();
+        return redirect('/History');
     }
 
     /**

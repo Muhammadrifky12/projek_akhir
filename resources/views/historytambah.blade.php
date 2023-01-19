@@ -23,7 +23,6 @@
                                 <label for="tanggal">Tanggal</label>
                                 <input type="hidden" name="id_siswa" id="id_siswa" value="{{$siswa->id}}">
                                 <input type="date" class="form-control" id="tanggal" name='tanggal'>
-                                <input type="hidden" class="form-control" id="pelanggar" name='pelanggar' value="1">
                             </div>
                             <div class="form-group">
                                 <label for="bentukpelanggaran">Berapa Pelanggaran</label>
@@ -33,9 +32,12 @@
                                 <label for="penanganan">Penanganan</label>
                                 <select name="penanganan" id="penanganan" class="form-control">
                                     <option value="">--Pilih--</option>
-                                    {{-- @foreach ($bk as $items)
+                                    @foreach ($bk as $items)
                                         <option value="{{ $items->nama }}">{{ $items->nama }}</option>
-                                    @endforeach --}}
+                                    @endforeach
+                                    @foreach ($tatib as $items)
+                                        <option value="{{ $items->nama }}">{{ $items->nama }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>

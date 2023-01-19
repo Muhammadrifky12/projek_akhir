@@ -58,7 +58,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <div class="card shadow mb-4">
                 <div id="pp" class="card-header">
                     <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Sedang : Panggilan Orang Tua
@@ -83,8 +83,8 @@
                                     <td>{{ $ortuu->nama }}</td>
                                     <td>{{ $ortuu->id_kelas }}</td>
                                     <td>{{ $ortuu->skor }}</td>
-                                    <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
-                                        <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                    <td>{{ $ortuu->status}}</td>
+                                    <td><a href="" class="btn-sm btn-primary btn-circle"><i class="fas fa-edit"></i></a>
                                         </a>
                                     </td>
                                 </tr>
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <div class="card shadow mb-4">
                 <div id="pp" class="card-header">
                     <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Berat : Skorsing dan Paggilan Orang Tua
@@ -122,8 +122,8 @@
                                     <td>{{ $skor->nama }}</td>
                                     <td>{{ $skor->id_kelas }}</td>
                                     <td>{{ $skor->skor }}</td>
-                                    <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
-                                        <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                    <td>{{ $skor->status}}</td>
+                                    <td><a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
                                         </a>
                                     </td>
                                 </tr>
@@ -136,7 +136,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-8">
             <div class="card shadow mb-4">
                 <div id="pp" class="card-header">
                     <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Berat : Paggilan Orang Tua dan Siswa Dikembalikan
@@ -162,6 +162,7 @@
                                     <td>{{ $outt->nama }}</td>
                                     <td>{{ $outt->id_kelas }}</td>
                                     <td>{{ $outt->skor }}</td>
+                                    <td>{{ $outt->status}}</td>
                                     <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
                                         <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
                                         </a>

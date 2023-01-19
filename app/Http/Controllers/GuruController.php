@@ -23,8 +23,7 @@ class GuruController extends Controller
         $gurubkk = gurubk::paginate(5);
         $tatib = gurutatib::all();
         $tatibb = gurutatib::paginate(5);
-        $bk = guru::all();
-        return view('Guru', compact('guru', 'gurubk', 'bk', 'gurubkk', 'tatib', 'tatibb'));
+        return view('Guru', compact('guru', 'gurubk', 'gurubkk', 'tatib', 'tatibb'));
     }
 
     /**

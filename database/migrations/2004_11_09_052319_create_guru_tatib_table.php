@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreign('nama')->references('nama')->on('guru')
             ->onDelete('cascade')
             ->onUpdate('cascade');
+            $table->primary('nama');
             $table->timestamps();
         });
     }
