@@ -16,8 +16,7 @@
                             <tr>
                                 <th scope="col">no</th>
                                 <th scope="col">Tanggal</th>
-                                <th scope="col">Bentuk Pelanggaran</th>
-                                <th scope="col">Skor</th>
+                                <th scope="col">Jumlah Pelanggaran</th>
                                 <th scope="col">Penanganan</th>
                                 <th scope="col">Action</th>
                             </tr>
@@ -30,7 +29,7 @@
                                     <td>{{ $itemw->tanggal }}</td>
                                     <td>{{ $itemw->bentukpelanggaran }}</td>
                                     <td>{{ $itemw->penanganan }}</td>
-                                    <td><a href="" class="btn btn-circle"><i class="fas fa-trash-circle"></i></a>
+                                    <td><a href="{{ route('History.edit', $itemw ->id) }}" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

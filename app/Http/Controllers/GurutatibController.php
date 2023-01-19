@@ -38,12 +38,11 @@ class GurutatibController extends Controller
             'required' => ':attribute harus diisi Slurr ',
         ];
         $this->validate($request,[
-            'id_nama'=>'required',
+            'nama'=>'required',
         ], $massage);
         //insert data
         $tatip = new gurutatib;
-        $tatip->nama = $request->input('id_nama');
-
+        $tatip->nama = $request->input('nama');
         $tatip->save();
         return redirect('/Guru');
     }
@@ -92,9 +91,9 @@ class GurutatibController extends Controller
     {
         //
     }
-    public function hapus($id_nama)
+    public function hapus($nama)
     {
-        gurutatib::where('id_nama', $id_nama)->delete();
+        gurutatib::where('nama', $nama)->delete();
         return redirect('/Guru');
     }
 }
