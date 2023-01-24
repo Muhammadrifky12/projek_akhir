@@ -64,9 +64,9 @@
                                                 <td>{{ $items->nip }}</td>
                                                 <td>{{ $items->nama }}</td>
                                                 <td>{{ $items->JK }}</td>
-                                                <td><a href="{{ route('Guru.hapus', $items->nama) }}"
+                                                <td><a href="{{ route('Guru.hapus', $items->id) }}"
                                                         class="btn-sm btn-circle"><i class="fas fa-trash"></i></a></a>
-                                                    <a href="" class="btn-sm btn-circle"><i
+                                                    <a href="{{route('Guru.edit', $items->id)}}" class="btn-sm btn-circle"><i
                                                             class="fas fa-edit"></i></a>
                                                 </td>
                                             </tr>
@@ -98,12 +98,13 @@
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
+                        {{-- @dd ($gurubk->gurubk  ) --}}
                         @foreach ($gurubk as $i1 => $item2)
                             <tr>
                                 <th scope="row">{{ ++$i1 }}</th>
-                                <td>{{ $item2->nama }}</td>
+                                <td>{{ $item2->gurubk->nama }}</td>
                                 <td>{{ $item2->deskripsi }}</td>
-                                <td><a href="{{ route('Gurubk.hapus', $item2->nama) }}" class="btn-sm btn-circle"><i
+                                <td><a href="{{ route('Gurubk.hapus', $item2->id) }}" class="btn-sm btn-circle"><i
                                             class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
@@ -135,7 +136,7 @@
                         @foreach ($tatib as $g => $hallo)
                             <tr>
                                 <th scope="row">{{ ++$g }}</th>
-                                <td>{{ $hallo->nama }}</td>
+                                <td>{{ $hallo->gurutatib->nama }}</td>
                                 <td><a href="{{ route('Gurutatib.hapus', $hallo->nama) }}" class="btn-sm btn-circle"><i
                                             class="fas fa-trash"></i></a>
                                 </td>
@@ -222,7 +223,7 @@
                             <select name="nama" id="nama" class="form-control">
                                 <option value="">--PILIH--</option>
                                 @foreach ($guru as $item)
-                                    <option value="{{ $item->nama }}">{{ $item->nama }}</option>
+                                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -262,7 +263,7 @@
                             <select name="nama" id="nama" class="form-control">
                                 <option value="">--PILIH--</option>
                                 @foreach ($guru as $item)
-                                    <option value="{{ $item->nama }}">{{ $item->nama }}</option>
+                                    <option value="{{ $item->id }}">{{ $item->nama }}</option>
                                 @endforeach
                             </select>
                         </div>

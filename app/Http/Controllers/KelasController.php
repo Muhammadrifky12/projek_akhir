@@ -22,16 +22,16 @@ class KelasController extends Controller
 
     public function store(Request $request)
     {
-        $massage = [
-            'required' => ':attribute harus diisi Slurr ',
-            'min' => ':attribute minimal :min karakter ya Slurr',
-            'max' => ':attribute maksimal :max Karakter Slurrr'
-        ];
-        $this->validate($request, [
-            'kelass' => 'required|',
-            'walas' => 'required|min:7|max:50',
-            'gurubk' => 'required',
-        ], $massage);
+        // $massage = [
+        //     'required' => ':attribute harus diisi Slurr ',
+        //     'min' => ':attribute minimal :min karakter ya Slurr',
+        //     'max' => ':attribute maksimal :max Karakter Slurrr'
+        // ];
+        // $this->validate($request, [
+        //     'kelass' => 'required|',
+        //     'walas' => 'required|min:7|max:50',
+        //     'gurubk' => 'required',
+        // ], $massage);
         //insert data
         $kelass = new kelas;
         $kelass->kelass = $request->input('kelass');

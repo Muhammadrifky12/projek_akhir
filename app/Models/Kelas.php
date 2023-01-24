@@ -15,27 +15,12 @@ class Kelas extends Model
     ];
     protected $table = 'kelas';
     public function kelas1(){
-        return $this->hasMany('App\Models\Siswa','id_kelas');
-    }
-    public function kelas2(){
-        return $this->hasMany('App\Models\Siswa10rpl2','id_kelas');
-    }
-    public function kelas3(){
-        return $this->hasMany('App\Models\Siswa11','id_kelas');
-    }
-    public function kelas4(){
-        return $this->hasMany('App\Models\Siswa11rpl2','id_kelas');
-    }
-    public function Siswa12(){
-        return $this->hasMany('App\Models\Siswa12','id_kelas');
-    }
-    public function kelas6(){
-        return $this->hasMany('App\Models\Siswa12rpl2','id_kelas');
+        return $this->hasMany('App\Models\Siswa','id');
     }
     public function kelasss(){
-        return $this->hasMany('App\Models\guru','nama');
+        return $this->belongsTo('App\Models\guru','nama');
     }
     public function kel(){
-        return $this->belongsTo('App\Models\kelas','nama');
+        return $this->belongsTo('App\Models\gurubk','nama');
     }
 }

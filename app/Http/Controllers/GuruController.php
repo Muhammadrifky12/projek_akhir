@@ -84,7 +84,8 @@ class GuruController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Gurukuh = guru::find($id);
+        return view('Edit.Editguru',compact('Gurukuh'));
     }
 
     /**
@@ -96,7 +97,12 @@ class GuruController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $gurui = guru::find($id);
+        $gurui->nip = $request->nip;
+        $gurui->nama = $request->nama;
+        $gurui->JK = $request->JK;
+        $gurui->save();
+        return redirect('/Guru');
     }
 
     /**
@@ -109,9 +115,9 @@ class GuruController extends Controller
     {
         //
     }
-    public function hapus($nama)
+    public function hapus($id)
     {
-        guru::where('nama', $nama)->delete();
+        guru::where('id', $id)->delete();
         return redirect('/Guru');
     }
 }

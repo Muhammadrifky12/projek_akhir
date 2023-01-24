@@ -18,6 +18,6 @@ class gurubk extends Model
         return $this->belongsTo('App\Models\guru','nama');
     }
     public function kel(){
-        return $this->hasMany('App\Models\kelas','gurubk');
+        return $this->hasMany('App\Models\kelas','id');
     }
 }
