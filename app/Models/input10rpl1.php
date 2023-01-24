@@ -14,6 +14,6 @@ class input10rpl1 extends Model
     ];
     protected $table = 'input10rpl1';
     public function Input10rpl1(){
-        return $this->belongsTo('App\Models\Siswa','nama');
+        return $this->belongsTo('App\Models\Siswa','id');
     }
 }

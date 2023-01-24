@@ -16,12 +16,12 @@ class guru extends Model
     ];
     protected $table = 'guru';
     public function kelasss(){
-        return $this->hasMany('App\Models\kelas','walas');
+        return $this->hasMany('App\Models\kelas','id');
     }
     public function gurubk(){
-        return $this->hasMany('App\Models\gurubk','nama');
+        return $this->hasMany('App\Models\gurubk','id');
     }
     public function gurutatib(){
-        return $this->hasMany('App\Models\gurutatib','id_nama');
+        return $this->hasMany('App\Models\gurutatib','id');
     }
 }

@@ -37,7 +37,7 @@
                     <div class="col-lg-10"></div>
                     <div class="col-lg-2">
                         <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tambah">
-                            Tambah Siswa
+                            Tambah Kelas
                         </button>
                     </div>
                 </div>
@@ -62,8 +62,8 @@
                                     <tr>
                                         <th scope="row">{{++$b}}</th>
                                         <td>{{$items -> kelass }}</td>
-                                        <td>{{$items -> walas }}</td>
-                                        <td>{{$items -> gurubk}}</td>
+                                        <td>{{$items->kelasss->nama }}</td>
+                                        <td>{{$items->gurubk->nama}}</td>
                                         <td><a href="{{ route('Kelas.hapus', $items ->kelass) }}"
                                                 class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
                                             <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
@@ -118,7 +118,7 @@
                             <select name="walas" id="walas" class="form-control">
                                 <option value="">--PILIH--</option>
                                 @foreach ($walas as $item)
-                                <option value="{{$item->nama}}">{{$item->nama}}</option>
+                                <option value="{{$item->id}}">{{$item->nama}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -126,8 +126,8 @@
                             <label for="BK">Guru BK</label>
                             <select name="gurubk" id="gurubk" class="form-control form-control-sm">
                                 <option value="">--PILIH--</option>
-                                @foreach ($bk as $item)
-                                <option value="{{$item->nama}}">{{$item->nama}}</option>
+                                @foreach ($bk as $items)
+                                <option value="{{$item->id}}">{{$item->kel}}</option>
                                 @endforeach
                             </select>
                         </div>

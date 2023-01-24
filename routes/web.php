@@ -56,7 +56,7 @@ Route::middleware('auth')->group(function(){
     //route hapus
     Route::get('viewsiswa/{nama_siswa}/hapus',[SiswaController::class,'hapus'])->name('viewsiswa.hapus');
     Route::get('Kelas/{kelass_kelas}/hapus',[KelasController::class,'hapus'])->name('Kelas.hapus');
-    Route::get('Guru/{nama_guru}/hapus',[GuruController::class,'hapus'])->name('Guru.hapus');
+    Route::get('Guru/{id_guru}/hapus',[GuruController::class,'hapus'])->name('Guru.hapus');
     Route::get('jenispelaggaran/{jenisku_jenispelaggaran}/hapus',[JenispelanggaranController::class,'hapus'])->name('Jenis.hapus');
     Route::get('Gurubk/{nama_guru}/hapus',[GurubkController::class,'hapus'])->name('Gurubk.hapus');
     Route::get('Gurutatib/{nama_guru}/hapus',[GurutatibController::class,'hapus'])->name('Gurutatib.hapus');
