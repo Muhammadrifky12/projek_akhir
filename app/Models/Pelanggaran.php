@@ -15,6 +15,6 @@ class Pelanggaran extends Model
     ];
     protected $table = 'pelanggaran';
     public function pelanggaran(){
-        return $this->belongsTo('App\Models\jenispelanggaran','jenisku');
+        return $this->belongsTo('App\Models\jenispelanggaran','id_jenis');
     }
 }

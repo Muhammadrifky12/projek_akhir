@@ -73,7 +73,7 @@
                                                         <th scope="row">{{ ++$b }}</th>
                                                         <td>{{ $items->nisn }}</td>
                                                         <td>{{ $items->nama }}</td>
-                                                        <td>{{ $items->id_kelas }}</td>
+                                                        <td>{{ $items->kelas1->kelass }}</td>
                                                         <td>{{ $items->JK }}</td>
                                                         <td><a href="{{ route('viewsiswa.hapus', $items->nama) }}"
                                                                 class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
@@ -124,7 +124,7 @@
                                 <select name="id_kelas" id="id_kelas" class="form-control">
                                     <option value="">--Pilih--</option>
                                     @foreach ($kelas as $item)
-                                        <option value="{{ $item->kelass }}">{{ $item->kelass }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->kelass }}</option>
                                     @endforeach
                                 </select>
                             </div>

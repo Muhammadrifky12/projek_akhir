@@ -24,4 +24,10 @@ class guru extends Model
     public function gurutatib(){
         return $this->hasMany('App\Models\gurutatib','id');
     }
+    public function penanganan1(){
+        return $this->hasMany('App\Models\history','id');
+    }
+    public function bk(){
+        return $this->hasMany('App\Models\Kelas','id');
+    }
 }

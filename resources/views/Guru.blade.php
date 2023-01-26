@@ -104,7 +104,7 @@
                                 <th scope="row">{{ ++$i1 }}</th>
                                 <td>{{ $item2->gurubk->nama }}</td>
                                 <td>{{ $item2->deskripsi }}</td>
-                                <td><a href="{{ route('Gurubk.hapus', $item2->id) }}" class="btn-sm btn-circle"><i
+                                <td><a href="{{ route('Gurubk.hapus', $item2->nama) }}" class="btn-sm btn-circle"><i
                                             class="fas fa-trash"></i></a>
                                 </td>
                             </tr>

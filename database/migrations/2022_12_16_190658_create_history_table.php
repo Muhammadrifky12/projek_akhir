@@ -21,7 +21,7 @@ return new class extends Migration
             ->onUpdate('cascade');
             $table->date('tanggal');
             $table->unsignedBigInteger('bentukpelanggaran');
-            $table->string('penanganan');
+            $table->unsignedBigInteger('penanganan');
             $table->timestamps();
         });
     }

@@ -16,4 +16,7 @@ class gurutatib extends Model
     public function gurutatib(){
         return $this->belongsTo('App\Models\guru','nama');
     }
+    // public function penanganan1(){
+    //     return $this->hasMany('App\Models\history','id');
+    // }
 }

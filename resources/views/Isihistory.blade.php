@@ -28,7 +28,7 @@
                                     <th scope="row">{{ ++$b }}</th>
                                     <td>{{ $itemw->tanggal }}</td>
                                     <td>{{ $itemw->bentukpelanggaran }}</td>
-                                    <td>{{ $itemw->penanganan }}</td>
+                                    <td>{{ $itemw->penanganan1->nama }}</td>
                                     <td><a href="{{ route('History.edit', $itemw ->id) }}" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-edit"></i></a>
                                     </td>
                                 </tr>
