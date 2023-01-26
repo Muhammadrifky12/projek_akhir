@@ -39,9 +39,9 @@
                                 <tr>
                                     <th scope="row">{{ ++$b }}</th>
                                     <td>{{ $items->jenisku }}</td>
-                                    <td><a href="{{ route('Jenis.hapus', $items->jenisku) }}" class="btn-sm btn-circle"><i
+                                    <td><a href="{{ route('Jenis.hapus', $items->id) }}" class="btn-sm btn-circle"><i
                                                 class="fas fa-trash"></i></a>
-                                        <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                        <a href="{{route('Jenis.edit', $items->id)}}" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
                                         </a>
                                     </td>
                                 </tr>
@@ -91,12 +91,10 @@
                                     @foreach ($pelanggar as $b => $item)
                                         <tr>
                                             <th scope="row">{{ ++$b }}</th>
-                                            <td>{{ $item->id_jenis }}</td>
+                                            <td>{{ $item->Pelanggaran->jenisku }}</td>
                                             <td>{{ $item->Bentukpelanggaran }}</td>
                                             <td>{{ $item->skor }}</td>
-                                            <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
-                                                <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
-                                                </a>
+                                            <td><a href="{{route('Pelanggaran.hapus',$item->skor)}}" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -127,7 +125,7 @@
                             <select name="id_jenis" id="id_jenis" class="form-control">
                                 <option value="">--PILIH--</option>
                                 @foreach ($jenis as $item)
-                                    <option value="{{ $item->jenisku }}">{{ $item->jenisku }}</option>
+                                    <option value="{{ $item->id }}">{{ $item->jenisku }}</option>
                                 @endforeach
                             </select>
                         </div>

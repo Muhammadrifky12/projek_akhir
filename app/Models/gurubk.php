@@ -20,4 +20,7 @@ class gurubk extends Model
     public function kel(){
         return $this->hasMany('App\Models\kelas','id');
     }
+    // public function penanganan1(){
+    //     return $this->hasMany('App\Models\history','id');
+    // }
 }

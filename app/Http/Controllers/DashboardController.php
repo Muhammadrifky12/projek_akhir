@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\history;
 use App\Models\Siswa;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -66,7 +67,8 @@ class DashboardController extends Controller
      */
     public function edit($id)
     {
-        //
+        $dash = Siswa::find($id);
+        return view('Edit.Editpemangilan',compact('dash'));
     }
 
     /**
@@ -78,7 +80,18 @@ class DashboardController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $siswa = Siswa::find($id);
+        $siswa->nisn = $request->nisn;
+        $siswa->nama = $request->nama;
+        $siswa->id_kelas = $request->id_kelas;
+        $siswa->JK = $request->JK;
+        $siswa->skor = $request->skor;
+        $siswa->status= $request->status;
+        $siswa->save();
+        Session::flash('success', 'Data Berhasil Diinput');
+        return redirect('/dashboard');
+        // return $siswa;
     }
 
     /**

@@ -11,7 +11,7 @@
                     <div class="form-group">
                         <div class="form-group">
                             <label for="tanggal">Tanggal</label>
-                            <input type="hidden" name="id_siswa" id="id_siswa" value="{{$siswaa->id}}">
+                            <input type="hidden" name="id_siswa" id="id_siswa" value="{{$historykuh->id}}">
                             <input type="date" class="form-control" id="tanggal" name='tanggal' value="{{$historykuh->tanggal}}">
                         </div>
                         <div class="form-group">
@@ -21,12 +21,12 @@
                         <div class="form-group">
                             <label for="penanganan">Penanganan</label>
                             <select name="penanganan" id="penanganan" class="form-control">
-                                <option value="">{{$historykuh->penanganan}}</option>
+                                <option value="{{$historykuh->penanganan}}">{{$historykuh->penanganan1->nama}}</option>
                                 @foreach ($bkk as $items)
-                                    <option value="{{ $items->nama }}">{{ $items->nama }}</option>
+                                    <option value="{{ $items->nama }}">{{ $items->gurubk->nama }}</option>
                                 @endforeach
                                 @foreach ($tatibb as $items)
-                                    <option value="{{ $items->nama }}">{{ $items->nama }}</option>
+                                    <option value="{{ $items->nama }}">{{ $items->gurutatib->nama }}</option>
                                 @endforeach
                             </select>
                         </div>

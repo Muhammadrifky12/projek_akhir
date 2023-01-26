@@ -84,7 +84,7 @@
                                     <td>{{ $ortuu->id_kelas }}</td>
                                     <td>{{ $ortuu->skor }}</td>
                                     <td>{{ $ortuu->status}}</td>
-                                    <td><a href="" class="btn-sm btn-primary btn-circle"><i class="fas fa-edit"></i></a>
+                                    <td><a href="{{route('dashboard.edit',$ortuu->id)}}" class="btn-sm btn-primary btn-circle"><i class="fas fa-edit"></i></a>
                                         </a>
                                     </td>
                                 </tr>
@@ -156,11 +156,12 @@
                         </thead>
                         <tbody>
                             {{-- perulangan --}}
+                            {{-- @dd ($out) --}}
                             @foreach ($out as $b => $outt)
                                 <tr>
                                     <th scope="row">{{ ++$b }}</th>
                                     <td>{{ $outt->nama }}</td>
-                                    <td>{{ $outt->id_kelas }}</td>
+                                    <td>{{ $outt->kelas1->kelass }}</td>
                                     <td>{{ $outt->skor }}</td>
                                     <td>{{ $outt->status}}</td>
                                     <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>

@@ -8,9 +8,9 @@
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
                             <ul type="circle">
-                                @foreach ($errors->all() as $item)
+                                @foreach ($errors->all() as $error)
                                     <li>
-                                        {{ $item }}
+                                        {{ $error }}
                                     </li>
                                 @endforeach
                             </ul>
@@ -33,10 +33,10 @@
                                 <select name="penanganan" id="penanganan" class="form-control">
                                     <option value="">--Pilih--</option>
                                     @foreach ($bk as $items)
-                                        <option value="{{ $items->nama }}">{{ $items->nama }}</option>
+                                        <option value="{{ $items->nama }}">{{ $items->gurubk->nama }}</option>
                                     @endforeach
-                                    @foreach ($tatib as $items)
-                                        <option value="{{ $items->nama }}">{{ $items->nama }}</option>
+                                    @foreach ($tatib as $ite)
+                                        <option value="{{ $ite->nama }}">{{ $ite->gurutatib->nama }}</option>
                                     @endforeach
                                 </select>
                             </div>

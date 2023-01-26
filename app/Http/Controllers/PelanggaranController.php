@@ -81,7 +81,9 @@ class PelanggaranController extends Controller
      */
     public function edit($id)
     {
-        //
+        $jenis = jenispelanggaran::all();
+        $pel1 = Pelanggaran::find($id);
+        return view('Edit.Editpelanggaran',compact('jenis','pel1'));
     }
 
     /**
@@ -93,7 +95,24 @@ class PelanggaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $massage = [
+            'required' => ':attribute harus diisi Slurr ',
+            'min' => ':attribute minimal :min karakter ya Slurr',
+            'max' => ':attribute maksimal :max Karakter Slurrr'
+        ];
+        $this->validate($request, [
+            'id_jenis' => 'required',
+            'Bentukpelanggaran' => 'required|min:7|max:50',
+            'skor' => 'required',
+        ], $massage);
+        $pelaku = Pelanggaran::find($id);
+        $pelaku->id_jenis = $request->id_jenis;
+        $pelaku->Bentukpelanggaran = $request->Bentukpelanggaran;
+        $pelaku->skor = $request->skor;
+
+        $pelaku->save();
+        Session::flash('success', 'Data Berhasil Diinput');
+        return redirect('/Pelanggaran')->with('succes', 'Perubahan Tersimpan');
     }
 
     /**
@@ -105,5 +124,10 @@ class PelanggaranController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function hapus($skor){
+        Pelanggaran::where('skor',$skor)->delete();
+        return redirect('/Pelanggaran');
     }
 }

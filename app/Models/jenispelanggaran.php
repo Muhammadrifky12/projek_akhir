@@ -13,6 +13,6 @@ class jenispelanggaran extends Model
     ];
     protected $table = 'jenispelaggaran';
     public function kelas1(){
-        return $this->hasMany('App\Models\Pelanggaran','id_jenis');
+        return $this->hasMany('App\Models\Pelanggaran','id');
     }
 }

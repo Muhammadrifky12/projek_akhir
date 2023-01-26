@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('pelanggaran', function (Blueprint $table) {
             $table->string('skor');
-            $table->string('id_jenis');
-            $table->foreign('id_jenis')->references('jenisku')->on('jenispelaggaran')
+            $table->unsignedBigInteger('id_jenis');
+            $table->foreign('id_jenis')->references('id')->on('jenispelaggaran')
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->string('Bentukpelanggaran');

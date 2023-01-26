@@ -43,7 +43,7 @@
                                     <th scope="row">{{ ++$b }}</th>
                                     <td>{{ $items->nisn }}</td>
                                     <td>{{ $items->nama }}</td>
-                                    <td>{{ $items->id_kelas }}</td>
+                                    <td>{{ $items->kelas1->kelass }}</td>
                                     <td><a onclick="show({{ $items->id }})" class="btn-sm btn-info"><i
                                                 class="fas fa-folder-open"></i></a>
                                                 <a href="{{route('History.tambah', $items ->id)}}" class="btn-sm btn-success"><i class="fas fa-plus"></i></a>

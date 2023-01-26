@@ -97,9 +97,9 @@ class GurubkController extends Controller
     {
         //
     }
-    public function hapus($id)
+    public function hapus($nama)
     {
-        gurubk::where('id', $id)->delete();
+        gurubk::where('nama', $nama)->delete();
         return redirect('/Guru');
     }
 }

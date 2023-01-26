@@ -61,9 +61,9 @@
                                     @foreach ($kelas as $b => $items)
                                     <tr>
                                         <th scope="row">{{++$b}}</th>
-                                        <td>{{$items -> kelass }}</td>
+                                        <td>{{$items ->kelass }}</td>
                                         <td>{{$items->kelasss->nama }}</td>
-                                        <td>{{$items->gurubk->nama}}</td>
+                                        <td>{{$items->bk->nama}}</td>
                                         <td><a href="{{ route('Kelas.hapus', $items ->kelass) }}"
                                                 class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
                                             <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
@@ -126,8 +126,8 @@
                             <label for="BK">Guru BK</label>
                             <select name="gurubk" id="gurubk" class="form-control form-control-sm">
                                 <option value="">--PILIH--</option>
-                                @foreach ($bk as $items)
-                                <option value="{{$item->id}}">{{$item->kel}}</option>
+                                @foreach ($bk as $items1)
+                                <option value="{{$items1->nama}}">{{$items1->gurubk->nama}}</option>
                                 @endforeach
                             </select>
                         </div>

@@ -18,9 +18,12 @@ class Kelas extends Model
         return $this->hasMany('App\Models\Siswa','id');
     }
     public function kelasss(){
-        return $this->belongsTo('App\Models\guru','nama');
+        return $this->belongsTo('App\Models\guru','walas');
     }
     public function kel(){
-        return $this->belongsTo('App\Models\gurubk','nama');
+        return $this->belongsTo('App\Models\gurubk','gurubk');
+    }
+    public function bk(){
+        return $this->belongsTo('App\Models\guru','gurubk');
     }
 }

@@ -59,7 +59,7 @@
                                     <th scope="row">{{ ++$b }}</th>
                                     <td>{{ $items->nisn }}</td>
                                     <td>{{ $items->nama }}</td>
-                                    <td>{{ $items->id_kelas }}</td>
+                                    <td>{{ $items->kelas1->kelass }}</td>
                                     <td>{{ $items->JK }}</td>
                                     <td>{{ $items->skor }}</td>
                                     <td><a href="{{ route('Input10rpl1.edit', $items->id) }}" class="btn-sm btn-circle"><i
