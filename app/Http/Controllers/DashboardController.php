@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\history;
 use App\Models\Siswa;
+use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Http\Request;
 
@@ -103,5 +104,13 @@ class DashboardController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function export($id){
+        $data = Siswa::find($id);
+        view()->share('data',$data);
+        $pdf = PDF::loadview('pdf.surat');
+        // return $pdf->download('Surat Pemanggilan.pdf');
+        return $pdf->stream();
     }
 }

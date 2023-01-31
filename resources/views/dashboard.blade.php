@@ -83,8 +83,9 @@
                                     <td>{{ $ortuu->nama }}</td>
                                     <td>{{ $ortuu->id_kelas }}</td>
                                     <td>{{ $ortuu->skor }}</td>
-                                    <td>{{ $ortuu->status}}</td>
-                                    <td><a href="{{route('dashboard.edit',$ortuu->id)}}" class="btn-sm btn-primary btn-circle"><i class="fas fa-edit"></i></a>
+                                    <td>{{ $ortuu->status }}</td>
+                                    <td><a href="{{ route('dashboard.edit', $ortuu->id) }}"
+                                            class="btn-sm btn-primary btn-circle"><i class="fas fa-edit"></i></a>
                                         </a>
                                     </td>
                                 </tr>
@@ -93,7 +94,7 @@
                     </table>
                     <div class=" d-flex justify-content-end">
                         {{ $paginate->links() }}
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -122,8 +123,9 @@
                                     <td>{{ $skor->nama }}</td>
                                     <td>{{ $skor->id_kelas }}</td>
                                     <td>{{ $skor->skor }}</td>
-                                    <td>{{ $skor->status}}</td>
-                                    <td><a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                    <td>{{ $skor->status }}</td>
+                                    <td><a href="{{ route('dashboard.edit', $skor->id) }}" class="btn-sm btn-circle"><i
+                                                class="fas fa-edit"></i></a>
                                         </a>
                                     </td>
                                 </tr>
@@ -132,7 +134,7 @@
                     </table>
                     <div class=" d-flex justify-content-end">
                         {{ $paginate->links() }}
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -163,10 +165,11 @@
                                     <td>{{ $outt->nama }}</td>
                                     <td>{{ $outt->kelas1->kelass }}</td>
                                     <td>{{ $outt->skor }}</td>
-                                    <td>{{ $outt->status}}</td>
-                                    <td><a href="" class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
-                                        <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
-                                        </a>
+                                    <td>{{ $outt->status }}</td>
+                                    <td><a href="{{ route('dashboard.edit', $outt->id) }}" class="btn-sm btn-circle"><i
+                                                class="fas fa-edit"></i></a>
+                                        <a href="{{route('dashboard.export',$outt->id)}}" class="btn-sm btn-circle btn-danger" data-toggle="tooltip"
+                                            data-placement="top" title="Download pdf"><i class="fas fa-file-pdf"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -174,7 +177,7 @@
                     </table>
                     <div class=" d-flex justify-content-end">
                         {{ $paginate->links() }}
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>

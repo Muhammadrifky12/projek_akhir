@@ -1,6 +1,5 @@
 @extends('layout.admin')
 @section('title', 'Pelanggaran')
-@section('content-title', 'Macam-Macam Pelanggaran')
 @section('content')
     <style>
         #p {
@@ -9,14 +8,6 @@
     </style>
     <div class="row">
         <div class="col-lg-4">
-            <form action="" method="GET" class="form-inline">
-                <input type="search" name="search" class="form-control float-right" placeholder="Cari">
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-default bg-primary">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </form>
         </div>
         <div class="col-lg-2"></div>
         <div class="col-lg-6">
