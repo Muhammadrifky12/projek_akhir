@@ -4,29 +4,25 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="card shadow mb-4">
-                        <div class="card-header" id="p">
-                            <form action="" method="GET" class="form-inline">
-                                <input type="search" name="search" class="form-control float-right"
-                                    placeholder="Ketikkan Kelas">
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-default bg-primary">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                </div>
-                            </form>
+                <div class="col-lg-4">
+                    <form action="" method="GET" class="form-inline">
+                        <input type="search" name="search" class="form-control float-right" placeholder="Ketikkan Kelas">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default bg-primary">
+                                <i class="fas fa-search"></i>
+                            </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
+            <hr>
             <div class="card shadow">
                 <div class="card-header" id="p">
                     <div class="row">
                         <div class="col-lg-2">
-                            {{-- <a href="{{ URL::to('/employee/pdf') }}" class="btn-lg btn-circle btn-danger"
+                            <a href="" class="btn-lg btn-circle btn-danger"
                                 data-toggle="tooltip" data-placement="top" title="Download pdf"><i
-                                    class="fas fa-file-pdf"></i></a> --}}
+                                    class="fas fa-file-pdf"></i></a>
                         </div>
                         <div class="col-lg-2">
                         </div>

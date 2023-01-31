@@ -13,6 +13,8 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\PelanggaranController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\Input10rpl1Controller;
+use App\Http\Controllers\RegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,6 +39,7 @@ Route::middleware('guest')->group(function(){
     }); 
     Route::get('login', [LoginController::class,"index"])->name('login');
     Route::post('login', [LoginController::class,"authenticate"]);
+    Route::resource('Register',RegisterController::class);
 });
 
 Route::middleware('auth')->group(function(){
@@ -64,8 +67,7 @@ Route::middleware('auth')->group(function(){
 
     Route::get('/', [Input10rpl1Controller::class, 'showEmployees']);
     Route::get('History/create/{id_siswa}',[HistoryController::class,'tambah'])->name('History.tambah');
-    //Route get
-    Route::get('/Siswa', function () {
-        return view('Siswa');    
-    });
+    //Route pdf
+    Route::get('dashboard/{id_siswa}/export',[DashboardController::class,'export'])->name('dashboard.export');
+
 });
