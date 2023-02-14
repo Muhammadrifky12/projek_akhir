@@ -70,4 +70,5 @@ Route::middleware('auth')->group(function(){
     Route::get('/export',[Input10rpl1Controller::class,'export']);
     //route
     Route::get('/search',[Input10rpl1Controller::class,'search']);
+    Route::get('/searchsiswa',[SiswaController::class,'search']);
 });
