@@ -23,7 +23,7 @@ class HistoryController extends Controller
         $histor = Siswa::all();
         $history = history::all();
         $pelala = Pelanggaran::all();
-        $data = Siswa::paginate(10);
+        $data = Siswa::paginate(7);
         return view('History',compact('history','histor','pelala','data'));
     }
 

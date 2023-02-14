@@ -5,8 +5,8 @@
         <div class="col-lg-12">
             <div class="row">
                 <div class="col-lg-4">
-                    <form action="" method="GET" class="form-inline">
-                        <input type="search" name="search" class="form-control float-right" placeholder="Ketikkan Kelas">
+                    <form action="search" method="GET" class="form-inline">
+                        <input type="search" name="search" class="form-control float-right" placeholder="Search here...">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-default bg-primary">
                                 <i class="fas fa-search"></i>
@@ -20,7 +20,7 @@
                 <div class="card-header" id="p">
                     <div class="row">
                         <div class="col-lg-2">
-                            <a href="" class="btn-lg btn-circle btn-danger"
+                            <a href="/export" class="btn-lg btn-circle btn-danger"
                                 data-toggle="tooltip" data-placement="top" title="Download pdf"><i
                                     class="fas fa-file-pdf"></i></a>
                         </div>

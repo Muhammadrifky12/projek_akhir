@@ -58,7 +58,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-9">
             <div class="card shadow mb-4">
                 <div id="pp" class="card-header">
                     <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Sedang : Panggilan Orang Tua
@@ -87,6 +87,8 @@
                                     <td><a href="{{ route('dashboard.edit', $ortuu->id) }}"
                                             class="btn-sm btn-primary btn-circle"><i class="fas fa-edit"></i></a>
                                         </a>
+                                        <a href="{{route('dashboard.export',$ortuu->id)}}" class="btn-sm btn-circle btn-danger" data-toggle="tooltip"
+                                            data-placement="top" title="Download pdf"><i class="fas fa-file-pdf"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -98,7 +100,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-9">
             <div class="card shadow mb-4">
                 <div id="pp" class="card-header">
                     <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Berat : Skorsing dan Paggilan Orang Tua
@@ -127,6 +129,8 @@
                                     <td><a href="{{ route('dashboard.edit', $skor->id) }}" class="btn-sm btn-circle"><i
                                                 class="fas fa-edit"></i></a>
                                         </a>
+                                        <a href="{{route('dashboard.export',$skor->id)}}" class="btn-sm btn-circle btn-danger" data-toggle="tooltip"
+                                            data-placement="top" title="Download pdf"><i class="fas fa-file-pdf"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -138,7 +142,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-9">
             <div class="card shadow mb-4">
                 <div id="pp" class="card-header">
                     <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Berat : Paggilan Orang Tua dan Siswa Dikembalikan
