@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Siswa')
+@section('content-title','Master Siswa')
 @section('content')
     <style>
         #p {
@@ -15,23 +16,19 @@
         <div class=" col-lg-12">
             <div class="card-body p-0">
                 <div class="row">
-                    <div class="col-lg-3">
-                        <div class="card shadow mb-4">
-                            <div class="card-header" id="p">
-                                <form action="" method="GET" class="form-inline">
-                                    <input type="search" name="search" class="form-control float-right"
-                                        placeholder="Cari">
-                                    <div class="input-group-append">
-                                        <button type="submit" class="btn btn-default bg-primary">
-                                            <i class="fas fa-search"></i>
-                                        </button>
-                                    </div>
-                                </form>
+                    <div class="col-lg-4">
+                        <form action="searchsiswa" method="GET" class="form-inline">
+                            <input type="search" name="search" class="form-control float-right" placeholder="Cari">
+                            <div class="input-group-append">
+                                <button type="submit" class="btn btn-default bg-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
                             </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
             </div>
+            <hr>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card shadow mb-4">
@@ -53,8 +50,8 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="card shadow mb-4">
-                                    <div class="card-body ">
+                                <div class="card shadow">
+                                    <div class="card-body">
                                         <table class="table">
                                             <thead>
                                                 <tr>
@@ -137,10 +134,12 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <input type="hidden" class="form-control" id="status" name='status' value="Belum Dilakukan Pemanggilan">
+                                <input type="hidden" class="form-control" id="status" name='status'
+                                    value="Belum Dilakukan Pemanggilan">
                             </div>
                             <div class="form-group">
-                                <input type="hidden" class="form-control" id="skor" name='skor' value="0">
+                                <input type="hidden" class="form-control" id="skor" name='skor'
+                                    value="0">
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -152,4 +151,4 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection

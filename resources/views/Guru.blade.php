@@ -1,15 +1,12 @@
 @extends('layout.admin')
 @section('title', 'Guru')
+@section('content-title','Master Guru')
 @section('content')
     <style>
         #p {
             background: linear-gradient(to right, #33ccff 0%, #ff99cc 100%)
         }
     </style>
-    <div class="row">
-        <div class="col-lg-4">
-        </div>
-    </div>
     @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block">
             <button type="button" class="close" data-dismiss="alert">x</button>

@@ -119,4 +119,11 @@ class SiswaController extends Controller
         Siswa::where('nama',$nama)->delete();
         return redirect('/viewsiswa');
     }
+    public function search(Request $request){
+        $get = $request->search;
+        $data6 = Siswa::where('nama','LIKE','%'.$get.'%')->get();
+        $dataa = Siswa::paginate(7);
+        $kelas = Kelas::all();
+        return view('viewsiswa',compact('kelas', 'data6', 'dataa'));
+    }
 }
