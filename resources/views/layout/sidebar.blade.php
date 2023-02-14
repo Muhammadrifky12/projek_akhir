@@ -31,11 +31,11 @@
             </a>
             <div id="collapseUtilities" class="collapse">
                 <div class="nav-linkav py-2 collapse-inner rounded">
-                    <a class="collapse-item text-white" data-text="Siswa" href="/viewsiswa">
+                    <a class="collapse-item text-black" data-text="Siswa" href="/viewsiswa">
                         Siswa</a>
-                    <a class="collapse-item text-white" data-text="Kelas" href="/Kelas">
+                    <a class="collapse-item text-black" data-text="Kelas" href="/Kelas">
                         Kelas</a>
-                    <a class="collapse-item text-white" data-text="Guru" href="/Guru">Guru</a>
+                    <a class="collapse-item text-black" data-text="Guru" href="/Guru">Guru</a>
                 </div>
             </div>
         </li>
