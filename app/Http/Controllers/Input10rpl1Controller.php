@@ -20,7 +20,7 @@ class Input10rpl1Controller extends Controller
     {
         $pela = Pelanggaran::all();
         $siswa = Siswa::all();
-        $dataa = Siswa::paginate(15);
+        $dataa = Siswa::paginate(7);
         return view('Input.Input10rpl1', compact('pela', 'siswa', 'dataa'));
     }
 
@@ -125,4 +125,19 @@ class Input10rpl1Controller extends Controller
     {
         //
     }
+    public function export(){
+        $data = Siswa::all();
+        view()->share('data',$data);
+        $pdf = PDF::loadview('pdf.skor');
+        // return $pdf->download('Surat Pemanggilan.pdf');
+        return $pdf->stream();
+    }
+    public function search(Request $request){
+        $get = $request->search;
+        $siswa = Siswa::where('nama','LIKE','%'.$get.'%')->get();
+        $dataa = Siswa::paginate(7);
+        $pela = Pelanggaran::all();
+        return view('Input.Input10rpl1',compact('pela', 'siswa', 'dataa'));
+    }
+    
 }

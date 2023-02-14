@@ -1,27 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style>
 </head>
 <body>
-
-<h2>HTML Table</h2>
+<h2>Hallo</h2>
+{{-- <h2>HTML Table</h2>
 
 <table class="table">
     <thead>
@@ -35,17 +18,17 @@ tr:nth-child(even) {
     </thead>
     <tbody>
         {{-- perulangan --}}
-        @foreach ($dataa as $b => $items)
+        {{-- @foreach ($skorku as $b => $items)
             <tr>
                 <th scope="row">{{ ++$b }}</th>
-                <td>12 RPL 2</td>
+                <td>{{ $items->kelas1->kelass}}</td>
                 <td>{{ $items->nama }}</td>
                 <td>{{ $items->skor }}</td>
                 
             </tr>
-        @endforeach
-    </tbody>
-</table>
+        @endforeach --}}
+    {{-- </tbody>
+</table> --}}
 
 </body>
 </html>
