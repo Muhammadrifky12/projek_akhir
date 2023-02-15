@@ -30,7 +30,7 @@
                                 <option value="">--Pilih--</option>
                                 <option value="Sedang Di Skorsing">Sedang Di Skorsing</option>
                                 @endif
-                                @if ($dash->skor = 250)
+                                @if ($dash->skor >=250)
                                 <option value="">--Pilih--</option>
                                 <option value="Siswa Telah Dikeluarkan">Siswa Telah Dikeluarkan</option>
                                 @endif

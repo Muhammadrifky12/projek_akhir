@@ -1,6 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Kelas')
-@section('content-title','Master Kelas')
+@section('content-title', 'Master Kelas')
 @section('content')
     <style>
         #p {
@@ -18,49 +18,48 @@
             <div class="card shadow mb-4">
                 <div class="card-header" id="p">
                     <div class="row">
-                        <div class="col-lg-10"></div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-11">
+                            <h4 class="m-0 font-weight-bold text-dark"><i class="fas fa-yin-yang"></i> Table class</h4>
+                        </div>
+                        <div class="col-lg-1">
                             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tambah">
-                                Tambah Kelas
+                                Add Class
                             </button>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="card shadow mb-4">
-                            <div class="card-body ">
-                                <table class="table">
-                                    <thead>
+                        <div class="card-body ">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">Kelas</th>
+                                        <th scope="col">Walas</th>
+                                        <th scope="col">Guru BK</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{-- perulangan --}}
+                                    @foreach ($kelas as $b => $items)
                                         <tr>
-                                            <th scope="col">No</th>
-                                            <th scope="col">Kelas</th>
-                                            <th scope="col">Walas</th>
-                                            <th scope="col">Guru BK</th>
-                                            <th scope="col">Action</th>
+                                            <th scope="row">{{ ++$b }}</th>
+                                            <td>{{ $items->kelass }}</td>
+                                            <td>{{ $items->kelasss->nama }}</td>
+                                            <td>{{ $items->bk->nama }}</td>
+                                            <td><a href="{{ route('Kelas.hapus', $items->kelass) }}"
+                                                    class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
+                                                <a href="" class="btn-sm btn-circle"><i class="fas fa-edit"></i></a>
+                                                </a>
+                                            </td>
                                         </tr>
-                                    </thead>
-                                    <tbody>
-                                        {{-- perulangan --}}
-                                        @foreach ($kelas as $b => $items)
-                                            <tr>
-                                                <th scope="row">{{ ++$b }}</th>
-                                                <td>{{ $items->kelass }}</td>
-                                                <td>{{ $items->kelasss->nama }}</td>
-                                                <td>{{ $items->bk->nama }}</td>
-                                                <td><a href="{{ route('Kelas.hapus', $items->kelass) }}"
-                                                        class="btn-sm btn-circle"><i class="fas fa-trash"></i></a>
-                                                    <a href="" class="btn-sm btn-circle"><i
-                                                            class="fas fa-edit"></i></a>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
-                                </table>
-                                <div class="card-footer d-flex justify-content-end">
-                                    {{ $kelas->links() }}
-                                </div>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <div class="card-footer d-flex justify-content-end">
+                                {{ $kelas->links() }}
                             </div>
                         </div>
                     </div>
