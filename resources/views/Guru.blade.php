@@ -19,9 +19,9 @@
                 <div class="card-header" id="p">
                     <div class="row">
                         <div class="col-lg-10">
-                            <h5 class="m-0 font-weight-bold text-primary"><i class="fas fa-campground"></i> Tabel Guru</h5>
+                            <h4 class="m-0 font-weight-bold text-dark"><i class="fas fa-campground"></i> Tabel Guru</h4>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-2" style="text-align: right">
                             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#Guru">
                                 Tambah Guru
                             </button>
@@ -71,7 +71,7 @@
         <div class="col-lg-6">
             <div class="card shadow">
                 <div class="card-header" id="p">
-                    <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-vector-square"></i> Guru BK</h6>
+                    <h4 class="m-0 font-weight-bold text-dark"><i class="fas fa-vector-square"></i> Guru BK</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -107,7 +107,7 @@
         <div class="col-lg-6">
             <div class="card shadow mb-4">
                 <div class="card-header" id="p">
-                    <h6 class="m-0 font-weight-bold text-primary"><i class="fas fa-igloo"></i> Guru Tatip</h6>
+                    <h4 class="m-0 font-weight-bold text-dark"><i class="fas fa-igloo"></i> Guru Tatip</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">

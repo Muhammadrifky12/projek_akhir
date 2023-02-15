@@ -81,7 +81,7 @@
                                 <tr>
                                     <th scope="row">{{ ++$b }}</th>
                                     <td>{{ $ortuu->nama }}</td>
-                                    <td>{{ $ortuu->id_kelas }}</td>
+                                    <td>{{ $ortuu->kelas1->kelass }}</td>
                                     <td>{{ $ortuu->skor }}</td>
                                     <td>{{ $ortuu->status }}</td>
                                     <td><a href="{{ route('dashboard.edit', $ortuu->id) }}"
@@ -123,10 +123,10 @@
                                 <tr>
                                     <th scope="row">{{ ++$b }}</th>
                                     <td>{{ $skor->nama }}</td>
-                                    <td>{{ $skor->id_kelas }}</td>
+                                    <td>{{ $skor->kelas1->kelass }}</td>
                                     <td>{{ $skor->skor }}</td>
                                     <td>{{ $skor->status }}</td>
-                                    <td><a href="{{ route('dashboard.edit', $skor->id) }}" class="btn-sm btn-circle"><i
+                                    <td><a href="{{ route('dashboard.edit', $skor->id) }}" class="btn-sm btn-primary btn-circle"><i
                                                 class="fas fa-edit"></i></a>
                                         </a>
                                         <a href="{{route('dashboard.export',$skor->id)}}" class="btn-sm btn-circle btn-danger" data-toggle="tooltip"
@@ -170,7 +170,7 @@
                                     <td>{{ $outt->kelas1->kelass }}</td>
                                     <td>{{ $outt->skor }}</td>
                                     <td>{{ $outt->status }}</td>
-                                    <td><a href="{{ route('dashboard.edit', $outt->id) }}" class="btn-sm btn-circle"><i
+                                    <td><a href="{{ route('dashboard.edit', $outt->id) }}" class="btn-sm btn-primary btn-circle"><i
                                                 class="fas fa-edit"></i></a>
                                         <a href="{{route('dashboard.export',$outt->id)}}" class="btn-sm btn-circle btn-danger" data-toggle="tooltip"
                                             data-placement="top" title="Download pdf"><i class="fas fa-file-pdf"></i></a>

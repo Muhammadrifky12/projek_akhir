@@ -1,5 +1,6 @@
 @extends('layout.admin')
 @section('title', 'Input Pelanggaran')
+@section('content-title','Input point Siswa')
 @section('content')
     <div class="row">
         <div class="col-lg-12">
@@ -20,7 +21,7 @@
                 <div class="card-header" id="p">
                     <div class="row">
                         <div class="col-lg-2">
-                            <a href="/export" class="btn-lg btn-circle btn-danger"
+                            <a href="/export" class="btn btn-circle btn-danger"
                                 data-toggle="tooltip" data-placement="top" title="Download pdf"><i
                                     class="fas fa-file-pdf"></i></a>
                         </div>

@@ -52,4 +52,12 @@ class KelasController extends Controller
         Kelas::where('kelass', $kelass)->delete();
         return redirect('/Kelas');
     }
+    public function edit($id)
+    {
+        
+    }
+    public function update(Request $request, $id)
+    {
+        //
+    }
 }

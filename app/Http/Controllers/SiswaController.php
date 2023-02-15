@@ -41,20 +41,20 @@ class SiswaController extends Controller
      */
     public function store(Request $request)
     {
-         // $massage=[
-        //     'required' => ':attribute harus diisi Slurr ',
-        //     'numeric' =>':attribute kudu diisi angka Slur!!!',
-        //     'min' => ':attribute minimal :min karakter ya Slurr',
-        //     'mimes' =>':attribute harus bertipe jpg,jpeg,png',
-        //     'max' => ':attribute maksimal :max Karakter Slurrr'
-        // ];
+         $massage=[
+            'required' => ':attribute harus diisi Slurr ',
+            'numeric' =>':attribute kudu diisi angka Slur!!!',
+            'min' => ':attribute minimal :min karakter ya Slurr',
+            'mimes' =>':attribute harus bertipe jpg,jpeg,png',
+            'max' => ':attribute maksimal :max Karakter Slurrr'
+        ];
         // validasi form
         $this->validate($request,[
             'nisn'=>'required|numeric',
             'nama'=>'required|min:7|max:50',
             'id_kelas'=>'required',
             'JK'=>'required',
-        ]);
+        ],$massage);
         //insert data
         $siswa12 = new Siswa;
         $siswa12->nisn = $request->input('nisn'); 
@@ -65,7 +65,7 @@ class SiswaController extends Controller
         $siswa12->status = $request->input('status');
 
         $siswa12->save();
-        // Session::flash('success','Data Berhasil Diinput');
+        Session::flash('success','Siswa Berhasil Diinput');
         return redirect('/viewsiswa')->with('succes','Data Saved');
     }
 
@@ -88,7 +88,9 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $is = Siswa::find($id);
+        $kelas = Kelas::all();
+        return view('Edit.Editsiswa',compact('is','kelas'));
     }
 
     /**
@@ -100,7 +102,24 @@ class SiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request,[
+            'nisn'=>'required|numeric',
+            'nama'=>'required|min:7|max:50',
+            'id_kelas'=>'required',
+            'JK'=>'required',
+        ]);
+        //insert data
+        $siswa12 = Siswa::find($id);
+        $siswa12->nisn = $request->nisn; 
+        $siswa12->nama = $request->nama; 
+        $siswa12->id_kelas = $request->id_kelas; 
+        $siswa12->JK = $request->JK;
+        $siswa12->skor = $request->skor;
+        $siswa12->status = $request->status;
+
+        $siswa12->save();
+        // Session::flash('success','Data Berhasil Diinput');
+        return redirect('/viewsiswa')->with('succes','Data Saved');
     }
 
     /**
