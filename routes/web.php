@@ -67,8 +67,10 @@ Route::middleware('auth')->group(function(){
     Route::get('History/create/{id_siswa}',[HistoryController::class,'tambah'])->name('History.tambah');
     //Route pdf
     Route::get('dashboard/{id_siswa}/export',[DashboardController::class,'export'])->name('dashboard.export');
-    Route::get('/export',[Input10rpl1Controller::class,'export']);
+    //Filter Route
+    Route::get('/export/{id_kelas_siswa}',[Input10rpl1Controller::class,'export']);
     //route
     Route::get('/search',[Input10rpl1Controller::class,'search']);
     Route::get('/searchsiswa',[SiswaController::class,'search']);
+    Route::get('/searchklas',[Input10rpl1Controller::class,'searchklas']);
 });

@@ -34,16 +34,15 @@
 <body>
     <div class="container">
         <div class="row">
-            <P><H2 style="text-align: center">LAPORAN POINT PELANGGARAN SISWA</H2>
-            <br><span style="text-align: left">Kelas : 11 RPL 1</span></P>
+            <P><H2 style="text-align: center">LAPORAN POINT PELANGGARAN SISWA</H2></P>
             <hr>
             <table class="table" id="customers">
                 <thead>
                     <tr>
                         <th scope="col">No</th>
                         <th scope="col">Nisn</th>
-                        <th scope="col">Kelas</th>
                         <th scope="col">Nama Siswa</th>
+                        <th scope="col">Kelas</th>
                         <th scope="col">Skor</th>
                     </tr>
                 </thead>

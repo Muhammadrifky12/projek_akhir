@@ -87,9 +87,17 @@
                 <span style="display: inline-block; margin-left: 59px;"></span>
                 :............ <br>
                 Waktu <span style="display: inline-block; margin-left: 102px;"></span>
-                :............ <br>
+                : 10.00 WIB  <br>
                 Tempat <span style="display: inline-block; margin-left: 96px;"></span>
-                :............ <br>
+                : @if ($data->skor <= 149 && $data-> skor >=55)
+                Ketertippan
+                @endif
+                @if ($data->skor <= 249 && $data-> skor >=150)
+                Bimbingan Konseling
+                @endif
+                @if ($data->skor >=250)
+                Bimbingan Konseling
+                @endif<br>
                 Bertemu dengan <span style="display: inline-block; margin-left: 40px"></span>
                 :............ <br>
                 Keperluan <span style="display: inline-block; margin-left: 79px;"></span>
