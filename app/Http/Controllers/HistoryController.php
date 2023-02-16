@@ -24,7 +24,7 @@ class HistoryController extends Controller
         $history = history::all();
         $pelala = Pelanggaran::all();
         $data = Siswa::paginate(7);
-        return view('History',compact('history','histor','pelala','data'));
+        return view('History', compact('history', 'histor', 'pelala', 'data'));
     }
 
     /**
@@ -34,15 +34,15 @@ class HistoryController extends Controller
      */
     public function create()
     {
-        
     }
 
-    public function tambah($id){
-        $siswa=Siswa::find($id);
+    public function tambah($id)
+    {
+        $siswa = Siswa::find($id);
         $bk = gurubk::all();
         $tatib = gurutatib::all();
-        
-        return view('historytambah',compact('siswa','bk','tatib'));
+
+        return view('historytambah', compact('siswa', 'bk', 'tatib'));
     }
 
     /**
@@ -53,16 +53,16 @@ class HistoryController extends Controller
      */
     public function store(Request $request)
     {
-         //insert data
-         $history = new history;
-         $history->id_siswa = $request->input('id_siswa'); 
-         $history->tanggal = $request->input('tanggal'); 
-         $history->bentukpelanggaran = $request->input('bentukpelanggaran'); 
-         $history->penanganan = $request->input('penanganan');
- 
-         $history->save();
-         // Session::flash('success','Data Berhasil Diinput');
-         return redirect('/History')->with('succes','Data Saved');
+        //insert data
+        $history = new history;
+        $history->id_siswa = $request->input('id_siswa');
+        $history->tanggal = $request->input('tanggal');
+        $history->bentukpelanggaran = $request->input('bentukpelanggaran');
+        $history->penanganan = $request->input('penanganan');
+
+        $history->save();
+        // Session::flash('success','Data Berhasil Diinput');
+        return redirect('/History')->with('succes', 'Data Saved');
     }
 
     /**
@@ -75,7 +75,7 @@ class HistoryController extends Controller
     {
         $historyyku = Siswa::find($id)->history()->get();
         $dataku = history::paginate(5);
-        return view('Isihistory',compact('historyyku','dataku'));
+        return view('Isihistory', compact('historyyku', 'dataku'));
     }
 
     /**
@@ -86,11 +86,11 @@ class HistoryController extends Controller
      */
     public function edit($id)
     {
-        $historykuh=history::find($id);
-        $siswaa=Siswa::find($id);
+        $historykuh = history::find($id);
+        $siswaa = Siswa::find($id);
         $bkk = gurubk::all();
         $tatibb = gurutatib::all();
-        return view('Edit.Edithistory',compact('siswaa','historykuh','bkk','tatibb'));
+        return view('Edit.Edithistory', compact('siswaa', 'historykuh', 'bkk', 'tatibb'));
     }
 
     /**

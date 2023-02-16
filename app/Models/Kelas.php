@@ -14,16 +14,20 @@ class Kelas extends Model
         'gurubk',
     ];
     protected $table = 'kelas';
-    public function kelas1(){
-        return $this->hasMany('App\Models\Siswa','id');
+    public function kelas1()
+    {
+        return $this->hasMany('App\Models\Siswa', 'id');
     }
-    public function kelasss(){
-        return $this->belongsTo('App\Models\guru','walas');
+    public function kelasss()
+    {
+        return $this->belongsTo('App\Models\guru', 'walas');
     }
-    public function kel(){
-        return $this->belongsTo('App\Models\gurubk','gurubk');
+    public function kel()
+    {
+        return $this->belongsTo('App\Models\gurubk', 'gurubk');
     }
-    public function bk(){
-        return $this->belongsTo('App\Models\guru','gurubk');
+    public function bk()
+    {
+        return $this->belongsTo('App\Models\guru', 'gurubk');
     }
 }

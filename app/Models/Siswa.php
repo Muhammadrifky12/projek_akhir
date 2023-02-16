@@ -16,10 +16,12 @@ class Siswa extends Model
         'skor',
     ];
     protected $table = 'siswa';
-    public function kelas1(){
-        return $this->belongsTo('App\Models\Kelas','id_kelas');
+    public function kelas1()
+    {
+        return $this->belongsTo('App\Models\Kelas', 'id_kelas');
     }
-    public function history(){
-        return $this->hasMany('App\Models\history','id_siswa');
+    public function history()
+    {
+        return $this->hasMany('App\Models\history', 'id_siswa');
     }
 }

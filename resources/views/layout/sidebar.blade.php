@@ -11,7 +11,7 @@
         <!-- Nav Item - Dashboard -->
         <li class="nav-item" style="--clr: #00ffff;">
             <a class="nav-link" data-text="Dashboard" href="/dashboard">
-               Dashboard <i class="fas fa-tachometer-alt"></i></a>
+                Dashboard <i class="fas fa-tachometer-alt"></i></a>
         </li>
 
         <!-- Divider -->
@@ -230,5 +230,4 @@
             transform: translateX(-50px);
         }
     }
-
 </style>

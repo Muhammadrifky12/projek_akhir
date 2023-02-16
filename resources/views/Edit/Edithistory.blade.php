@@ -12,31 +12,33 @@
                         <div class="form-group">
                             <label for="tanggal">Tanggal</label>
                             <input type="hidden" name="id_siswa" id="id_siswa" value="{{$historykuh->id}}">
-                            <input type="date" class="form-control" id="tanggal" name='tanggal' value="{{$historykuh->tanggal}}">
+                            <input type="date" class="form-control" id="tanggal" name='tanggal'
+                                value="{{$historykuh->tanggal}}">
                         </div>
                         <div class="form-group">
                             <label for="bentukpelanggaran">Berapa Pelanggaran</label>
-                            <input type="number" class="form-control" id="bentukpelanggaran" name='bentukpelanggaran' value="{{$historykuh->bentukpelanggaran}}">
+                            <input type="number" class="form-control" id="bentukpelanggaran" name='bentukpelanggaran'
+                                value="{{$historykuh->bentukpelanggaran}}">
                         </div>
                         <div class="form-group">
                             <label for="penanganan">Penanganan</label>
                             <select name="penanganan" id="penanganan" class="form-control">
                                 <option value="{{$historykuh->penanganan}}">{{$historykuh->penanganan1->nama}}</option>
                                 @foreach ($bkk as $items)
-                                    <option value="{{ $items->nama }}">{{ $items->gurubk->nama }}</option>
+                                <option value="{{ $items->nama }}">{{ $items->gurubk->nama }}</option>
                                 @endforeach
                                 @foreach ($tatibb as $items)
-                                    <option value="{{ $items->nama }}">{{ $items->gurutatib->nama }}</option>
+                                <option value="{{ $items->nama }}">{{ $items->gurutatib->nama }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input type="submit"  class="btn btn-success" value="OKE">
+                        <input type="submit" class="btn btn-success" value="OKE">
                         <a href="{{ route('History.index') }}" class="btn btn-danger">Batal</a>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-@endsection
+    @endsection
