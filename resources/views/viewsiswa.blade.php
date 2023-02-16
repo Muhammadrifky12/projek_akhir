@@ -16,11 +16,26 @@
     <div class=" col-lg-12">
         <div class="card-body p-0">
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-3">
                     <form action="searchsiswa" method="GET" class="form-inline">
-                        <input type="search" name="search" class="form-control float-right" placeholder="Cari">
+                        <input type="search" name="search" class="form-control float-right" placeholder="Cari Nama">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-default bg-primary">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4 form-inline" style="text-align: left">
+                    <form action="/searchklasku" method="GET" class="form-inline">
+                        <select class="form-control" name="search">
+                            <option value="">-- Cari Kelas --</option>
+                            @foreach ($kelas as $item)
+                            <option value="{{ $item->id }}">{{ $item->kelass }}</option>
+                            @endforeach
+                        </select>
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-default bg-primary" id="searchklas">
                                 <i class="fas fa-search"></i>
                             </button>
                         </div>
