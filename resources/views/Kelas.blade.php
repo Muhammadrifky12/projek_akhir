@@ -18,10 +18,10 @@
             <div class="card shadow mb-4">
                 <div class="card-header" id="p">
                     <div class="row">
-                        <div class="col-lg-11">
+                        <div class="col-lg-10">
                             <h4 class="m-0 font-weight-bold text-dark"><i class="fas fa-yin-yang"></i> Table class</h4>
                         </div>
-                        <div class="col-lg-1">
+                        <div class="col-lg-2" style="text-align: right">
                             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tambah">
                                 Add Class
                             </button>

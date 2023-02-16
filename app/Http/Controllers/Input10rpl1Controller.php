@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\input10rpl1;
+use App\Models\Kelas;
 use App\Models\Pelanggaran;
 use App\Models\Siswa;
 use Barryvdh\DomPDF\Facade\Pdf;
@@ -21,7 +22,8 @@ class Input10rpl1Controller extends Controller
         $pela = Pelanggaran::all();
         $siswa = Siswa::all();
         $dataa = Siswa::paginate(7);
-        return view('Input.Input10rpl1', compact('pela', 'siswa', 'dataa'));
+        $kelas = Kelas::all();
+        return view('Input.Input10rpl1', compact('pela', 'siswa', 'dataa', 'kelas'));
     }
 
     /**
@@ -125,8 +127,8 @@ class Input10rpl1Controller extends Controller
     {
         //
     }
-    public function export(){
-        $data = Siswa::all();
+    public function export($id){
+        $data = Siswa::where('id_kelas',$id)->get();
         view()->share('data',$data);
         $pdf = PDF::loadview('pdf.skor');
         // return $pdf->download('Surat Pemanggilan.pdf');
@@ -137,7 +139,16 @@ class Input10rpl1Controller extends Controller
         $siswa = Siswa::where('nama','LIKE','%'.$get.'%')->get();
         $dataa = Siswa::paginate(7);
         $pela = Pelanggaran::all();
-        return view('Input.Input10rpl1',compact('pela', 'siswa', 'dataa'));
+        $kelas = Kelas::all();
+        return view('Input.Input10rpl1',compact('pela', 'siswa', 'dataa', 'kelas'));
+    }
+    public function searchklas(Request $request){
+        $get = $request->search;
+        $siswa = Siswa::where('id_kelas','LIKE','%'.$get.'%')->get();
+        $dataa = Siswa::paginate(7);
+        $pela = Pelanggaran::all();
+        $kelas = Kelas::all();
+        return view('Input.Input10rpl1',compact('pela', 'siswa', 'dataa', 'kelas'));
     }
     
 }
