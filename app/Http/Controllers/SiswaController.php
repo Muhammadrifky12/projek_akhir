@@ -22,6 +22,13 @@ class SiswaController extends Controller
         $kelas = Kelas::all();
         return view('viewsiswa',compact('data6','dataa','kelas'));
     }
+    public function searchklasku(Request $request){
+        $get = $request->search;
+        $data6 = Siswa::where('id_kelas','LIKE','%'.$get.'%')->get();
+        $dataa = Siswa::paginate(10);
+        $kelas = Kelas::all();
+        return view('viewsiswa',compact('data6', 'dataa', 'kelas'));
+    }
 
     /**
      * Show the form for creating a new resource.
