@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class PelanggaranController extends Controller
 {
-       /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
@@ -20,7 +20,7 @@ class PelanggaranController extends Controller
         $pela = Pelanggaran::paginate(5);
         $jenis = jenispelanggaran::all();
         $jenis = jenispelanggaran::paginate(3);
-        return view('Pelanggaran',compact('pelanggar','pela','jenis'));
+        return view('Pelanggaran', compact('pelanggar', 'pela', 'jenis'));
     }
 
     /**
@@ -30,7 +30,6 @@ class PelanggaranController extends Controller
      */
     public function create()
     {
-        
     }
 
     /**
@@ -83,7 +82,7 @@ class PelanggaranController extends Controller
     {
         $jenis = jenispelanggaran::all();
         $pel1 = Pelanggaran::find($id);
-        return view('Edit.Editpelanggaran',compact('jenis','pel1'));
+        return view('Edit.Editpelanggaran', compact('jenis', 'pel1'));
     }
 
     /**
@@ -126,8 +125,9 @@ class PelanggaranController extends Controller
         //
     }
 
-    public function hapus($skor){
-        Pelanggaran::where('skor',$skor)->delete();
+    public function hapus($skor)
+    {
+        Pelanggaran::where('skor', $skor)->delete();
         return redirect('/Pelanggaran');
     }
 }

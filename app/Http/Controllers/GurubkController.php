@@ -35,12 +35,12 @@ class GurubkController extends Controller
      */
     public function store(Request $request)
     {
-        $massage=[
+        $massage = [
             'required' => ':attribute harus diisi Slurr ',
         ];
-        $this->validate($request,[
-            'nama'=>'required',
-            'deskripsi'=>'required',
+        $this->validate($request, [
+            'nama' => 'required',
+            'deskripsi' => 'required',
         ], $massage);
         //insert data
         $bkk = new gurubk;
@@ -49,8 +49,6 @@ class GurubkController extends Controller
 
         $bkk->save();
         return redirect('/Guru');
-
-        
     }
 
     /**

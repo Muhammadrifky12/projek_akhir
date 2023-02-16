@@ -14,16 +14,19 @@ class history extends Model
         'Bentuk_pelanggaran',
         'skor',
         'penanganan',
-        
+
     ];
     protected $table = 'history';
-    public function history(){
-        return $this->belongsTo('App\Models\Siswa','id');
+    public function history()
+    {
+        return $this->belongsTo('App\Models\Siswa', 'id');
     }
-    public function penanganan1(){
-        return $this->belongsTo('App\Models\guru','penanganan');
+    public function penanganan1()
+    {
+        return $this->belongsTo('App\Models\guru', 'penanganan');
     }
-    public function pena(){
-        return $this->belongsTo('App\Models\guru','penanganan');
+    public function pena()
+    {
+        return $this->belongsTo('App\Models\guru', 'penanganan');
     }
 }

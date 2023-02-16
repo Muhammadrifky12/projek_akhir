@@ -127,28 +127,30 @@ class Input10rpl1Controller extends Controller
     {
         //
     }
-    public function export($id){
-        $data = Siswa::where('id_kelas',$id)->get();
-        view()->share('data',$data);
+    public function export($id)
+    {
+        $data = Siswa::where('id_kelas', $id)->get();
+        view()->share('data', $data);
         $pdf = PDF::loadview('pdf.skor');
         // return $pdf->download('Surat Pemanggilan.pdf');
         return $pdf->stream();
     }
-    public function search(Request $request){
+    public function search(Request $request)
+    {
         $get = $request->search;
-        $siswa = Siswa::where('nama','LIKE','%'.$get.'%')->get();
+        $siswa = Siswa::where('nama', 'LIKE', '%' . $get . '%')->get();
         $dataa = Siswa::paginate(7);
         $pela = Pelanggaran::all();
         $kelas = Kelas::all();
-        return view('Input.Input10rpl1',compact('pela', 'siswa', 'dataa', 'kelas'));
+        return view('Input.Input10rpl1', compact('pela', 'siswa', 'dataa', 'kelas'));
     }
-    public function searchklas(Request $request){
+    public function searchklas(Request $request)
+    {
         $get = $request->search;
-        $siswa = Siswa::where('id_kelas','LIKE','%'.$get.'%')->get();
+        $siswa = Siswa::where('id_kelas', 'LIKE', '%' . $get . '%')->get();
         $dataa = Siswa::paginate(7);
         $pela = Pelanggaran::all();
         $kelas = Kelas::all();
-        return view('Input.Input10rpl1',compact('pela', 'siswa', 'dataa', 'kelas'));
+        return view('Input.Input10rpl1', compact('pela', 'siswa', 'dataa', 'kelas'));
     }
-    
 }

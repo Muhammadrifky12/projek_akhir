@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Login - @yield('title')</title>
     @include('login.head')
 </head>
 <style>
-    body{
+    body {
         background-image: url('https://wallpaperaccess.com/full/558715.jpg');
         background-attachment: fixed;
     }
-    </style>
+</style>
+
 <body>
     <div id="content">
         <!-- Begin Page Content -->
@@ -25,4 +27,5 @@
 
 
 </body>
+
 </html>

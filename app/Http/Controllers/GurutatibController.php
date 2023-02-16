@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\gurutatib;
 use Illuminate\Http\Request;
+
 class GurutatibController extends Controller
 {
     /**
@@ -34,11 +35,11 @@ class GurutatibController extends Controller
      */
     public function store(Request $request)
     {
-        $massage=[
+        $massage = [
             'required' => ':attribute harus diisi Slurr ',
         ];
-        $this->validate($request,[
-            'nama'=>'required',
+        $this->validate($request, [
+            'nama' => 'required',
         ], $massage);
         //insert data
         $tatip = new gurutatib;

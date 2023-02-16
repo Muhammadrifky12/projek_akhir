@@ -15,7 +15,6 @@ class JenispelanggaranController extends Controller
      */
     public function index()
     {
-    
     }
 
     /**
@@ -71,7 +70,7 @@ class JenispelanggaranController extends Controller
     public function edit($id)
     {
         $jenis = jenispelanggaran::find($id);
-        return view('Edit.Editjenispelanggaran',compact('jenis'));
+        return view('Edit.Editjenispelanggaran', compact('jenis'));
     }
 
     /**
@@ -83,11 +82,11 @@ class JenispelanggaranController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $r = jenispelanggaran::find($id);
-       $r->jenisku = $request->jenisku;
-       $r->save();
+        $r = jenispelanggaran::find($id);
+        $r->jenisku = $request->jenisku;
+        $r->save();
 
-       return redirect('/Pelanggaran');
+        return redirect('/Pelanggaran');
     }
 
     /**
@@ -100,8 +99,9 @@ class JenispelanggaranController extends Controller
     {
         //
     }
-    public function hapus($id){
-        jenispelanggaran::where('id',$id)->delete();
+    public function hapus($id)
+    {
+        jenispelanggaran::where('id', $id)->delete();
         return redirect('/Pelanggaran');
     }
 }

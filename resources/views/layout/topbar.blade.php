@@ -10,7 +10,6 @@
             0 0 20px #66ff33, 0 0 25px #66ff33,
             0 0 30px #66ff33, 0 0 35px #66ff33;
     }
-
 </style>
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" id="gradient1">
 

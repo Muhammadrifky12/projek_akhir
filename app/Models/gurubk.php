@@ -11,14 +11,16 @@ class gurubk extends Model
     protected $fillable = [
         'nama',
         'deskripsi',
-        
+
     ];
     protected $table = 'guru_bk';
-    public function gurubk(){
-        return $this->belongsTo('App\Models\guru','nama');
+    public function gurubk()
+    {
+        return $this->belongsTo('App\Models\guru', 'nama');
     }
-    public function kel(){
-        return $this->hasMany('App\Models\kelas','id');
+    public function kel()
+    {
+        return $this->hasMany('App\Models\kelas', 'id');
     }
     // public function penanganan1(){
     //     return $this->hasMany('App\Models\history','id');

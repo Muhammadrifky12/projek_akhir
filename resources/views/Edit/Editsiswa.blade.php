@@ -35,8 +35,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <input type="hidden" class="form-control" id="status" name='status'
-                                value="{{$is->status}}">
+                            <input type="hidden" class="form-control" id="status" name='status' value="{{$is->status}}">
                         </div>
                         <div class="form-group">
                             <input type="hidden" class="form-control" id="skor" name='skor' value="{{$is->skor}}">

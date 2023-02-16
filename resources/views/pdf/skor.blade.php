@@ -8,33 +8,41 @@
     <title>Document</title>
     <style>
         #customers {
-          font-family: Arial, Helvetica, sans-serif;
-          border-collapse: collapse;
-          width: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
         }
-        
-        #customers td, #customers th {
-          border: 1px solid #ddd;
-          padding: 8px;
-        }
-        
-        #customers tr:nth-child(even){background-color: #f2f2f2;}
-        
-        #customers tr:hover {background-color: #ddd;}
-        
+
+        #customers td,
         #customers th {
-          padding-top: 12px;
-          padding-bottom: 12px;
-          text-align: left;
-          background-color: #04AA6D;
-          color: white;
+            border: 1px solid #ddd;
+            padding: 8px;
         }
-        </style>
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
-            <P><H2 style="text-align: center">LAPORAN POINT PELANGGARAN SISWA</H2></P>
+            <P>
+                <H2 style="text-align: center">LAPORAN POINT PELANGGARAN SISWA</H2>
+            </P>
             <hr>
             <table class="table" id="customers">
                 <thead>
@@ -47,20 +55,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+
                     @foreach ($data as $b => $items)
-                        <tr>
-                            <th scope="row">{{ ++$b }}</th>
-                            <td>{{ $items->nisn}}</td>
-                            <td>{{ $items->nama }}</td>
-                            <td>{{ $items->kelas1->kelass }}</td>
-                            <td>{{ $items->skor }}</td>
-    
-                        </tr>
+                    <tr>
+                        <th scope="row">{{ ++$b }}</th>
+                        <td>{{ $items->nisn}}</td>
+                        <td>{{ $items->nama }}</td>
+                        <td>{{ $items->kelas1->kelass }}</td>
+                        <td>{{ $items->skor }}</td>
+
+                    </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
 </body>
+
 </html>

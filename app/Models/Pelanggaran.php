@@ -14,7 +14,8 @@ class Pelanggaran extends Model
         'skor',
     ];
     protected $table = 'pelanggaran';
-    public function pelanggaran(){
-        return $this->belongsTo('App\Models\jenispelanggaran','id_jenis');
+    public function pelanggaran()
+    {
+        return $this->belongsTo('App\Models\jenispelanggaran', 'id_jenis');
     }
 }

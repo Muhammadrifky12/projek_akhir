@@ -20,12 +20,12 @@ class DashboardController extends Controller
         $siswa = Siswa::all()->count();
         $histor = history::all()->count();
         $siswaku = Siswa::doesnthave('history')->count();
-        $ortu = Siswa::where('skor','>',55)->where('skor','<',149)->get();
+        $ortu = Siswa::where('skor', '>', 55)->where('skor', '<', 149)->get();
         $paginate = Siswa::paginate(5);
-        $skorsing = Siswa::where('skor','>',149)->where('skor','<',249)->get();
-        $out = Siswa::where('skor','>',249)->get();
+        $skorsing = Siswa::where('skor', '>', 149)->where('skor', '<', 249)->get();
+        $out = Siswa::where('skor', '>', 249)->get();
         // dd($history);
-        return view('dashboard',compact('histor','siswa','siswaku','ortu','skorsing','out','paginate'));
+        return view('dashboard', compact('histor', 'siswa', 'siswaku', 'ortu', 'skorsing', 'out', 'paginate'));
     }
 
     /**
@@ -35,7 +35,6 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        
     }
 
     /**
@@ -69,7 +68,7 @@ class DashboardController extends Controller
     public function edit($id)
     {
         $dash = Siswa::find($id);
-        return view('Edit.Editpemangilan',compact('dash'));
+        return view('Edit.Editpemangilan', compact('dash'));
     }
 
     /**
@@ -88,7 +87,7 @@ class DashboardController extends Controller
         $siswa->id_kelas = $request->id_kelas;
         $siswa->JK = $request->JK;
         $siswa->skor = $request->skor;
-        $siswa->status= $request->status;
+        $siswa->status = $request->status;
         $siswa->save();
         Session::flash('success', 'Data Berhasil Diinput');
         return redirect('/dashboard');
@@ -106,9 +105,10 @@ class DashboardController extends Controller
         //
     }
 
-    public function export($id){
+    public function export($id)
+    {
         $data = Siswa::find($id);
-        view()->share('data',$data);
+        view()->share('data', $data);
         $pdf = PDF::loadview('pdf.surat');
         // return $pdf->download('Surat Pemanggilan.pdf');
         return $pdf->stream();
