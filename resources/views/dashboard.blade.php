@@ -67,8 +67,9 @@
                             Pembinaan</h6>
                     </div>
                     <div class="col-lg-4" style="text-align: right">
-                        <button type="button" class="btn-xm btn-circle btn-success" data-bs-toggle="modal" data-bs-target="#tambah">
-                            <i class="fas fa-fas-info"></i>
+                        <button type="button" class="btn-xm btn-circle btn-success" data-bs-toggle="modal"
+                            data-bs-target="#mazze">
+                            <i class="fa fa-info"></i>
                         </button>
                     </div>
                 </div>
@@ -114,7 +115,18 @@
     <div class="col-lg-12">
         <div class="card shadow mb-4">
             <div id="pp" class="card-header">
-                <h6 class="m-0 font-weight-bold text-dark">Penanganan Sanksi Sedang : Skorsing dan Paggilan Orang Tua
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h6 class="m-0 font-weight-bold text-dark">Penanganan Sanksi Sedang : Skorsing dan Paggilan
+                            Orang Tua</h6>
+                    </div>
+                    <div class="col-lg-4" style="text-align: right">
+                        <button type="button" class="btn-xm btn-circle btn-success" data-bs-toggle="modal"
+                            data-bs-target="#mazze1">
+                            <i class="fa fa-info"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <table class="table">
@@ -157,9 +169,20 @@
     <div class="col-lg-12">
         <div class="card shadow mb-4">
             <div id="pp" class="card-header">
-                <h6 class="m-0 font-weight-bold text-dark">Penanganan Sanksi Berat : Paggilan Orang Tua dan Siswa
-                    Dikembalikan
-                    Kepada Orang Tua
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h6 class="m-0 font-weight-bold text-dark">Penanganan Sanksi Berat : Paggilan Orang Tua dan
+                            Siswa
+                            Dikembalikan
+                            Kepada Orang Tua</h6>
+                    </div>
+                    <div class="col-lg-4" style="text-align: right">
+                        <button type="button" class="btn-xm btn-circle btn-success" data-bs-toggle="modal"
+                            data-bs-target="#mazze2">
+                            <i class="fa fa-info"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <table class="table">
@@ -196,6 +219,55 @@
                 <div class=" d-flex justify-content-end">
                     {{ $paginate->links() }}
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mazze" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Info Sanksi</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ol>
+                    <li> Skor 56-75 <span style="display: inline-block; margin-left: 5px;">: Panggilan Orang Tua ke 1
+                            (Tatib, BK, Wali kelas)</span></li>
+                    <li> Skor 76-95 <span style="display: inline-block; margin-left: 5px;">: Panggilan Orang Tua ke 2
+                            (Tatib, BK, Wali kelas)</span></li>
+                    <li> Skor 96-149 <span>: Panggilan Orang Tua ke 3 (KoordBK)</span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mazze1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Info Sanksi</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ol>
+                    <li> Skor 150-249 <span>: Skorsing (Wakasek Kesiswaan)</span></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="mazze2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Info Sanksi</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ol>
+                    <li> Skor 250-keatas <span>: Dikembalikan Ke Orang Tua (Kepala Sekolah)</span></li>
+                </ol>
             </div>
         </div>
     </div>

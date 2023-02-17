@@ -36,9 +36,6 @@
                         @endforeach
                     </tbody>
                 </table>
-                <div class=" d-flex justify-content-end">
-                    {{ $historyyku->links() }}
-                </div>
             </div>
         </div>
     </div>
