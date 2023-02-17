@@ -104,7 +104,7 @@
                                         </tbody>
                                     </table>
                                     <div class="card-footer d-flex justify-content-end">
-                                        {{ $dataa->links() }}
+                                        {{ $data6->links() }}
                                     </div>
                                 </div>
                             </div>

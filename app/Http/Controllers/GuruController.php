@@ -17,11 +17,8 @@ class GuruController extends Controller
      */
     public function index()
     {
-        $guru = guru::all();
         $guru = guru::paginate(5);
-        $gurubk = gurubk::all();
         $gurubkk = gurubk::paginate(5);
-        $tatib = gurutatib::all();
         $tatibb = gurutatib::paginate(5);
         return view('Guru', compact('guru', 'gurubk', 'gurubkk', 'tatib', 'tatibb'));
     }

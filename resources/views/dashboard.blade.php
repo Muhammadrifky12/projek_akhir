@@ -58,10 +58,20 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-lg-9">
+    <div class="col-lg-12">
         <div class="card shadow mb-4">
             <div id="pp" class="card-header">
-                <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Sedang : Panggilan Orang Tua
+                <div class="row">
+                    <div class="col-lg-8">
+                        <h6 class="m-0 font-weight-bold text-dark">Penanganan Sanksi Ringan : Panggilan Orang Tua serta
+                            Pembinaan</h6>
+                    </div>
+                    <div class="col-lg-4" style="text-align: right">
+                        <button type="button" class="btn-xm btn-circle btn-success" data-bs-toggle="modal" data-bs-target="#tambah">
+                            <i class="fas fa-fas-info"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
             <div class="card-body">
                 <table class="table">
@@ -101,10 +111,10 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-9">
+    <div class="col-lg-12">
         <div class="card shadow mb-4">
             <div id="pp" class="card-header">
-                <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Berat : Skorsing dan Paggilan Orang Tua
+                <h6 class="m-0 font-weight-bold text-dark">Penanganan Sanksi Sedang : Skorsing dan Paggilan Orang Tua
             </div>
             <div class="card-body">
                 <table class="table">
@@ -144,10 +154,11 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-9">
+    <div class="col-lg-12">
         <div class="card shadow mb-4">
             <div id="pp" class="card-header">
-                <h6 class="m-0 font-weight-bold text-dark">Pelanggaran Berat : Paggilan Orang Tua dan Siswa Dikembalikan
+                <h6 class="m-0 font-weight-bold text-dark">Penanganan Sanksi Berat : Paggilan Orang Tua dan Siswa
+                    Dikembalikan
                     Kepada Orang Tua
             </div>
             <div class="card-body">

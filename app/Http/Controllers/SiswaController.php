@@ -17,10 +17,10 @@ class SiswaController extends Controller
      */
     public function index()
     {
-        $dataa = Siswa::paginate(10);
-        $data6 = Siswa::all();
+        
+        $data6 = Siswa::paginate(10);
         $kelas = Kelas::all();
-        return view('viewsiswa', compact('data6', 'dataa', 'kelas'));
+        return view('viewsiswa', compact('data6', 'kelas'));
     }
     public function searchklasku(Request $request)
     {

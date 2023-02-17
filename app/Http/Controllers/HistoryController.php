@@ -20,11 +20,10 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        $histor = Siswa::all();
         $history = history::all();
         $pelala = Pelanggaran::all();
-        $data = Siswa::paginate(7);
-        return view('History', compact('history', 'histor', 'pelala', 'data'));
+        $histor = Siswa::paginate(7);
+        return view('History', compact('history', 'histor', 'pelala'));
     }
 
     /**
@@ -74,8 +73,7 @@ class HistoryController extends Controller
     public function show($id)
     {
         $historyyku = Siswa::find($id)->history()->get();
-        $dataku = history::paginate(5);
-        return view('Isihistory', compact('historyyku', 'dataku'));
+        return view('Isihistory', compact('historyyku'));
     }
 
     /**

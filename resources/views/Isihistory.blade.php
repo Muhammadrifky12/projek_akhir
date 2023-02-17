@@ -37,7 +37,7 @@
                     </tbody>
                 </table>
                 <div class=" d-flex justify-content-end">
-                    {{ $dataku->links() }}
+                    {{ $historyyku->links() }}
                 </div>
             </div>
         </div>

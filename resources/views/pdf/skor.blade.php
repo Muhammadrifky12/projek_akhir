@@ -42,6 +42,10 @@
         <div class="row">
             <P>
                 <H2 style="text-align: center">LAPORAN POINT PELANGGARAN SISWA</H2>
+                <p style="text-align: right">Tanggal : {{$tomorrow}}</p>
+                <p>Kelas <span style="display: inline-block; margin-left: 35px;">: {{$kelas->kelass}}</span> <br>
+                    Wali Kelas : {{$kelas->kelasss->nama}}
+                </p>
             </P>
             <hr>
             <table class="table" id="customers">

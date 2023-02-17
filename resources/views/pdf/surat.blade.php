@@ -52,7 +52,7 @@
         </div>
         <br>
         <div style="text-align: right; margin-right: 30px">
-            Surabaya, 02 februari 2023
+            Surabaya, {{$besok}}
         </div>
         <div>
             <p>No.<span id="tab1"></span>: 421/ /101.6.1.23/20 <br>
