@@ -84,7 +84,7 @@
                         </tr>
                     </thead>
                     {{-- @dd ($gurubk->gurubk  ) --}}
-                    @foreach ($gurubk as $i1 => $item2)
+                    @foreach ($gurubkk as $i1 => $item2)
                     <tr>
                         <th scope="row">{{ ++$i1 }}</th>
                         <td>{{ $item2->gurubk->nama }}</td>
@@ -118,7 +118,7 @@
                             <th scope="col">Action</th>
                         </tr>
                     </thead>
-                    @foreach ($tatib as $g => $hallo)
+                    @foreach ($tatibb as $g => $hallo)
                     <tr>
                         <th scope="row">{{ ++$g }}</th>
                         <td>{{ $hallo->gurutatib->nama }}</td>

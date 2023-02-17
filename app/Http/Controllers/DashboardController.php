@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\history;
+use App\Models\Kelas;
 use App\Models\Siswa;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\Session;
@@ -109,9 +110,11 @@ class DashboardController extends Controller
     public function export($id)
     {
         $data = Siswa::find($id);
-        $besok = Carbon::tomorrow()->format('d M Y');
+        $besok = Carbon::tomorrow()->format('d-m-Y');
+        $kela = Kelas::find($id);
         view()->share('data', $data);
         view()->share('besok',$besok);
+        view()->share('kela',$kela);
         $pdf = PDF::loadview('pdf.surat');
         // return $pdf->download('Surat Pemanggilan.pdf');
         return $pdf->stream();

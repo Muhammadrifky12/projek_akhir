@@ -85,21 +85,29 @@
             <p>
                 Hari/Tanggal
                 <span style="display: inline-block; margin-left: 59px;"></span>
-                :............ <br>
+                : {{$besok}} <br>
                 Waktu <span style="display: inline-block; margin-left: 102px;"></span>
                 : 10.00 WIB <br>
                 Tempat <span style="display: inline-block; margin-left: 96px;"></span>
                 : @if ($data->skor <= 149 && $data-> skor >=55)
-                    Ketertippan
+                    Ruang Bimbingan Konseling SMKN 1 Surabaya
                     @endif
                     @if ($data->skor <= 249 && $data-> skor >=150)
-                        Bimbingan Konseling
+                        Ruang Bimbingan Konseling SMKN 1 Surabaya
                         @endif
                         @if ($data->skor >=250)
-                        Bimbingan Konseling
+                        Ruang Kepala Sekolah SMKN 1 Surabaya
                         @endif<br>
                         Bertemu dengan <span style="display: inline-block; margin-left: 40px"></span>
-                        :............ <br>
+                        : @if ($data->skor <= 149 && $data-> skor >=55)
+                        {{$kela->bk->nama}}
+                        @endif 
+                        @if ($data->skor <= 249 && $data-> skor >=150)
+                            Wakasek Kesiswaan
+                        @endif
+                        @if ($data->skor >=250)
+                            Kepala Sekolah
+                        @endif<br>
                         Keperluan <span style="display: inline-block; margin-left: 79px;"></span>
                         : Membicarakan masalah putra-putri dari Bapak/Ibu. <br>
                         <span style="display: inline-block; margin-left: 162px;">
