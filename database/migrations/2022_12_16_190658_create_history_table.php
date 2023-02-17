@@ -20,7 +20,8 @@ return new class extends Migration
             ->onDelete('cascade')
             ->onUpdate('cascade');
             $table->date('tanggal');
-            $table->unsignedBigInteger('bentukpelanggaran');
+            $table->string('bentukpelanggaran');
+            $table->unsignedBigInteger('skor');
             $table->unsignedBigInteger('penanganan');
             $table->timestamps();
         });

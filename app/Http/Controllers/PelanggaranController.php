@@ -47,7 +47,7 @@ class PelanggaranController extends Controller
         ];
         $this->validate($request, [
             'id_jenis' => 'required',
-            'Bentukpelanggaran' => 'required|min:7|max:50',
+            'Bentukpelanggaran' => 'required|min:7|max:255',
             'skor' => 'required',
         ], $massage);
         //insert data
