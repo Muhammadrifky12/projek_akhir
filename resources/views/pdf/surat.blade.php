@@ -99,20 +99,27 @@
                         Ruang Kepala Sekolah SMKN 1 Surabaya
                         @endif<br>
                         Bertemu dengan <span style="display: inline-block; margin-left: 40px"></span>
-                        : @if ($data->skor <= 149 && $data-> skor >=55)
-                        {{$kela->bk->nama}}
-                        @endif 
-                        @if ($data->skor <= 249 && $data-> skor >=150)
-                            Wakasek Kesiswaan
-                        @endif
-                        @if ($data->skor >=250)
-                            Kepala Sekolah
-                        @endif<br>
-                        Keperluan <span style="display: inline-block; margin-left: 79px;"></span>
-                        : Membicarakan masalah putra-putri dari Bapak/Ibu. <br>
-                        <span style="display: inline-block; margin-left: 162px;">
-                            Mohon datang tepat waktu dan tidak diwakilkan.
-                        </span>
+                        : @if ($data->skor <= 149 && $data-> skor >=56)
+                            @if ($data->skor <=95 && $data-> skor >=56)
+                                @foreach ($kela as $item)
+                                {{$item->bk->nama}}
+                                @endforeach
+                                @endif
+                                @if ($data->skor <=149 && $data-> skor >=96)
+                                    KoordBK
+                                    @endif
+                                    @if ($data->skor <= 249 && $data-> skor >=150)
+                                        Wakasek Kesiswaan
+                                        @endif
+                                        @if ($data->skor >=250)
+                                        Kepala Sekolah
+                                        @endif<br>
+                                        @endif
+                                        Keperluan <span style="display: inline-block; margin-left: 79px;"></span>
+                                        : Membicarakan masalah putra-putri dari Bapak/Ibu. <br>
+                                        <span style="display: inline-block; margin-left: 162px;">
+                                            Mohon datang tepat waktu dan tidak diwakilkan.
+                                        </span>
             </p>
         </div>
         <br>

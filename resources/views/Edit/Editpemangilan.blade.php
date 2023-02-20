@@ -18,11 +18,17 @@
                             <input type="hidden" name="skor" id="skor" value="{{ $dash->skor }}">
                             <label for="status">Status Siswa</label>
                             <select class="form-control form-select" id="status" name='status'>
-                                @if ($dash->skor <= 149 && $dash-> skor >=55)
+                                @if ($dash->skor <= 149 && $dash-> skor >55)
                                     <option value="">--Pilih--</option>
+                                    @if ($dash->skor <= 75 && $dash-> skor >55)
                                     <option value="Pemanggilan Pertama">Pemanggilan Pertama</option>
+                                    @endif
+                                    @if ($dash->skor <= 95 && $dash-> skor >=76)
                                     <option value="Pemanggilan Kedua">Pemanggilan Kedua</option>
+                                    @endif
+                                    @if ($dash->skor <= 149 && $dash-> skor >=96)
                                     <option value="Pemanggilan Ketiga">Pemanggilan Ketiga</option>
+                                    @endif
                                     @endif
                                     @if ($dash->skor <= 249 && $dash-> skor >=150)
                                         <option value="">--Pilih--</option>
