@@ -109,9 +109,10 @@ class DashboardController extends Controller
 
     public function export($id)
     {
-        $data = Siswa::find($id);
+        $data = Siswa::find($id); 
+        $kelas= $data['id_kelas'];
         $besok = Carbon::tomorrow()->format('d-m-Y');
-        $kela = Kelas::find($id);
+        $kela = Kelas::where('id',$kelas)->get();
         view()->share('data', $data);
         view()->share('besok',$besok);
         view()->share('kela',$kela);

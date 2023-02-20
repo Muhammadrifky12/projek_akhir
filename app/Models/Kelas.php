@@ -22,10 +22,6 @@ class Kelas extends Model
     {
         return $this->belongsTo('App\Models\guru', 'walas');
     }
-    public function kel()
-    {
-        return $this->belongsTo('App\Models\gurubk', 'gurubk');
-    }
     public function bk()
     {
         return $this->belongsTo('App\Models\guru', 'gurubk');
